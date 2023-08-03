@@ -12,6 +12,7 @@ export class CampaignController extends BaseController {
 
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createCampaign)
+      .delete('/:campaignId', this.archiveCampaign)
   }
 
 
@@ -39,6 +40,17 @@ export class CampaignController extends BaseController {
       campaignData.creatorId = req.userInfo.id
       const campaign = await campaignService.createCampaign(campaignData)
       res.send(campaign)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async archiveCampaign(req, res, next) {
+    try {
+      const campaignId = req.params.campaignId
+      const userId = req.userInfo.id
+      const campaign = await campaignService.archiveCampaign(campaignId, userId)
+      return res.send(campaign)
     } catch (error) {
       next(error)
     }
