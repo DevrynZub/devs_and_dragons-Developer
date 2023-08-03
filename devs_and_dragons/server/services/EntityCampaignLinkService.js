@@ -24,6 +24,11 @@ class EntityCampaignLinkService {
     return linkToDelete
   }
 
+  async getEntityCampaignLinksByCampaignId(campaignId) {
+    const entityLinks = await dbContext.EntityCampaignLink.find({ campaignId }).populate('Entity')
+    return entityLinks
+  }
+
 }
 
 export const entityCampaignLinkService = new EntityCampaignLinkService()

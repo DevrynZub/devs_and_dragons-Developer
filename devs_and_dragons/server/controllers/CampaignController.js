@@ -2,6 +2,7 @@ import { Auth0Provider } from "@bcwdev/auth0provider";
 import BaseController from "../utils/BaseController.js";
 import { campaignService } from "../services/CampaignService.js";
 import { notesService } from "../services/NotesService.js";
+import { entityCampaignLinkService } from "../services/EntityCampaignLinkService.js";
 
 export class CampaignController extends BaseController {
   constructor() {
@@ -11,6 +12,7 @@ export class CampaignController extends BaseController {
       .get('', this.getAllCampaigns)
       .get('/:campaignId', this.getCampaignById)
       .get('/:campaignId/notes', this.getNotesByCampaignId)
+      .get('/:campaignId/entitycampaignlinks', this.getEntityCampaignLinksByCampaignId)
 
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createCampaign)
@@ -43,6 +45,16 @@ export class CampaignController extends BaseController {
       const campaignId = req.params.camapignId
       const notes = await notesService.getNotesByCampaignId(campaignId)
       return res.send(notes)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async getEntityCampaignLinksByCampaignId(req, res, next) {
+    try {
+      const campaignId = req.params.campaignId
+      const entityLinks = await entityCampaignLinkService.getEntityCampaignLinksByCampaignId(campaignId)
+      res.send(entityLinks)
     } catch (error) {
       next(error)
     }
