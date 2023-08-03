@@ -24,8 +24,8 @@
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Campaign' }" class="btn lighten-30 selectable text-uppercase">
-            Campaign
+          <router-link :to="{ name: 'Campaign' }" class="btn lighten-30 selectable text-uppercase nav-shadow">
+            Campaigns
           </router-link>
         </li>
 
