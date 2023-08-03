@@ -6,9 +6,19 @@
         <img class="hero-img img-fluid" src="https://i.pinimg.com/originals/af/dc/f8/afdcf872dbb81f7354ab9f2b30cfdd26.jpg"
           alt="">
       </div>
-      <div class="col-12">
-        <h1 class="text-center text-light">“Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The
-          Three Musketeers</h1>
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-center text-light">“Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The
+            Three Musketeers</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col6">Test</div>
+        <div class="col6">Test</div>
+        <div class="col6">Test</div>
+        <div class="col6">Test</div>
+
       </div>
     </div>
   </div>
@@ -26,7 +36,8 @@ export default {
 
 <style lang="scss" scoped>
 .about-page {
-  background-image: url('https://i.pinimg.com/originals/20/5e/7b/205e7b29a4ec6e34d8015c075148b5f5.jpg');
+  // background-image: url('https://i.pinimg.com/originals/20/5e/7b/205e7b29a4ec6e34d8015c075148b5f5.jpg');
+  background-color: #5f3f2485;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
