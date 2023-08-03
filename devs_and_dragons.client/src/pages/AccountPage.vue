@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="text-center mt-3">My Profile</p>
+    <h1 class="text-center m-5">My Profile</h1>
   </div>
   <div class="container-fluid">
     <div class="row justify-content-around mt-2">
