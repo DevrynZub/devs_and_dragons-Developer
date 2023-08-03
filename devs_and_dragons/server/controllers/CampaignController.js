@@ -1,6 +1,7 @@
 import { Auth0Provider } from "@bcwdev/auth0provider";
 import BaseController from "../utils/BaseController.js";
 import { campaignService } from "../services/CampaignService.js";
+import { notesService } from "../services/NotesService.js";
 
 export class CampaignController extends BaseController {
   constructor() {
@@ -9,6 +10,7 @@ export class CampaignController extends BaseController {
 
       .get('', this.getAllCampaigns)
       .get('/:campaignId', this.getCampaignById)
+      .get('/:campaignId/notes', this.getNotesByCampaignId)
 
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createCampaign)
@@ -35,6 +37,17 @@ export class CampaignController extends BaseController {
       next(error)
     }
   }
+
+  async getNotesByCampaignId(req, res, next) {
+    try {
+      const campaignId = req.params.camapignId
+      const notes = await notesService.getNotesByCampaignId(campaignId)
+      return res.send(notes)
+    } catch (error) {
+      next(error)
+    }
+  }
+
   async createCampaign(req, res, next) {
     try {
       const campaignData = req.body
