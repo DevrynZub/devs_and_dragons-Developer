@@ -11,7 +11,7 @@ export class NotesController extends BaseController {
 
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createNote)
-      .delete('/:noteId')
+      .delete('/:noteId', this.removeNote)
 
   }
 
@@ -31,7 +31,7 @@ export class NotesController extends BaseController {
       const noteId = req.params.noteId
       const userId = req.userInfo.id
       const note = await notesService.removeNote(noteId, userId)
-      return res.send(note)
+      res.send(note)
     } catch (error) {
       next(error)
     }
