@@ -1,13 +1,13 @@
 <template>
   <div class="container-fluid about-page">
     <div class="row">
-      <div class="col-12 col-md-6 pt-5">
+      <div class="col-12 col-md-6 pt-md-5 pb-3">
         <img class="hero-img img-fluid"
           src="https://res.cloudinary.com/teepublic/image/private/s--MwXqUo6Q--/t_Preview/b_rgb:36538b,c_limit,f_jpg,h_630,q_90,w_630/v1446137621/production/designs/17624_0.jpg"
           alt="">
       </div>
 
-      <div class="col-12 col-md-6 text-center pt-5 project-tools">
+      <div class="col-12 col-md-6 text-center pt-md-5 project-tools">
         <div>
           <p>Languages and Tools
             used on this project:</p>
@@ -26,7 +26,7 @@
 
 
 
-    <div class="row">
+    <div class="row mt-3">
       <div class="col-12 col-md-12">
         <h1 class="d-flex text-dark quote-img">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
@@ -235,6 +235,32 @@ span:nth-child(18) {
   max-width: 500%;
   margin-left: 15%;
   padding-top: 5%;
+}
+
+
+
+
+@media(max-width: 767px) {
+  .hero-img {
+    max-width: 100%;
+    margin-left: 0;
+    padding-top: 3%;
+  }
+
+  .project-tools {
+    margin-top: 3%;
+    margin-left: 0;
+    padding: 3%;
+
+  }
+
+  .quote-img {
+    font-size: 20px;
+    padding-top: 3%;
+    margin-left: -14%;
+  }
+
+
 }
 </style>
 
