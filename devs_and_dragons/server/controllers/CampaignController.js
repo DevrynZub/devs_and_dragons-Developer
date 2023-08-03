@@ -8,9 +8,11 @@ export class CampaignController extends BaseController {
     this.router
 
       .get('', this.getAllCampaigns)
+      .get('/:campaignId', this.getCampaignById)
 
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createCampaign)
+      .delete('/:campaignId', this.archiveCampaign)
   }
 
 
@@ -22,12 +24,33 @@ export class CampaignController extends BaseController {
       next(error)
     }
   }
+
+  async getCampaignById(req, res, next) {
+    try {
+      const campaignId = req.params.campaignId
+      const campaign = await campaignService.getCampaignById(campaignId)
+      return res.send(campaign)
+    } catch (error) {
+      next(error)
+    }
+  }
   async createCampaign(req, res, next) {
     try {
       const campaignData = req.body
       campaignData.creatorId = req.userInfo.id
       const campaign = await campaignService.createCampaign(campaignData)
       res.send(campaign)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async archiveCampaign(req, res, next) {
+    try {
+      const campaignId = req.params.campaignId
+      const userId = req.userInfo.id
+      const campaign = await campaignService.archiveCampaign(campaignId, userId)
+      return res.send(campaign)
     } catch (error) {
       next(error)
     }
