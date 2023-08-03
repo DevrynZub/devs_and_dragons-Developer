@@ -14,9 +14,9 @@ class EntitiesService {
 
     entityToEdit.tags = entityData.tags || entityToEdit.tags
     entityToEdit.desc = entityData.desc || entityToEdit.desc
-    entityToEdit.connections = entityData.connections || entityToEdit.desc
-    entityToEdit.body = entityData.body || entityToEdit.desc
-    entityToEdit.imgUrl = entityData.imgUrl || entityToEdit.desc
+    entityToEdit.connections = entityData.connections || entityToEdit.connections
+    entityToEdit.body = entityData.body || entityToEdit.body
+    entityToEdit.imgUrl = entityData.imgUrl || entityToEdit.imgUrl
 
     await entityToEdit.save()
     return entityToEdit
