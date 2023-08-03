@@ -7,12 +7,13 @@
                     <div class="elevation-3 rounded fs-5 bg-black text-light p-1">
                         <label for="site-campaigns">Search for Campaigns: </label>
                         <input v-model="filterBy" class="m-2" type="search" id="site-campaigns" name="q" />
-                        <button class="btn btn-outline-danger">Search</button>
+
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-3 col-12 card m-2" v-for="campaign in campaigns" :key="campaign.id">
+                <div class="col-md-3 col-12 card m-2 text-light elevation-5" v-for="campaign in campaigns"
+                    :key="campaign.id">
                     <h3>{{ campaign.name }}</h3>
                     <p>{{ campaign.nextSessionDate }}</p>
                     <p>{{ campaign.desc }}</p>
@@ -74,5 +75,9 @@ export default {
     background-repeat: no-repeat;
     height: 92dvh;
     background-attachment: fixed;
+}
+
+.card {
+    background-color: slategray;
 }
 </style>
