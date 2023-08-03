@@ -56,7 +56,6 @@ main {
   background-color: rgba(0, 0, 0, 0.808);
   border-radius: 5px;
   box-shadow: 3px 3px rgb(219, 215, 219);
-
   width: 40dvw;
 }
 
