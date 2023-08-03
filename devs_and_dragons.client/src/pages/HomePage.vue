@@ -1,16 +1,15 @@
 <template>
-  <main>
+  <div class="background">
+
     <div class="container-fluid">
-      <div class="row">
-        <div class=" col-md-5 col-12 p-5 home flex-grow-1 d-flex flex-column justify-content-start">
-          <div class="home-card text-shadow p-5 rounded elevation-3">
-            <h4>
-              Devs and Dragons gives you the tools to become a superior Dungeon Master. Create and edit epic campaigns,
-              seamlessly coordinate your adventure, and have access to shared knowledge across all the campaigns.
-            </h4>
-          </div>
+      <div class="row justify-content-between">
+        <div class="col-md-5 col-11 home-card text-shadow p-3 m-3 rounded elevation-3">
+          <h4>
+            Devs and Dragons gives you the tools to become a superior Dungeon Master. Create and edit epic campaigns,
+            seamlessly coordinate your adventure, and have access to shared knowledge across all the campaigns.
+          </h4>
         </div>
-        <div class="col-md-2 col-6 flex-column justify-content-start m-5">
+        <div class="col-md-2 col-12">
           <button class=" btn btn-rounded">
             <img class="rounded start-button elevation-5"
               src="https://tse3.mm.bing.net/th?id=OIP.XK5GfaI4mfcNUIQh-yngSQHaDL&pid=Api&P=0&h=220">
@@ -18,7 +17,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -30,10 +29,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-main {
+.background {
   background-image: url(https://wallpapercave.com/wp/wp2770331.jpg);
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
+  height: 92dvh;
+
 }
 
 
@@ -41,7 +43,6 @@ main {
 
 .home {
   display: grid;
-  height: 92dvh;
   place-content: center;
   text-align: center;
   user-select: none;
@@ -56,16 +57,9 @@ main {
   background-color: rgba(0, 0, 0, 0.808);
   border-radius: 5px;
   box-shadow: 3px 3px rgb(219, 215, 219);
-  width: 40dvw;
 }
 
->img {
-  height: 200px;
-  max-width: 200px;
-  width: 100%;
-  object-fit: contain;
-  object-position: center;
-}
+
 
 .text-shadow {
   color: rgb(228, 41, 41);
