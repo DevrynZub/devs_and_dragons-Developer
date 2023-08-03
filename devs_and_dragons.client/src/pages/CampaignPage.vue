@@ -56,7 +56,8 @@ export default {
                     return AppState.campaigns
 
                 } else {
-                    return AppState.campaigns.includes(filterBy)
+
+                    return AppState.campaigns.filter(c => c.name.includes(filterBy.value))
                 }
             })
         }
