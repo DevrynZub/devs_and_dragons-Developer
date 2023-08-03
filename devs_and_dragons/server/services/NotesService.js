@@ -18,6 +18,15 @@ class NotesService {
     const newNote = await dbContext.Notes.create(noteData)
     return newNote
   }
+
+  async removeNote(noteId, userId) {
+    const noteToRemove = await dbContext.Notes.findById(noteId)
+    if (noteToRemove.accountId.toString() != userId) {
+      throw new Forbidden('You cannot delete a note you did not create.')
+    }
+    await noteToRemove.remove()
+    return noteToRemove
+  }
 }
 
 
