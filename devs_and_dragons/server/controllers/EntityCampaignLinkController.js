@@ -13,9 +13,12 @@ export class EntityCampaignLinkController extends BaseController {
       .post('', this.createEntityCampaignLink)
       .delete('/:entityLinkId', this.deleteEntityCampaignLink)
   }
-  deleteEntityCampaignLink(req, res, next) {
+  async deleteEntityCampaignLink(req, res, next) {
     try {
-
+      const entityLinkId = req.params.entityLinkId
+      const accountId = req.userInfo.id
+      const entityLink = await entityCampaignLinkService.deleteEntityCampaignLink(entityLinkId, accountId)
+      res.send(entityLink)
     } catch (error) {
       next(error)
     }
@@ -23,7 +26,7 @@ export class EntityCampaignLinkController extends BaseController {
   async createEntityCampaignLink(req, res, next) {
     try {
       const data = req.body
-      data.accountId = req.userInfo.id
+      data.creatorId = req.userInfo.id
       const entityCampaignLink = await entityCampaignLinkService.createEntityCampaignLink(data)
       res.send(entityCampaignLink)
     } catch (error) {

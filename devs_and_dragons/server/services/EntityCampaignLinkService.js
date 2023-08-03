@@ -1,5 +1,5 @@
 import { dbContext } from "../db/DbContext.js"
-import { Forbidden } from "../utils/Errors.js"
+import { BadRequest, Forbidden } from "../utils/Errors.js"
 import { campaignService } from "./CampaignService.js"
 
 class EntityCampaignLinkService {
@@ -10,6 +10,18 @@ class EntityCampaignLinkService {
     }
     const newLink = (await dbContext.EntityCampaignLink.create(data)).populate('Entity')
     return newLink
+  }
+
+  async deleteEntityCampaignLink(entityLinkId, accountId) {
+    const linkToDelete = await dbContext.EntityCampaignLink.findById(entityLinkId)
+    if (!linkToDelete) {
+      throw new BadRequest('This link could not be found')
+    }
+    if (linkToDelete.creatorId != accountId) {
+      throw new Forbidden('You cannot delete a link that you did not create')
+    }
+    await linkToDelete.remove()
+    return linkToDelete
   }
 
 }
