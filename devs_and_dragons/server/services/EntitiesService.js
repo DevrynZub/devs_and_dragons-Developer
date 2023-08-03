@@ -3,6 +3,24 @@ import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 
 class EntitiesService {
+  async editEntity(entityId, userId, entityData) {
+    const entityToEdit = await this.getEntityById(entityId)
+    if (!entityToEdit) {
+      throw new BadRequest('There is no entity with that id')
+    }
+    if (entityToEdit.creatorId != userId) {
+      throw new Forbidden("you cannot delete someone else's entity")
+    }
+
+    entityToEdit.tags = entityData.tags || entityToEdit.tags
+    entityToEdit.desc = entityData.desc || entityToEdit.desc
+    entityToEdit.connections = entityData.connections || entityToEdit.desc
+    entityToEdit.body = entityData.body || entityToEdit.desc
+    entityToEdit.imgUrl = entityData.imgUrl || entityToEdit.desc
+
+    await entityToEdit.save()
+    return entityToEdit
+  }
   async deleteEntity(entityId, userId) {
     const entityToDelete = await this.getEntityById(entityId)
     if (!entityToDelete) {
