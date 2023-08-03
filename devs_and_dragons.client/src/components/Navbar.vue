@@ -30,8 +30,9 @@
         </li>
 
       </ul>
-      <!-- LOGIN COMPONENT HERE -->
-      <Login />
+      <div>
+        <Login />
+      </div>
     </div>
   </nav>
 </template>

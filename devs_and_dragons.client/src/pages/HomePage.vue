@@ -9,7 +9,7 @@
             seamlessly coordinate your adventure, and have access to shared knowledge across all the campaigns.
           </h4>
         </div>
-        <div class="col-md-2 col-12">
+        <div class="col-md-6 text-end col-12 m-auto">
           <button class=" btn btn-rounded">
             <img class="rounded start-button elevation-5"
               src="https://tse3.mm.bing.net/th?id=OIP.XK5GfaI4mfcNUIQh-yngSQHaDL&pid=Api&P=0&h=220">
