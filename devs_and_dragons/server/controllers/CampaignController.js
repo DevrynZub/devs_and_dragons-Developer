@@ -7,8 +7,20 @@ export class CampaignController extends BaseController {
     super('api/campaigns')
     this.router
 
+      .get('', this.getAllCampaigns)
+
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createCampaign)
+  }
+
+
+  async getAllCampaigns(req, res, next) {
+    try {
+      const campaigns = await campaignService.getAllCampaigns()
+      return res.send(campaigns)
+    } catch (error) {
+      next(error)
+    }
   }
   async createCampaign(req, res, next) {
     try {
