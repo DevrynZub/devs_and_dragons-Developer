@@ -8,6 +8,7 @@ export class CampaignController extends BaseController {
     this.router
 
       .get('', this.getAllCampaigns)
+      .get('/:campaignId', this.getCampaignById)
 
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createCampaign)
@@ -18,6 +19,16 @@ export class CampaignController extends BaseController {
     try {
       const campaigns = await campaignService.getAllCampaigns()
       return res.send(campaigns)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async getCampaignById(req, res, next) {
+    try {
+      const campaignId = req.params.campaignId
+      const campaign = await campaignService.getCampaignById(campaignId)
+      return res.send(campaign)
     } catch (error) {
       next(error)
     }
