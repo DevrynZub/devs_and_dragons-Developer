@@ -6,14 +6,19 @@
                 <div class="col-md-5 col-12 p-3 text-center">
                     <div class="elevation-3 rounded fs-5 bg-black text-light p-1">
                         <label for="site-campaigns">Search for Campaigns: </label>
-                        <input class="m-2" type="search" id="site-campaigns" name="q" />
+                        <input v-model="filterBy" class="m-2" type="search" id="site-campaigns" name="q" />
                         <button class="btn btn-outline-danger">Search</button>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 col-12">
-                    <h1>Hello</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-3 col-12 card m-2" v-for="campaign in campaigns" :key="campaign.id">
+                    <h3>{{ campaign.name }}</h3>
+                    <p>{{ campaign.nextSessionDate }}</p>
+                    <p>{{ campaign.desc }}</p>
+
+
+
                 </div>
             </div>
         </div>
@@ -22,9 +27,39 @@
 
 
 <script>
+import { computed, onMounted, ref } from 'vue'
+import Pop from '../utils/Pop.js'
+import { campaignsService } from '../services/CampaignsService.js'
+import { AppState } from "../AppState.js"
+
+
 export default {
     setup() {
-        return {}
+        const filterBy = ref('')
+
+
+        async function getCampaigns() {
+            try {
+                await campaignsService.getCampaigns()
+            } catch (error) {
+                Pop.error(error.message)
+            }
+        }
+        onMounted(() => {
+            getCampaigns()
+        })
+
+        return {
+            filterBy,
+            campaigns: computed(() => {
+                if (filterBy.value == "") {
+                    return AppState.campaigns
+
+                } else {
+                    return AppState.campaigns.includes(filterBy)
+                }
+            })
+        }
     }
 }
 </script>
