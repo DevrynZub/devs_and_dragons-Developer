@@ -3,9 +3,9 @@ import { AccountSchema } from '../models/Account'
 import { ValueSchema } from '../models/Value'
 import { CampaignSchema } from "../models/CampaignSchema.js";
 import { EntitySchema } from "../models/EntitySchema.js";
-import { entityCampaignLinkSchema } from "../models/EntityCampaignLink.js";
+import { entityCampaignLinkSchema } from "../models/EntityCampaignLinkSchema.js";
 import { NotesSchema } from "../models/NotesSchema.js";
-import { accountCampaignLinkSchema } from "../models/AccountCampaignLink.js";
+import { accountCampaignLinkSchema } from "../models/AccountCampaignLinkSchema.js";
 
 class DbContext {
   Values = mongoose.model('Value', ValueSchema);
