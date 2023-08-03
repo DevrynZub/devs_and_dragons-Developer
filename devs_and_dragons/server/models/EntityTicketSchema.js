@@ -1,11 +1,11 @@
 import { Schema } from "mongoose";
 
-export const entityTicketSchema = new Schema({
+export const entityCampaignLinkSchema = new Schema({
   campaignId: { type: Schema.Types.ObjectId, required: true, ref: 'Campaign' },
   entityId: { type: Schema.Types.ObjectId, required: true, ref: 'Entity' }
 }, { timestamps: true, toJSON: { virtuals: true } })
 
-entityTicketSchema.virtual('Entity', {
+entityCampaignLinkSchema.virtual('Entity', {
   localField: 'campaignId',
   foreignField: '_id',
   justOne: true,
