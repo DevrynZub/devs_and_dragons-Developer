@@ -2,12 +2,12 @@
   <header>
     <Navbar />
   </header>
+
   <main>
     <router-view />
   </main>
-  <footer class="bg-dark text-light">
-    Made with 💖 by CodeWorks
-  </footer>
+  <!-- <footer>
+  </footer> -->
 </template>
 
 <script>
@@ -30,6 +30,8 @@ export default {
 :root {
   --main-height: calc(100vh - 32px - 64px);
 }
+
+
 
 
 footer {
