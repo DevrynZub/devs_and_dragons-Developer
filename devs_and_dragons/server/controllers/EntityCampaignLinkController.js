@@ -25,6 +25,7 @@ export class EntityCampaignLinkController extends BaseController {
       const data = req.body
       data.accountId = req.userInfo.id
       const entityCampaignLink = await entityCampaignLinkService.createEntityCampaignLink(data)
+      res.send(entityCampaignLink)
     } catch (error) {
       next(error)
     }
