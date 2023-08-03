@@ -93,7 +93,7 @@ h1 {
   text-align: center;
   transform: scale(1.5);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-  padding-left: 25%;
+  padding-left: 15%;
 }
 
 @keyframes scale {
