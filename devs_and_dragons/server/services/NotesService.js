@@ -1,8 +1,15 @@
 import { dbContext } from "../db/DbContext.js"
-import { Forbidden } from "../utils/Errors.js"
+import { BadRequest, Forbidden } from "../utils/Errors.js"
 import { campaignService } from "./CampaignService.js"
 
 class NotesService {
+  async getNoteById(noteId) {
+    const note = await dbContext.Notes.findById(noteId)
+    if (!note) {
+      throw new BadRequest('Cannot find any notes by that ID')
+    }
+    return note
+  }
   async getNotesByCampaignId(campaignId) {
     const notes = await dbContext.Notes.find(campaignId)
     return notes
