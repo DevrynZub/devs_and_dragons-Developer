@@ -26,7 +26,6 @@ const routes = [
     path: '/campaign',
     name: 'Campaign',
     component: loadPage('CampaignPage'),
-    beforeEnter: authGuard
   }
 
 
