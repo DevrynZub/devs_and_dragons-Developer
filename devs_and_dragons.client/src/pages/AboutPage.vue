@@ -1,28 +1,78 @@
 <template>
   <div class="container-fluid about-page">
     <div class="row">
-      <div class="col-12">
-        <h1 class="text-center text-light mb-5">Meet the team</h1>
-        <img class="hero-img img-fluid" src="https://i.pinimg.com/originals/af/dc/f8/afdcf872dbb81f7354ab9f2b30cfdd26.jpg"
+      <div class="col-6 pt-5">
+        <img class="hero-img img-fluid"
+          src="https://res.cloudinary.com/teepublic/image/private/s--MwXqUo6Q--/t_Preview/b_rgb:36538b,c_limit,f_jpg,h_630,q_90,w_630/v1446137621/production/designs/17624_0.jpg"
           alt="">
       </div>
+
+      <div class="col-6 text-center pt-5 project-tools">
+        <div>
+          <p>Languages and Tools
+            used on this project:</p>
+          <p>JavaScript</p>
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>Vue</p>
+          <p>Git</p>
+          <p>MongoDB</p>
+          <p>node.js</p>
+          <p>Bootstrap</p>
+          <p>Auth0</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-12">
+        <h1 class="d-flex text-dark quote-img">
+          “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
+        </h1>
+      </div>
+    </div>
+
+
+    <div class="container card-names">
       <div class="row">
-        <div class="col-12">
-          <h1 class="text-center text-light">“Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The
-            Three Musketeers</h1>
+        <div class="col-md-6">
+          <div class="card mt-4">Devryn Zub</div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mt-4">Andrew Allison</div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col6">Test</div>
-        <div class="col6">Test</div>
-        <div class="col6">Test</div>
-        <div class="col6">Test</div>
-
+        <div class="col-md-6">
+          <div class="card mt-4">Jeremy Olds</div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mt-4">Riley Thomas</div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mt-4">Brandon Riggs</div>
+        </div>
       </div>
     </div>
+
+
+
+
   </div>
 </template>
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
@@ -35,22 +85,174 @@ export default {
 
 
 <style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+
+h1 {
+  font-family: "Montserrat Medium";
+  // max-width: 15ch;
+  text-align: center;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  padding-left: 25%;
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(7) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(8) {
+  animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(9) {
+  animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(10) {
+  animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(11) {
+  animation: fade-in 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(12) {
+  animation: fade-in 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(13) {
+  animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(14) {
+  animation: fade-in 0.8s 1.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(15) {
+  animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(16) {
+  animation: fade-in 0.8s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(17) {
+  animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+span:nth-child(18) {
+  animation: fade-in 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+
+
+
+
+
+.card-names {
+  margin-top: 5%;
+
+
+}
+
+
+
+
+
+
+
+.project-tools {
+
+  font-size: 25px;
+
+  margin-top: 5%;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border: 1px solid rgba(246, 243, 196, 1);
+  margin-left: -2%;
+
+
+
+}
+
+
+
+
+.quote-img {
+  font-size: 30px;
+  padding-top: 5%;
+}
+
+
+
 .about-page {
-  // background-image: url('https://i.pinimg.com/originals/20/5e/7b/205e7b29a4ec6e34d8015c075148b5f5.jpg');
+  background-image: url('https://th.bing.com/th/id/R.b3f7eef14148eb23697fe1857c6995b9?rik=shhZE%2f0fBF2FyQ&pid=ImgRaw&r=0');
   background-color: #5f3f2485;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 95vh;
-  opacity: 100%;
+  // opacity: 80%;
+
 }
 
 .hero-img {
-  max-height: 75vh;
-  max-width: 75vw;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+  // max-height: 95vh;
+  max-width: 500%;
+  margin-left: 20%;
+  padding-top: 5%;
 }
 </style>
+
+
+
+
+
+
+

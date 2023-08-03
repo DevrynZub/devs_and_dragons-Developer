@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .navbar {
-  background-image: linear-gradient(180deg, rgb(151, 67, 67), rgb(236, 236, 231));
+  background-image: linear-gradient(rgba(255, 0, 0, 0.5), white);
 }
 
 
