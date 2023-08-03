@@ -1,13 +1,13 @@
 <template>
   <div class="container-fluid about-page">
     <div class="row">
-      <div class="col-6 pt-5">
+      <div class="col-12 col-md-6 pt-5">
         <img class="hero-img img-fluid"
           src="https://res.cloudinary.com/teepublic/image/private/s--MwXqUo6Q--/t_Preview/b_rgb:36538b,c_limit,f_jpg,h_630,q_90,w_630/v1446137621/production/designs/17624_0.jpg"
           alt="">
       </div>
 
-      <div class="col-6 text-center pt-5 project-tools">
+      <div class="col-12 col-md-6 text-center pt-5 project-tools">
         <div>
           <p>Languages and Tools
             used on this project:</p>
@@ -27,7 +27,7 @@
 
 
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 col-md-12">
         <h1 class="d-flex text-dark quote-img">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
@@ -37,22 +37,22 @@
 
     <div class="container card-names">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="card mt-4">Devryn Zub</div>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="card mt-4">Andrew Allison</div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="card mt-4">Jeremy Olds</div>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="card mt-4">Riley Thomas</div>
         </div>
-        <div class="col-md-6">
+        <div class="col-12 col-md-6">
           <div class="card mt-4">Brandon Riggs</div>
         </div>
       </div>
@@ -194,25 +194,19 @@ span:nth-child(18) {
 
 .card-names {
   margin-top: 5%;
-
-
 }
 
 
 .project-tools {
 
   font-size: 25px;
-
   margin-top: 5%;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.5px);
   -webkit-backdrop-filter: blur(9.5px);
   border: 1px solid rgba(246, 243, 196, 1);
-  margin-left: -2%;
-
-
-
+  margin-left: -1.5%
 }
 
 
@@ -239,7 +233,7 @@ span:nth-child(18) {
 .hero-img {
   // max-height: 95vh;
   max-width: 500%;
-  margin-left: 20%;
+  margin-left: 15%;
   padding-top: 5%;
 }
 </style>
