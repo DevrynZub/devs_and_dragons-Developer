@@ -27,6 +27,10 @@ class NotesService {
     await noteToRemove.remove()
     return noteToRemove
   }
+
+  async editNotes(noteId, noteData, userId) {
+
+  }
 }
 
 
