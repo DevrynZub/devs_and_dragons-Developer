@@ -36,13 +36,13 @@ export default {
 
 <style lang="scss" scoped>
 .about-page {
-  // background-image: url('https://i.pinimg.com/originals/20/5e/7b/205e7b29a4ec6e34d8015c075148b5f5.jpg');
+  background-image: url('https://th.bing.com/th/id/R.b3f7eef14148eb23697fe1857c6995b9?rik=shhZE%2f0fBF2FyQ&pid=ImgRaw&r=0');
   background-color: #5f3f2485;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 95vh;
-  opacity: 100%;
+  opacity: 80%;
 }
 
 .hero-img {
