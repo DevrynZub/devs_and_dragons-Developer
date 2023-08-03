@@ -15,8 +15,16 @@ export class EntitiesController extends BaseController {
       .delete('/:entityId', this.deleteEntity)
       .put('/:entityId', this.editEntity)
   }
-  editEntity() {
-
+  async editEntity(req, res, next) {
+    try {
+      const entityId = req.params.entityId
+      const userId = req.userInfo.id
+      const entityData = req.body
+      const editedEntity = await entitiesService.editEntity(entityId, userId, entityData)
+      res.send(editedEntity)
+    } catch (error) {
+      next(error)
+    }
   }
   async deleteEntity(req, res, next) {
     try {
