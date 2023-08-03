@@ -33,7 +33,7 @@ export default {
 <style lang="scss" scoped>
 .background {
     background-position: center;
-    background-image: url(https://cdn.wallpapersafari.com/8/73/2QFSbm.jpg);
+    background-image: url(https://wallpaperset.com/w/full/4/1/4/237716.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 92dvh;
