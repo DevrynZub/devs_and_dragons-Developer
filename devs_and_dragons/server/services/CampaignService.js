@@ -2,6 +2,10 @@ import { dbContext } from "../db/DbContext.js"
 import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 class CampaignService {
+  async getCampaignsByAccount(creatorId) {
+    const campaigns = await dbContext.Campaigns.find({ creatorId })
+    return campaigns
+  }
   async getAllCampaigns() {
     const campaigns = await dbContext.Campaigns.find()
     return campaigns

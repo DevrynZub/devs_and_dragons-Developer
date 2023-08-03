@@ -12,3 +12,9 @@ export const EntitySchema = new Schema({
   isPrivate: { type: Boolean, default: false }
 }, { timestamps: true, toJSON: { virtuals: true } })
 
+EntitySchema.virtual('Creator', {
+  localField: 'creatorId',
+  foreignField: '_id',
+  justOne: true,
+  ref: 'Account'
+})

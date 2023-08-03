@@ -3,6 +3,10 @@ import { BadRequest, Forbidden } from "../utils/Errors.js"
 
 
 class EntitiesService {
+  async getEntitiesByAccount(creatorId) {
+    const entities = await dbContext.Entities.find({ creatorId })
+    return entities
+  }
   async editEntity(entityId, userId, entityData) {
     const entityToEdit = await this.getEntityById(entityId)
     if (!entityToEdit) {
