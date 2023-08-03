@@ -11,8 +11,8 @@ export const CampaignSchema = new Schema({
   nextSessionDate: { type: Date }
 },
   { timestamps: true, toJSON: { virtuals: true } }
-
 )
+
 
 // TODO ADD CREATOR VIRTUAL // CoverImg
 
