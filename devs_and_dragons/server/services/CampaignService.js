@@ -38,7 +38,7 @@ class CampaignService {
       throw new BadRequest('You cannot edit a campaign once it has been archived')
     }
     if (originalCampaign.creatorId.toString() != userId) {
-      throw new Forbidden('Only the creator of this campaign can archive it')
+      throw new Forbidden('Only the creator of this campaign can edit it')
     }
     originalCampaign.name = campaignData.name || originalCampaign.name
     originalCampaign.desc = campaignData.desc || originalCampaign.desc
