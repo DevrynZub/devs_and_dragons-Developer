@@ -12,14 +12,25 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-3 col-12 card m-2 text-light elevation-5" v-for="campaign in campaigns"
+                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in campaigns"
                     :key="campaign.id">
-                    <h3>{{ campaign.name }}</h3>
-                    <p>{{ campaign.nextSessionDate }}</p>
-                    <p>{{ campaign.desc }}</p>
+                    <div class="d-flex flex-column">
+                        <h3>{{ campaign.name }}</h3>
+                        <p>{{ campaign.nextSessionDate }}</p>
+                        <p>{{ campaign.desc }}</p>
+                        <p>Player Capacity: {{ campaign.capacity }}</p>
+                    </div>
 
 
 
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable">
+                    <div class="d-flex flex-column">
+                        <h2>My Campaigns</h2>
+                        <h3>{{ campaign.name }}</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,6 +89,15 @@ export default {
 }
 
 .card {
-    background-color: slategray;
+    background-color: rgb(73, 73, 73);
+    border: 1px double red;
+    box-shadow: 3px 1px 5px rgb(255, 0, 0);
+}
+
+.card:hover {
+    background-color: rgb(73, 73, 73);
+    border: 2px double rgb(112, 213, 241);
+    box-shadow: 2px 0px 4px rgb(112, 213, 241);
+
 }
 </style>
