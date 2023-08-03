@@ -1,11 +1,9 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <p>Devs and Dragons</p>
+  <nav class="text-shadow navbar navbar-expand-lg navbar-dark bg-dark p-3 ">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center m-2">
 
-        <img alt="logo"
-          src="https://www.underconsideration.com/brandnew/archives/dungeons_and_dragons_40_ampersand_detail_black.jpg"
+        <img alt="logo" src="https://www.pngkey.com/png/full/141-1413460_en-world-rpg-news-reviews-d-d-logo.png"
           height="60" />
       </div>
     </router-link>
@@ -14,27 +12,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto ">
         <li>
-          <router-link :to="{ name: 'About' }" class="btn lighten-30 selectable text-uppercase">
+          <router-link :to="{ name: 'About' }" class="btn lighten-30 selectable text-uppercase  nav-shadow">
             About
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Account' }" class="btn lighten-30 selectable text-uppercase">
+          <router-link :to="{ name: 'Account' }" class="btn lighten-30 selectable text-uppercase nav-shadow">
             Account
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Account' }" class="btn lighten-30 selectable text-uppercase">
-            Campaign
+          <router-link :to="{ name: 'Account' }" class="btn lighten-30 selectable text-uppercase nav-shadow">
+            Campaigns
           </router-link>
         </li>
-        <li>
-          <router-link :to="{ name: 'Account' }" class="btn lighten-30 selectable text-uppercase">
-            Search?
-          </router-link>
-        </li>
+
       </ul>
       <!-- LOGIN COMPONENT HERE -->
       <Login />
@@ -54,9 +48,18 @@ export default {
 
 <style scoped>
 .navbar {
-  background-image: linear-gradient(rgba(255, 0, 0, 0.5), white);
+  background-image: linear-gradient(rgba(69, 61, 61, 0.5), rgb(144, 6, 6));
 }
 
+.text-shadow {
+  color: rgb(228, 41, 41);
+  text-shadow: 1px 1px 4px rgb(150, 109, 117);
+}
+
+.nav-shadow {
+  color: rgb(227, 227, 227);
+  text-shadow: 1px 1px 4px rgb(150, 109, 117);
+}
 
 
 a:hover {
@@ -65,6 +68,7 @@ a:hover {
 
 .nav-link {
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .navbar-nav .router-link-exact-active {
