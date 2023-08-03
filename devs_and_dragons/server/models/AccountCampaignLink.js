@@ -1,18 +1,18 @@
 import { Schema } from "mongoose";
 
 
-export const accountCampaignLink = new Schema({
+export const accountCampaignLinkSchema = new Schema({
   campaignId: { type: Schema.Types.ObjectId, required: true, ref: 'Campaign' },
   accountId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' }
 }, { timestamps: true, toJSON: { virtuals: true } })
 
-accountCampaignLink.virtual('Campaign', {
+accountCampaignLinkSchema.virtual('Campaign', {
   localField: 'campaignId',
   foreignField: '_id',
   justOne: true,
   ref: 'Campaign'
 })
-accountCampaignLink.virtual('Account', {
+accountCampaignLinkSchema.virtual('Account', {
   localField: 'accountId',
   foreignField: '_id',
   justOne: true,
