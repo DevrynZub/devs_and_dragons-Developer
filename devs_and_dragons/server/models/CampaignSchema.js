@@ -2,6 +2,7 @@ import { Schema } from "mongoose";
 
 export const CampaignSchema = new Schema({
   name: { type: String, required: true, minLength: 3, maxLength: 100 },
+  coverImg: { type: String, minLength: 3, maxLength: 400 },
   desc: { type: String, required: true, minLength: 10, maxLength: 2500 },
   creatorId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' },
   isPrivate: { type: Boolean, default: false },
