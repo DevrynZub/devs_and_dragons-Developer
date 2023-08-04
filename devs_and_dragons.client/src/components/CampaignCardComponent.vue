@@ -10,7 +10,7 @@
           <p>Player Capacity: {{ campaignProp.capacity }}</p>
         </div>
         <div class="text-center mb-2">
-          <img class="image-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
+          <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
         </div>
       </div>
     </div>
