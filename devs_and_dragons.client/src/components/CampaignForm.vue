@@ -22,10 +22,10 @@
             <label for="description" class="form-label">Event Description</label>
             <textarea v-model="editable.desc" class="form-control" aria-label="eventDescription" required></textarea>
         </div>
-        <div class="mb-3">
+        <!-- <div class="mb-3">
             <label for="tags" class="form-label">Campaign Tags</label>
             <textarea v-model="editable.tags" class="form-control" aria-label="tags"></textarea>
-        </div>
+        </div> -->
         <button type="submit" class="btn btn-primary" title="Submit">Submit</button>
     </form>
 </template>

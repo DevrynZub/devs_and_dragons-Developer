@@ -17,8 +17,10 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in  campaigns "
                     :key="campaign.id">
-                    <div class="d-flex flex-column">
-                        <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
+                    <div class="d-flex">
+                        <div>
+                            <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
+                        </div>
                         <h3>{{ campaign.name }}</h3>
                         <p>{{ campaign.nextSessionDate.toLocaleDateString() }} </p>
                         <p>{{
