@@ -1,7 +1,7 @@
 export class Campaign {
     constructor(data) {
         this.id = data.id
-        this.coverImg = data.coverImg
+        this.coverImg = data.coverImg || "https://images5.alphacoders.com/110/1107324.jpg"
         this.name = data.name
         this.desc = data.desc
         this.creatorId = data.creatorId

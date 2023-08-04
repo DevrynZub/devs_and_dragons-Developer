@@ -14,12 +14,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in  campaigns "
-                    :key="campaign.id">
-                    <div class="d-flex flex-column">
-                        <div>
-
+            <div class="row justify-content-center p-2">
+                <div class="col-md-3 col-12 rounded box m-2 text-light elevation-5 selectable"
+                    v-for="campaign in campaigns " :key="campaign.id">
+                    <div class="d-flex flex-column  m-2 p-2">
+                        <div class="card p-2 text-light mb-1">
                             <h3>{{ campaign.name }}</h3>
                             <p>{{ campaign.nextSessionDate.toLocaleDateString() }} </p>
                             <p>{{
@@ -28,7 +27,7 @@
                             <p>Player Capacity: {{ campaign.capacity }}</p>
                         </div>
                         <div>
-                            <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
+                            <img class="img-fluid rounded cover-Img" :src="campaign?.coverImg" alt="">
                         </div>
                     </div>
 
@@ -93,12 +92,18 @@ export default {
 }
 
 .card {
+    background-color: rgba(30, 20, 20, 0.644);
+    border: 1px double rgba(255, 0, 0, 0.395);
+
+}
+
+.box {
     background-color: rgba(73, 73, 73, 0.719);
     border: 1px double red;
     box-shadow: 3px 1px 5px rgb(255, 0, 0);
 }
 
-.card:hover {
+.box:hover {
     background-color: rgb(73, 73, 73);
     border: 2px double rgb(112, 213, 241);
     box-shadow: 2px 0px 4px rgb(112, 213, 241);
