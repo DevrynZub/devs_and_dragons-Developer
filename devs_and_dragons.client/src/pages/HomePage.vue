@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-end pt-5 pe-5">
+      <div class="row justify-content-end pt-5 pe-5 p-2">
         <div class="col-md-6 col-12 home-card text-shadow p-4 mt-5 rounded elevation-3">
           <h4 class="text-center">
             Foucs On The Adventure</h4>
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-start pt-5 ps-5">
+      <div class="row justify-content-start pt-5 ps-5 p-2">
         <div class="col-md-6 col-12 home-card text-shadow p-4 mt-5 rounded elevation-3">
           <h4 class="text-center">Share The Knowledge</h4>
           <p>
@@ -30,7 +30,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-end pt-5 pe-5">
+      <div class="row justify-content-end pt-5 pe-5 p-2">
         <div class="col-md-6 col-12 home-card text-shadow p-4 mt-5 rounded elevation-3">
           <h4 class="text-center">Retell Your Tales</h4>
           <p>No longer will your adventures be preceded by a retelling of last session's feats. With a dedicated RECAP tab, a DM can create and share notes detailing the players' previous antics. Highlight the story points you deem most valuable, and allow your party to access them at any time with the click of a button. </p>
