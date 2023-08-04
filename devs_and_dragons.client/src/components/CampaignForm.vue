@@ -15,7 +15,8 @@
         </div>
         <div class="mb-3">
             <label for="nextSessionDate" class="form-label">Next Session Date</label>
-            <input v-model="editable.nextSessionDate" type="date" class="form-control" id="nextSessionDate" required>
+            <input v-model="editable.nextSessionDate" type="datetime-local" class="form-control" id="nextSessionDate"
+                required>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Event Description</label>

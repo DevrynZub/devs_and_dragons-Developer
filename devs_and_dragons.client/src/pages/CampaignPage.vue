@@ -20,7 +20,7 @@
                     <div class="d-flex flex-column">
                         <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
                         <h3>{{ campaign.name }}</h3>
-                        <p>{{ campaign.nextSessionDate }}</p>
+                        <p>{{ campaign.nextSessionDate.toLocaleDateString() }}</p>
                         <p>{{ campaign.desc }}</p>
                         <p>Player Capacity: {{ campaign.capacity }}</p>
                     </div>
@@ -82,7 +82,6 @@ export default {
     background-image: url(https://www.pixel-creation.com/wp-content/uploads/dungeons-and-dragons-wallpaper-1920x1080-77-images-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 92dvh;
     background-attachment: fixed;
 }
 
