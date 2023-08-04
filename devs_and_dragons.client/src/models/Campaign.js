@@ -9,6 +9,6 @@ export class Campaign {
         this.tags = data.tags
         this.capacity = data.capacity
         this.isArchived = data.isArchived
-        this.nextSessionDate = data.nextSessionDate
+        this.nextSessionDate = new Date(data.nextSessionDate)
     }
 }
