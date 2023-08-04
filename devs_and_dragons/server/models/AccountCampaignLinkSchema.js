@@ -16,5 +16,6 @@ accountCampaignLinkSchema.virtual('Account', {
   localField: 'accountId',
   foreignField: '_id',
   justOne: true,
+  ref: 'Account'
 
 })
