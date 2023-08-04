@@ -17,16 +17,19 @@
             <div class="row justify-content-center">
                 <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in  campaigns "
                     :key="campaign.id">
-                    <div class="d-flex">
+                    <div class="d-flex flex-column">
+                        <div>
+
+                            <h3>{{ campaign.name }}</h3>
+                            <p>{{ campaign.nextSessionDate.toLocaleDateString() }} </p>
+                            <p>{{
+                                campaign.nextSessionDate.toLocaleTimeString() }}</p>
+                            <p>{{ campaign.desc }}</p>
+                            <p>Player Capacity: {{ campaign.capacity }}</p>
+                        </div>
                         <div>
                             <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
                         </div>
-                        <h3>{{ campaign.name }}</h3>
-                        <p>{{ campaign.nextSessionDate.toLocaleDateString() }} </p>
-                        <p>{{
-                            campaign.nextSessionDate.toLocaleTimeString() }}</p>
-                        <p>{{ campaign.desc }}</p>
-                        <p>Player Capacity: {{ campaign.capacity }}</p>
                     </div>
 
 
