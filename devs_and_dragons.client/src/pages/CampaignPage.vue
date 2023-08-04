@@ -20,7 +20,9 @@
                     <div class="d-flex flex-column">
                         <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
                         <h3>{{ campaign.name }}</h3>
-                        <p>{{ campaign.nextSessionDate.toLocaleDateString() }}</p>
+                        <p>{{ campaign.nextSessionDate.toLocaleDateString() }} </p>
+                        <p>{{
+                            campaign.nextSessionDate.toLocaleTimeString() }}</p>
                         <p>{{ campaign.desc }}</p>
                         <p>Player Capacity: {{ campaign.capacity }}</p>
                     </div>
@@ -100,8 +102,7 @@ export default {
 
 .cover-Img {
     height: 15vh;
-    width: 20vh;
+    width: 35vh;
     object-fit: cover;
-    object-position: center;
 }
 </style>
