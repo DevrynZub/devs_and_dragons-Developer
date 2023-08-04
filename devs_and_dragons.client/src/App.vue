@@ -9,7 +9,7 @@
   <!-- <footer>
   </footer> -->
 
-  <ModalComponent id="whatever you are calling goes here">
+  <ModalComponent id="createCampaignModal">
     <template #header>
 
     </template>
@@ -23,7 +23,7 @@
 import { computed } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
-import ModalComponent from "./components/ModalComponent.vue.js"
+import ModalComponent from "./components/ModalComponent.vue"
 
 export default {
   setup() {
