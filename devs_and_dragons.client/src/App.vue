@@ -8,12 +8,22 @@
   </main>
   <!-- <footer>
   </footer> -->
+
+  <ModalComponent id="whatever you are calling goes here">
+    <template #header>
+
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
 </template>
 
 <script>
 import { computed } from 'vue'
 import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
+import ModalComponent from "./components/ModalComponent.vue.js"
 
 export default {
   setup() {
@@ -21,7 +31,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar }
+  components: { Navbar, ModalComponent }
 }
 </script>
 <style lang="scss">
