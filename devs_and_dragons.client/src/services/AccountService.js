@@ -14,9 +14,10 @@ class AccountService {
   }
 
   async editAccount(formData) {
-    const res = await api.put('account', formData)
+    logger.log('is this editing?')
+    const res = await api.put('/account', formData)
     logger.log('editing account', res.data)
-    const updateAccount = new Account(res.data)
+    let updateAccount = new Account(res.data)
     AppState.account = updateAccount
   }
 }

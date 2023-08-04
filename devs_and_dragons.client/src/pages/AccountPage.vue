@@ -12,18 +12,18 @@
       </div>
       <div class="col-6 mb-4">
         <p>Edit Account</p>
-        <form @submit.prevent="editAccount()">
-          <div>
-            <label for="name">Username</label>
-            <input v-model="editable.name" type="text" class="form-control" name="name" id="name">
+        <form action="" @submit.prevent="editAccount()">
+          <div class="mb-2">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" id="name" minlength="3" maxlength="75" v-model="editable.name">
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input v-model="editable.email" type="text" class="form-control" name="email" id="email">
+          <div class="mb-2">
+            <label for="name">Email</label>
+            <input class="form-control" type="text" id="email" minlength="3" maxlength="75" v-model="editable.email">
           </div>
-          <div>
+          <div class="mb-2">
             <label for="picture">Picture</label>
-            <input v-model="editable.picture" type="url" class="form-control" name="picture" id="picture">
+            <input class="form-control" type="url" id="picture" minlength="3" maxlength="200" v-model="editable.picture">
           </div>
           <button @click="editAccount" type="submit">Update</button>
         </form>
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watchEffect } from 'vue';
 import { AppState } from '../AppState';
 import Pop from '../utils/Pop.js';
 import { accountService } from '../services/AccountService.js';
@@ -94,6 +94,8 @@ export default {
       getCampaignsByAccount();
       getMyEntitiesByAccount();
     });
+
+
 
 
 
