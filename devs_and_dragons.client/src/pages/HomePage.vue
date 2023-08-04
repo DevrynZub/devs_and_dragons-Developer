@@ -99,4 +99,9 @@ export default {
   color: rgb(228, 41, 41);
   text-shadow: 1px 1px 4px rgb(150, 109, 117);
 }
+
+p{
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 4px rgb(150, 109, 117);
+}
 </style>
