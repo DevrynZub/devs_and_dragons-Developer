@@ -33,14 +33,7 @@
     <div class="row">
       <div class="col-4" v-for="campaign in myCampaigns" :key="campaign.id">
         <div class="card mb-3">
-          <div class="card-header">
-            {{ campaign.name }}
-          </div>
-          <img
-            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f2abaa30-1464-49db-aff5-f8a38372adbf/dfjlfz3-62ebbef5-327b-4ca7-934a-c2f21c4cd74b.png/v1/fill/w_894,h_894,q_70,strp/sir_corgi_by_bravenor88_dfjlfz3-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyNCIsInBhdGgiOiJcL2ZcL2YyYWJhYTMwLTE0NjQtNDlkYi1hZmY1LWY4YTM4MzcyYWRiZlwvZGZqbGZ6My02MmViYmVmNS0zMjdiLTRjYTctOTM0YS1jMmYyMWM0Y2Q3NGIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Dz70fMr_xV6XeGY6XeyG7Jz73H0xu7nfh9p3fS2vB6w"
-            class="card-img-top img-fluid elevation rounded" alt="">
-          <div class="card-body">
-          </div>
+          <CampaignCardComponent :campaignProp="campaign" />
         </div>
       </div>
     </div>
@@ -64,6 +57,7 @@ import { accountService } from '../services/AccountService.js';
 import { campaignsService } from '../services/CampaignsService.js';
 import { entityService } from '../services/EntityService.js';
 import { logger } from '../utils/Logger.js';
+
 export default {
   setup() {
     const account = ref({})
