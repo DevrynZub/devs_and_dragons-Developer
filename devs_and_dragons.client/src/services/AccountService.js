@@ -19,7 +19,6 @@ class AccountService {
     logger.log('editing account', res.data)
     const updateAccount = new Account(res.data)
     AppState.account = updateAccount
-    logger.log('account in appstate', AppState.account)
   }
 }
 

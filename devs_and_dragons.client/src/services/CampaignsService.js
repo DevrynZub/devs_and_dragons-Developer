@@ -15,7 +15,7 @@ class CampaignsService {
         const res = await api.get('account/campaigns')
         logger.log('[GOT MY CAMPAIGNS]', res.data)
         AppState.myCampaigns = res.data.map(c => new Campaign(c))
-        logger.log('[appstate campaigns]', AppState.myCampaigns)
+        // logger.log('[appstate campaigns]', AppState.myCampaigns)
     }
 
 

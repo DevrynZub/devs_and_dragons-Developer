@@ -25,7 +25,7 @@
             <label for="picture">Picture</label>
             <input v-model="editable.picture" type="url" class="form-control" name="picture" id="picture">
           </div>
-          <button @click="updateAccount" type="submit">Update</button>
+          <button @click="editAccount" type="submit">Update</button>
         </form>
       </div>
     </div>
