@@ -12,9 +12,10 @@ accountCampaignLinkSchema.virtual('Campaign', {
   justOne: true,
   ref: 'Campaign'
 })
-accountCampaignLinkSchema.virtual('Account', {
+accountCampaignLinkSchema.virtual('Profile', {
   localField: 'accountId',
   foreignField: '_id',
   justOne: true,
+  ref: 'Account'
 
 })
