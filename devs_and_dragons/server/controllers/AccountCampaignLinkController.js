@@ -9,6 +9,7 @@ export class AccountCampaignLinkController extends BaseController {
 
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createAccountLink)
+      .delete('/:accountLinkId', this.deleteAccountLink)
   }
 
 
@@ -17,6 +18,17 @@ export class AccountCampaignLinkController extends BaseController {
       const linkData = req.body
       linkData.accountId = req.userInfo.id
       const accountLink = await accountCampaignLinkService.createAccountLink(linkData)
+      res.send(accountLink)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async deleteAccountLink(req, res, next) {
+    try {
+      const accountLinkId = req.params.accountLinkId
+      const accountId = req.userInfo.id
+      const accountLink = await accountCampaignLinkService.deleteAccountLink(accountLinkId, accountId)
       res.send(accountLink)
     } catch (error) {
       next(error)
