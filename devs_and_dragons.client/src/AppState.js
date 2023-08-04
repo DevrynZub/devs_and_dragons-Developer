@@ -7,6 +7,13 @@ export const AppState = reactive({
   account: {},
 
   /** @type {import('./models/Campaign.js').Campaign[]} */
-  campaigns: []
+  campaigns: [],
+
+  myCampaigns: [],
+
+  entities: [],
+
+  myEntities: [],
+
 
 })

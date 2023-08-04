@@ -10,5 +10,16 @@ class CampaignsService {
         const campaigns = res.data.map(c => new Campaign(c))
         AppState.campaigns = campaigns
     }
+
+    async getCampaignsByAccount() {
+        const res = await api.get('api/campaigns')
+        logger.log('[GOT MY CAMPAIGNS]', res.data)
+        AppState.myCampaigns = res.data.map(c => new Campaign(c))
+    }
+
+
+
+
+
 }
 export const campaignsService = new CampaignsService()
