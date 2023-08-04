@@ -7,6 +7,7 @@ export class AccountCampaignLinkController extends BaseController {
     super('api/accountcampaignlinks')
     this.router
 
+
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createAccountLink)
       .delete('/:accountLinkId', this.deleteAccountLink)

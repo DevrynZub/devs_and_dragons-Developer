@@ -3,6 +3,7 @@ import { accountService } from '../services/AccountService'
 import BaseController from '../utils/BaseController'
 import { campaignService } from "../services/CampaignService.js"
 import { entitiesService } from "../services/EntitiesService.js"
+import { accountCampaignLinkService } from "../services/AccountCampaignLinkService.js"
 
 export class AccountController extends BaseController {
   constructor() {
@@ -12,6 +13,7 @@ export class AccountController extends BaseController {
       .get('', this.getUserAccount)
       .get('/campaigns', this.getCampaignsByAccount)
       .get('/entities', this.getEntitiesByAccount)
+      .get('/accountcampaignlinks', this.getCampaignsByAccountLink)
   }
 
   async getEntitiesByAccount(req, res, next) {
@@ -39,6 +41,16 @@ export class AccountController extends BaseController {
     try {
       const account = await accountService.getAccount(req.userInfo)
       res.send(account)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async getCampaignsByAccountLink(req, res, next) {
+    try {
+      const accountId = req.userInfo.id
+      const campaigns = await accountCampaignLinkService.getCampaignsByAccountLink(accountId)
+      res.send(campaigns)
     } catch (error) {
       next(error)
     }
