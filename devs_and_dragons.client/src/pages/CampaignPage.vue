@@ -15,13 +15,21 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in campaigns"
+                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in  campaigns "
                     :key="campaign.id">
                     <div class="d-flex flex-column">
-                        <h3>{{ campaign.name }}</h3>
-                        <p>{{ campaign.nextSessionDate }}</p>
-                        <p>{{ campaign.desc }}</p>
-                        <p>Player Capacity: {{ campaign.capacity }}</p>
+                        <div>
+
+                            <h3>{{ campaign.name }}</h3>
+                            <p>{{ campaign.nextSessionDate.toLocaleDateString() }} </p>
+                            <p>{{
+                                campaign.nextSessionDate.toLocaleTimeString() }}</p>
+                            <p>{{ campaign.desc }}</p>
+                            <p>Player Capacity: {{ campaign.capacity }}</p>
+                        </div>
+                        <div>
+                            <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
+                        </div>
                     </div>
 
 
@@ -81,7 +89,6 @@ export default {
     background-image: url(https://www.pixel-creation.com/wp-content/uploads/dungeons-and-dragons-wallpaper-1920x1080-77-images-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 92dvh;
     background-attachment: fixed;
 }
 
@@ -96,5 +103,11 @@ export default {
     border: 2px double rgb(112, 213, 241);
     box-shadow: 2px 0px 4px rgb(112, 213, 241);
 
+}
+
+.cover-Img {
+    height: 15vh;
+    width: 35vh;
+    object-fit: cover;
 }
 </style>

@@ -19,7 +19,13 @@ class CampaignsService {
     }
 
 
+    async createCampaign(campaignData) {
+        const res = await api.post('api/campaigns', campaignData)
+        logger.log(res.data)
+        const campaign = new Campaign(res.data)
+        return campaign
 
+    }
 
 
 }
