@@ -83,7 +83,8 @@ export default {
 
     async function getMyEntitiesByAccount() {
       try {
-        await entityService.getMyEntitiesByAccount()
+        const accountId = account.value.id;
+        await entityService.getMyEntitiesByAccount(accountId)
       } catch (error) {
         logger.error(error)
       }
