@@ -9,14 +9,18 @@
                             data-bs-target="#createCampaignModal">
                             <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
                         <label for="site-campaigns">Search for Campaigns: </label>
-                        <input v-model="filterBy" class="m-2" type="search" id="site-campaigns" name="q" />
+                        <input v-model="filterBy" class="rounded m-2" type="search" id="site-campaigns" name="q" />
 
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center p-2">
-                <div class="col-md-3 col-12 m-3 text-light " v-for="campaign in campaigns " :key="campaign.id">
-                    <CampaignCardComponent :campaignProp="campaign" />
+                <div class="col-10">
+                    <div class="row justify-content-center p-2 ">
+                        <div class="col-md-3 col-12 m-3 text-light " v-for="campaign in campaigns " :key="campaign.id">
+                            <CampaignCardComponent :campaignProp="campaign" />
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -74,7 +78,9 @@ export default {
     background-attachment: fixed;
 }
 
-
+.scroll {
+    overflow-y: scroll;
+}
 
 .box {
     background-color: rgba(73, 73, 73, 0.719);
