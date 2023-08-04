@@ -53,7 +53,7 @@ export default {
                     const campaign = await campaignsService.createCampaign(campaignData)
                     router.push({ name: 'Campaign', params: { campaignId: campaign.id } })
                     editable.value = {}
-                    Modal.getOrCreateInstance(document.getElementById('exampleModal')).hide()
+                    Modal.getOrCreateInstance(document.getElementById('createCampaignModal')).hide()
                     Pop.success('Created Campaign!')
                 } catch (error) {
                     Pop.error(error)

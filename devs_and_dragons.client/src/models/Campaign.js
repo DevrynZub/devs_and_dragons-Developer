@@ -1,7 +1,7 @@
 export class Campaign {
     constructor(data) {
         this.id = data.id
-        this.coverImg = data.CoverImg
+        this.coverImg = data.coverImg
         this.name = data.name
         this.desc = data.desc
         this.creatorId = data.creatorId
@@ -9,6 +9,6 @@ export class Campaign {
         this.tags = data.tags
         this.capacity = data.capacity
         this.isArchived = data.isArchived
-        this.nextSessionDate = data.nextSessionDate
+        this.nextSessionDate = new Date(data.nextSessionDate)
     }
 }
