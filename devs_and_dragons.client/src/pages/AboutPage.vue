@@ -1,13 +1,11 @@
 <template>
   <div class="container-fluid about-page">
     <div class="row">
-      <div class="col-12 col-md-6 pt-md-5 pb-3">
-        <img class="hero-img img-fluid"
-          src="https://res.cloudinary.com/teepublic/image/private/s--MwXqUo6Q--/t_Preview/b_rgb:36538b,c_limit,f_jpg,h_630,q_90,w_630/v1446137621/production/designs/17624_0.jpg"
-          alt="">
+      <div class="col-12 col-md-6 pt-md-5 pb-3 d-flex align-items-center">
+        <img class="hero-img img-fluid" src="src\assets\img\DnD About Page.png" alt="">
       </div>
 
-      <div class="col-12 col-md-6 text-center pt-md-5 project-tools">
+      <div class="col-12 col-md-6 text-center project-tools">
         <div>
           <p>Languages and Tools
             used on this project:</p>
@@ -225,9 +223,9 @@ span:nth-child(18) {
 
 .hero-img {
   // max-height: 95vh;
-  max-width: 500%;
-  margin-left: 15%;
-  padding-top: 5%;
+  max-width: 75vh;
+  // margin-left: 15%;
+  // padding-top: 5%;
 }
 
 
@@ -241,8 +239,9 @@ span:nth-child(18) {
   }
 
   .project-tools {
-    margin-top: 3%;
-    margin-left: 0;
+    margin-top: 1vh;
+    margin-right: 5%;
+    margin-left: 5%;
     padding: 3%;
 
   }
