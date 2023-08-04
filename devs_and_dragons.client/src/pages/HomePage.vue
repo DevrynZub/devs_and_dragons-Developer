@@ -2,7 +2,12 @@
   <div class="background">
 
     <div class="container-fluid">
-      <div class="row justify-content-between p-2 ps-5">
+      <div class="row justify-content-center p-2 ps-5">
+
+        <div class="text-center py-4">
+          <!-- <img class="img-fluid logo-card" src="../assets/img/DnD_Logo2-removebg-preview.png" alt="Title"> -->
+        </div>
+
         <div class="col-md-6 col-12 home-card text-shadow p-4 mt-5 rounded elevation-3">
           <h4>
             Devs and Dragons gives you the tools to become a superior Dungeon Master. Create and edit epic campaigns,
@@ -101,6 +106,7 @@ export default {
   border-radius: 5px;
   box-shadow: 3px 3px rgb(219, 215, 219);
 }
+
 
 
 
