@@ -9,7 +9,7 @@
   <!-- <footer>
   </footer> -->
 
-  <ModalComponent id="whatever you are calling goes here">
+  <ModalComponent id="createCampaignModal">
     <template #header>
 
     </template>
