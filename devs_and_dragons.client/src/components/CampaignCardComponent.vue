@@ -1,12 +1,13 @@
 <template>
-  <router-link :to="{ name: 'ActiveCampaign', param: { campaignId: campaignProp.id } }">
-    <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable">
+  <router-link :to="{ name: 'ActiveCampaign', params: { campaignId: campaignProp.id } }">
+    <div class="text-white">
       <div class="d-flex flex-column">
-        <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
-        <h3>{{ campaign.name }}</h3>
-        <p>{{ campaign.nextSessionDate }}</p>
-        <p>{{ campaign.desc }}</p>
-        <p>Player Capacity: {{ campaign.capacity }}</p>
+        <img class="image-fluid cover-Img" :src="campaignProp.coverImg" alt="">
+        <h3>{{ campaignProp.name }}</h3>
+        <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
+        <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
+        <p>{{ campaignProp.desc }}</p>
+        <p>Player Capacity: {{ campaignProp.capacity }}</p>
       </div>
     </div>
   </router-link>
