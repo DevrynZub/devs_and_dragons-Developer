@@ -7,7 +7,7 @@ export const entityCampaignLinkSchema = new Schema({
 }, { timestamps: true, toJSON: { virtuals: true } })
 
 entityCampaignLinkSchema.virtual('Entity', {
-  localField: 'campaignId',
+  localField: 'entityId',
   foreignField: '_id',
   justOne: true,
   ref: 'Entity'
