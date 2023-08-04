@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid about-page">
     <div class="row">
-      <div class="col-12 col-md-6 pt-md-5 pb-3 d-flex align-items-center">
+      <div class="col-12 col-md-6 pt-md-5 pb-3 d-flex align-items-center justify-content-center">
         <img class="hero-img img-fluid" src="src\assets\img\DnD About Page.png" alt="">
       </div>
 
@@ -239,10 +239,11 @@ span:nth-child(18) {
   }
 
   .project-tools {
-    margin-top: 1vh;
+    margin-top: 5%;
     margin-right: 5%;
     margin-left: 5%;
     padding: 3%;
+    max-width: 89%;
 
   }
 
