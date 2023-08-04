@@ -24,6 +24,11 @@ class AccountCampaignLinkService {
     return linkToDelete
   }
 
+  async getCampaignsByAccountLink(accountId) {
+    const accountLinks = await dbContext.AccountCampaignLink.find({ accountId }).populate('Campaign')
+    return accountLinks
+  }
+
 }
 
 export const accountCampaignLinkService = new AccountCampaignLinkService()
