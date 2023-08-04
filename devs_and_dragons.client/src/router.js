@@ -26,6 +26,11 @@ const routes = [
     path: '/campaign',
     name: 'Campaign',
     component: loadPage('CampaignPage'),
+  },
+  {
+    path: '/campaign/:campaignId',
+    name: 'ActiveCampaign',
+    component: loadPage('ActiveCampaignPage')
   }
 
 
