@@ -13,7 +13,6 @@ class AccountService {
     }
   }
 
-
   async editAccount(formData) {
     const res = await api.put('account', formData)
     logger.log('editing account', res.data)
