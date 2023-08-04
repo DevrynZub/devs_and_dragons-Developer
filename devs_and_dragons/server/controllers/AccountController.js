@@ -14,7 +14,7 @@ export class AccountController extends BaseController {
       .get('/campaigns', this.getCampaignsByAccount)
       .get('/entities', this.getEntitiesByAccount)
       .get('/accountcampaignlinks', this.getCampaignsByAccountLink)
-      .post('', this.updateAccount)
+      .put('', this.updateAccount)
   }
 
 
