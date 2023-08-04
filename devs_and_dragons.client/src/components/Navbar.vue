@@ -51,9 +51,9 @@ export default {
 .navbar {
   background-image: linear-gradient(rgba(69, 61, 61, 0.5), rgb(144, 6, 6));
   box-shadow:
-    inset 0 0 20px 7px #b44612,
+    inset 0 0 20px 7px #b44512b6,
     inset 0 2px 10px 2px #ecd718,
-    4px 0 10px 2px #ffdc41,
+    4px 0 10px 2px #f06718,
     0 3px 100px 5px #83d1cd;
 }
 
