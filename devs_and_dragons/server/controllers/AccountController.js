@@ -14,8 +14,20 @@ export class AccountController extends BaseController {
       .get('/campaigns', this.getCampaignsByAccount)
       .get('/entities', this.getEntitiesByAccount)
       .get('/accountcampaignlinks', this.getCampaignsByAccountLink)
+      .post('', this.updateAccount)
   }
 
+
+  async updateAccount(req, res, next) {
+    try {
+      const body = req.body
+      const user = req.userInfo
+      const updatedAccount = await accountService.updateAccount(user, body)
+      res.send(updatedAccount)
+    } catch (error) {
+      next(error)
+    }
+  }
   async getEntitiesByAccount(req, res, next) {
     try {
       const accountId = req.userInfo.id
