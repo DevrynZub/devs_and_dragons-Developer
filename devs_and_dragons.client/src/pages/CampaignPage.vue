@@ -18,7 +18,7 @@
                 <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in  campaigns "
                     :key="campaign.id">
                     <div class="d-flex flex-column">
-                        <img :src="campaign?.coverImg" alt="">
+                        <img class="image-fluid cover-Img" :src="campaign?.coverImg" alt="">
                         <h3>{{ campaign.name }}</h3>
                         <p>{{ campaign.nextSessionDate }}</p>
                         <p>{{ campaign.desc }}</p>
@@ -97,5 +97,12 @@ export default {
     border: 2px double rgb(112, 213, 241);
     box-shadow: 2px 0px 4px rgb(112, 213, 241);
 
+}
+
+.cover-Img {
+    height: 15vh;
+    width: 20vh;
+    object-fit: cover;
+    object-position: center;
 }
 </style>
