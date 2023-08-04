@@ -3,7 +3,7 @@
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center m-2">
 
-        <img alt="logo" src="https://www.pngkey.com/png/full/141-1413460_en-world-rpg-news-reviews-d-d-logo.png"
+        <img class="p-1" alt="logo" src="https://www.pngkey.com/png/full/141-1413460_en-world-rpg-news-reviews-d-d-logo.png"
           height="60" />
       </div>
     </router-link>
