@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import { computed, onMounted, ref, watchEffect } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { AppState } from '../AppState';
 import Pop from '../utils/Pop.js';
 import { accountService } from '../services/AccountService.js';
