@@ -66,14 +66,15 @@ import { entityService } from '../services/EntityService.js';
 import { logger } from '../utils/Logger.js';
 export default {
   setup() {
-
+    const account = ref({})
     const editable = ref({})
 
 
 
     async function getCampaignsByAccount() {
       try {
-        await campaignsService.getCampaignsByAccount();
+        const accountId = account.value.id;
+        await campaignsService.getCampaignsByAccount(accountId);
       }
       catch (error) {
         logger.error(error);
