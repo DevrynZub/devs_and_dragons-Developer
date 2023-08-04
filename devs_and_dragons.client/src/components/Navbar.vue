@@ -50,6 +50,9 @@ export default {
 <style scoped>
 .navbar {
   background-image: linear-gradient(rgba(69, 61, 61, 0.5), rgb(144, 6, 6));
+  box-shadow:
+    inset 0 0 20px 7px #b44612,
+    10px 3px 100px 5px #83d1cd;
 }
 
 .text-shadow {
