@@ -53,6 +53,15 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-4" v-for="entity in myEntities" :key="entity.id">
+        <div class="card mb-3">
+          <div class="card-header">
+            {{ entity.body }}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
