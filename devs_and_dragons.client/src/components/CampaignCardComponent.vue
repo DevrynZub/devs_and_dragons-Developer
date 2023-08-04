@@ -30,4 +30,25 @@ export default {
 </script>
 
 
-<style lang="scss" scoped></style>
+
+<style lang="scss" scoped>
+.box {
+  background-color: rgba(73, 73, 73, 0.719);
+  border: 1px double red;
+  box-shadow: 3px 1px 5px rgb(255, 0, 0);
+
+}
+
+.box:hover {
+  background-color: rgb(73, 73, 73);
+  border: 2px double rgb(112, 213, 241);
+  box-shadow: 2px 0px 4px rgb(112, 213, 241);
+
+}
+
+.cover-Img {
+  height: 15vh;
+  width: 35vh;
+  object-fit: cover;
+}
+</style>
