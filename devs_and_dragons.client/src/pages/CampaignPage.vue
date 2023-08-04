@@ -15,8 +15,7 @@
                 </div>
             </div>
             <div class="row justify-content-center p-2">
-                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in campaigns "
-                    :key="campaign.id">
+                <div class="col-md-3 col-12 m-3 text-light " v-for="campaign in campaigns " :key="campaign.id">
                     <CampaignCardComponent :campaignProp="campaign" />
                 </div>
             </div>
@@ -75,17 +74,7 @@ export default {
     background-attachment: fixed;
 }
 
-.card {
-    background-color: rgba(30, 20, 20, 0.644);
-    border: 1px double rgba(255, 0, 0, 0.395);
 
-}
-
-.card:hover {
-    background-color: rgba(30, 20, 20, 0.644);
-    border: 1px double rgb(112, 213, 241);
-
-}
 
 .box {
     background-color: rgba(73, 73, 73, 0.719);

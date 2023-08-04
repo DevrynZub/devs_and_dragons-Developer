@@ -28,4 +28,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.background {
+    background-image: url(https://i.pinimg.com/originals/00/d6/2b/00d62b36709f8b98cba25576996f70ff.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+}
+</style>

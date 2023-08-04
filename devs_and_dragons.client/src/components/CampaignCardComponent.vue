@@ -1,13 +1,17 @@
 <template>
   <router-link :to="{ name: 'ActiveCampaign', params: { campaignId: campaignProp.id } }">
     <div class="text-white">
-      <div class="d-flex flex-column">
-        <img class="image-fluid cover-Img" :src="campaignProp.coverImg" alt="">
-        <h3>{{ campaignProp.name }}</h3>
-        <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
-        <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
-        <p>{{ campaignProp.desc }}</p>
-        <p>Player Capacity: {{ campaignProp.capacity }}</p>
+      <div class="d-flex flex-column box rounded elevation-5 selectable p-2">
+        <div class="card text-light mb-2 p-2">
+          <h3>{{ campaignProp.name }}</h3>
+          <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
+          <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
+          <p>{{ campaignProp.desc }}</p>
+          <p>Player Capacity: {{ campaignProp.capacity }}</p>
+        </div>
+        <div class="text-center mb-2">
+          <img class="image-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
+        </div>
       </div>
     </div>
   </router-link>
@@ -43,6 +47,18 @@ export default {
   background-color: rgb(73, 73, 73);
   border: 2px double rgb(112, 213, 241);
   box-shadow: 2px 0px 4px rgb(112, 213, 241);
+
+}
+
+.card {
+  background-color: rgba(30, 20, 20, 0.644);
+  border: 1px double rgba(255, 0, 0, 0.395);
+
+}
+
+.card:hover {
+  background-color: rgba(30, 20, 20, 0.644);
+  border: 1px double rgb(112, 213, 241);
 
 }
 
