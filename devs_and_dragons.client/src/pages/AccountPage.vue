@@ -83,7 +83,8 @@ export default {
 
     async function getMyEntitiesByAccount() {
       try {
-        await entityService.getMyEntitiesByAccount()
+        const accountId = account.value.id;
+        await entityService.getMyEntitiesByAccount(accountId)
       } catch (error) {
         logger.error(error)
       }
@@ -125,15 +126,6 @@ export default {
 img {
   max-width: 100px;
 }
-
-/* .background {
-  background-position: center;
-  background-image: url(https://th.bing.com/th/id/R.7c4b72b54938b0773e70c8ebb312ef10?rik=8W63dH%2b9lw0yXA&riu=http%3a%2f%2fwallpapercave.com%2fwp%2f7z6cSaI.jpg&ehk=X%2b%2fh530OV87vj1tiOdMAL8nSbsHAxeJ1ympx8rJ5y5I%3d&risl=&pid=ImgRaw&r=0);
-  background-size: cover;
-  background-repeat: no-repeat;
-  max-height: 100%;
-  background-attachment: fixed;
-} */
 
 .card-img-top {
 

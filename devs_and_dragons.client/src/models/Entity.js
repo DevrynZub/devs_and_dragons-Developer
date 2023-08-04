@@ -12,6 +12,5 @@ export class Entity {
     this.creatorId = data.creatorId
     this.isPrivate = data.isPrivate
     this.tags = data.tags
-    this.Creator = data.Creator
   }
 }
