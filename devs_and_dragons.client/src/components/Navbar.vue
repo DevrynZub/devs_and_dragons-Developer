@@ -14,8 +14,8 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto ">
         <li>
-          <router-link :to="{ name: 'About' }" class="btn lighten-30 selectable text-uppercase  nav-shadow">
-            About
+          <router-link :to="{ name: 'Campaign' }" class="btn lighten-30 selectable text-uppercase nav-shadow">
+            Campaigns
           </router-link>
         </li>
         <li>
@@ -24,8 +24,8 @@
           </router-link>
         </li>
         <li>
-          <router-link :to="{ name: 'Campaign' }" class="btn lighten-30 selectable text-uppercase nav-shadow">
-            Campaigns
+          <router-link :to="{ name: 'About' }" class="btn lighten-30 selectable text-uppercase  nav-shadow">
+            About
           </router-link>
         </li>
 
@@ -50,6 +50,9 @@ export default {
 <style scoped>
 .navbar {
   background-image: linear-gradient(rgba(69, 61, 61, 0.5), rgb(144, 6, 6));
+  box-shadow:
+    inset 0 0 20px 7px #b44612,
+    10px 3px 100px 5px #83d1cd;
 }
 
 .text-shadow {
