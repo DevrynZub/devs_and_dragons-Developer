@@ -5,6 +5,9 @@
             <div class="row justify-content-center">
                 <div class="col-md-5 col-12 p-3 text-center">
                     <div class="elevation-3 rounded fs-5 bg-black text-light p-1">
+                        <button v-if="account.id" class="btn btn-outline-danger mx-2" type="button" data-bs-toggle="modal"
+                            data-bs-target="#createCampaignModal">
+                            <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
                         <label for="site-campaigns">Search for Campaigns: </label>
                         <input v-model="filterBy" class="m-2" type="search" id="site-campaigns" name="q" />
 
@@ -55,6 +58,7 @@ export default {
         })
 
         return {
+            account: computed(() => AppState.account),
             filterBy,
             campaigns: computed(() => {
                 if (filterBy.value == "") {
@@ -74,7 +78,7 @@ export default {
 <style lang="scss" scoped>
 .background {
     background-position: center;
-    background-image: url(https://wallpaperset.com/w/full/4/1/4/237716.jpg);
+    background-image: url(https://www.pixel-creation.com/wp-content/uploads/dungeons-and-dragons-wallpaper-1920x1080-77-images-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 92dvh;
@@ -82,7 +86,7 @@ export default {
 }
 
 .card {
-    background-color: rgb(73, 73, 73);
+    background-color: rgba(73, 73, 73, 0.719);
     border: 1px double red;
     box-shadow: 3px 1px 5px rgb(255, 0, 0);
 }
