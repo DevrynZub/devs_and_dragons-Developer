@@ -37,16 +37,23 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-12 text-center py-4">
+          <router-link :to="{ name: 'Campaign' }">
+            <button class=" btn btn-rounded" title="To Campaign Page">
+              <img class="rounded start-button elevation-5"
+                src="https://tse3.mm.bing.net/th?id=OIP.XK5GfaI4mfcNUIQh-yngSQHaDL&pid=Api&P=0&h=220">
+            </button>
+          </router-link>
+        </div>
+
+      </div>
+
+
     </div>
   </div>
 </template>
 
-<!-- <div class="col-md-6 col-12 m-auto">
-  <button class=" btn btn-rounded">
-    <img class="rounded start-button elevation-5"
-      src="https://tse3.mm.bing.net/th?id=OIP.XK5GfaI4mfcNUIQh-yngSQHaDL&pid=Api&P=0&h=220">
-  </button>
-</div> -->
 
 <script>
 export default {
