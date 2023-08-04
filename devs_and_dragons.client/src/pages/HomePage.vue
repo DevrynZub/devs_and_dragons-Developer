@@ -37,6 +37,15 @@
         </div>
       </div>
 
+      <div class="row justify-content-start pt-5 ps-5 p-2">
+        <div class="col-md-6 col-12 home-card text-shadow p-4 mt-5 rounded elevation-3">
+          <h4 class="text-center">Build Your World</h4>
+          <p>
+              A world is only as interesting as the objects that exist within it. To aid in populating your journey, Devs and Dragons allows you to create and save ENTITIES. Create, detail, save, and reference any object you envision within your world. Make them public and share them with the party or quickly reference the custom objects that stand in their path as the DM during a session. View and track the entities you have designed or browse all of the communities creations while searching for inspiration on your next great adventure.
+          </p>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-12 text-center py-4">
           <router-link :to="{ name: 'Campaign' }">
