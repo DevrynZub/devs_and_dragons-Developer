@@ -15,9 +15,10 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in campaigns"
+                <div class="col-md-3 col-12 card m-3 text-light elevation-5 selectable" v-for="campaign in  campaigns "
                     :key="campaign.id">
                     <div class="d-flex flex-column">
+                        <img :src="campaign?.coverImg" alt="">
                         <h3>{{ campaign.name }}</h3>
                         <p>{{ campaign.nextSessionDate }}</p>
                         <p>{{ campaign.desc }}</p>
