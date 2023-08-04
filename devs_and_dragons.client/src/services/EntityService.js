@@ -1,3 +1,5 @@
+import { AppState } from "../AppState.js"
+import { Entity } from "../models/Entity.js"
 import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
 
@@ -12,6 +14,7 @@ class EntityService {
   async getMyEntitiesByAccount() {
     const res = await api.get('api/entities')
     logger.log('[GETTING MY ENTITIES]', res.data)
+    AppState.myEntities = res.data.map(c => new Entity(c))
   }
 }
 

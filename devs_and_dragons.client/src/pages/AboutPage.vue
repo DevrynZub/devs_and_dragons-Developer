@@ -188,10 +188,6 @@ span:nth-child(18) {
 }
 
 
-
-
-
-
 .card-names {
   margin-top: 5%;
 }
@@ -210,13 +206,10 @@ span:nth-child(18) {
 }
 
 
-
-
 .quote-img {
   font-size: 30px;
   padding-top: 5%;
 }
-
 
 
 .about-page {
