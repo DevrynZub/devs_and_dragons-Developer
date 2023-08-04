@@ -12,7 +12,7 @@ class EntityService {
 
 
   async getMyEntitiesByAccount() {
-    const res = await api.get('api/entities')
+    const res = await api.get('account/entities')
     logger.log('[GETTING MY ENTITIES]', res.data)
     AppState.myEntities = res.data.map(c => new Entity(c))
   }
