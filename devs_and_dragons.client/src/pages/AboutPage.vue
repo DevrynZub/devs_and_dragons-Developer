@@ -1,32 +1,32 @@
 <template>
   <div class="container-fluid about-page">
-    <div class="row">
-      <div class="col-12 col-md-6 pt-md-5 pb-3 d-flex align-items-center justify-content-center">
-        <img class="hero-img img-fluid" src="src\assets\img\DnD About Page.png" alt="">
+    <div class="row justify-content-around ">
+      <div class="col-12 col-md-4 pt-md-5 pb-3 d-flex justify-content-center ">
+        <img class="hero-img card img-fluid" src="src\assets\img\DnD About Page.png" alt="">
       </div>
 
-      <div class="col-12 col-md-6 text-center project-tools">
+      <div class="col-12 col-md-3 card project-tools text-light  px-3">
         <div>
           <p>Languages and Tools
             used on this project:</p>
-          <p>JavaScript</p>
-          <p>HTML</p>
-          <p>CSS</p>
-          <p>Vue</p>
-          <p>Git</p>
-          <p>MongoDB</p>
-          <p>node.js</p>
-          <p>Bootstrap</p>
-          <p>Auth0</p>
+          <p>•JavaScript</p>
+          <p>•HTML</p>
+          <p>•CSS</p>
+          <p>•Vue</p>
+          <p>•Git</p>
+          <p>•MongoDB</p>
+          <p>•node.js</p>
+          <p>•Bootstrap</p>
+          <p>•Auth0</p>
         </div>
       </div>
     </div>
 
 
 
-    <div class="row mt-3">
-      <div class="col-12 col-md-12">
-        <h1 class="d-flex text-dark quote-img justify-content-center">
+    <div class="row mt-3 justify-content-center">
+      <div class="col-11 col-md-10 card align-items-center justify-content-center">
+        <h1 class="d-flex text-light quote-img ">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
       </div>
@@ -191,15 +191,21 @@ span:nth-child(18) {
 }
 
 
+.card {
+  background-color: rgba(30, 20, 20, 0.879);
+  border: 1px double rgba(0, 255, 191, 0.578);
+  box-shadow: 2px 0px 4px rgb(0, 255, 191, 0.578);
+  border-radius: 16px;
+
+}
+
 .project-tools {
 
   font-size: 25px;
-  margin-top: 5%;
+  margin-top: 2.5%;
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.5px);
-  -webkit-backdrop-filter: blur(9.5px);
-  border: 1px solid rgba(246, 243, 196, 1);
+  box-shadow: 2px 0px 4px rgb(0, 255, 191, 0.578);
+  border: 1px solid rgba(0, 255, 191, 0.578);
   margin-left: -1.5%
 }
 
@@ -211,13 +217,13 @@ span:nth-child(18) {
 
 
 .about-page {
-  background-image: url('https://th.bing.com/th/id/R.b3f7eef14148eb23697fe1857c6995b9?rik=shhZE%2f0fBF2FyQ&pid=ImgRaw&r=0');
+  background-image: url('https://i.redd.it/ifw1keannjw41.jpg');
   background-color: #5f3f2485;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   min-height: 95vh;
-  // opacity: 80%;
+  // opacity: ;
 
 }
 

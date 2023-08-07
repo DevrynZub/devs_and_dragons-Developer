@@ -1,10 +1,10 @@
 <template>
-  <nav class="text-shadow navbar navbar-expand-lg navbar-dark bg-dark p-3 ">
+  <nav class="text-shadow navbar navbar-expand-lg sticky-top navbar-dark bg-dark p-3 ">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center m-2">
 
-        <img class="p-1" alt="logo" src="https://www.pngkey.com/png/full/141-1413460_en-world-rpg-news-reviews-d-d-logo.png"
-          height="60" />
+        <img class="p-1" alt="logo"
+          src="https://www.pngkey.com/png/full/141-1413460_en-world-rpg-news-reviews-d-d-logo.png" height="60" />
       </div>
     </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -56,6 +56,8 @@ export default {
     4px 0 10px 2px #f06718,
     0 3px 100px 5px #83d1cd;
 }
+
+
 
 .text-shadow {
   color: rgb(228, 41, 41);
