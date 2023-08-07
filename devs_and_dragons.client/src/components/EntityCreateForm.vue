@@ -37,6 +37,7 @@ export default {
   setup() {
 
     const editable = ref({})
+    const entityData = editable.value
 
     return {
       editable,
@@ -46,11 +47,10 @@ export default {
           if (!AppState.account.id) {
             throw new Error('Login required to Create Event')
           }
-          const entityData = editable.value
           const account = await entityService.createEntity(entityData)
+          router.push({ name: 'Account', params: { accountId: account.id } })
           editable.value = {}
           Modal.getOrCreateInstance('createEntityModal').hide()
-          router.push({ name: 'Account', params: { accountId: account.id } })
         } catch (error) {
           Pop.success('Created Entity')
         }
