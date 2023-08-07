@@ -17,7 +17,8 @@
             <div class="row justify-content-center p-2">
                 <div class="col-10">
                     <div class="row justify-content-center p-2 ">
-                        <div class="col-md-3 col-12 m-3 text-light " v-for="campaign in campaigns " :key="campaign.id">
+                        <div class="col-md-3 col-12 m-3 text-light animate__animated animate__fadeIn"
+                            v-for="campaign in campaigns " :key="campaign.id">
                             <CampaignCardComponent :campaignProp="campaign" />
                         </div>
                     </div>
@@ -35,6 +36,7 @@ import Pop from '../utils/Pop.js'
 import { campaignsService } from '../services/CampaignsService.js'
 import { AppState } from "../AppState.js"
 import CampaignCardComponent from "../components/CampaignCardComponent.vue"
+import 'animate.css';
 
 
 export default {
