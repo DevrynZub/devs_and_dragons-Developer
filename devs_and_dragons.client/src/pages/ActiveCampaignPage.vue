@@ -53,6 +53,7 @@ export default {
     onMounted(() => {
       getActiveCampaign()
       getAccountCampaignLinks()
+
     })
     async function getActiveCampaign() {
       try {
