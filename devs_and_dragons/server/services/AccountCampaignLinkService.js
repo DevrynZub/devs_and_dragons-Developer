@@ -4,7 +4,7 @@ import { campaignService } from "./CampaignService.js"
 
 class AccountCampaignLinkService {
   async getAccountLinksByCampaignId(campaignId) {
-    const accountLinks = await dbContext.AccountCampaignLink.find()
+    const accountLinks = await dbContext.AccountCampaignLink.find().populate('Profile', 'name picture')
     return accountLinks
   }
   async createAccountLink(linkData) {
