@@ -18,7 +18,7 @@ class EntityService {
   }
 
   async createEntity(entityData) {
-    const res = await api.post('api/entity', entityData)
+    const res = await api.post('api/entities', entityData)
     logger.log('[CREATING ENTITY]', res.data)
     const entity = new Entity(res.data)
     AppState.entities.push(entity)
