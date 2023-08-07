@@ -29,8 +29,8 @@
         </div>
       </div>
 
-      <div class="row">
-        <img class="img-fluid horse-img" src="https://cdna.artstation.com/p/assets/images/images/000/150/348/large/tony-andreas-rudolph-concept-art34.jpg?1406809665" alt="">
+      <div class="row horse-img">
+        <!-- <img class="img-fluid horse-img" src="https://cdna.artstation.com/p/assets/images/images/000/150/348/large/tony-andreas-rudolph-concept-art34.jpg?1406809665" alt=""> -->
         <div class="col-md-6 col-12 home-card text-shadow p-4 mt-5 rounded elevation-3 info-card3">
           <h4 class="text-center">Retell Your Tales</h4>
           <p>No longer will your adventures be preceded by a retelling of last session's feats. With a dedicated RECAP tab, a DM can create and share notes detailing the players' previous antics. Highlight the story points you deem most valuable, and allow your party to access them at any time with the click of a button. </p>
@@ -134,14 +134,14 @@ export default {
 }
 
 .horse-img{
-width:100%;
-  max-height: 100%;
+  background-image: url(https://cdna.artstation.com/p/assets/images/images/000/150/348/large/tony-andreas-rudolph-concept-art34.jpg?1406809665);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   padding-left: 0;
   padding-right: 0;
   opacity: 65%;
+  height: 50em;
 }
 
 .info-card-top{
@@ -163,24 +163,30 @@ width:100%;
   top:11em;
   left: -3em;
   height: 14em;
+  opacity: 100%;
 }
 
 .info-card3{
   position: relative;
-  top: -63em;
+  top: -11em;
   left: 3em;
+  height: 13em;
+    opacity: 100%;
 }
 
 .info-card4{
   position: relative;
-  top: -35em;
+  top: 13em;
   left: -3em;
+  height: 16em;
+    opacity: 100%;
 }
 
 .start-button{
     position: relative;
-  top: -10em;
+  top: 5em;
   left: 19em;
+    opacity: 100%;
 }
 
 .home {
