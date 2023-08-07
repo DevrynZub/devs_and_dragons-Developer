@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid account-page">
-    <div class="row justify-content-around mt-2">
+    <div class="row justify-content-around">
       <div class="col-3 mb-5">
         <div class="card">
           <img class="card-img-top " :src="account.picture" alt="profile">
