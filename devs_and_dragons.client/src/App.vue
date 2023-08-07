@@ -20,7 +20,7 @@
 
   <ModalComponent id="createEntityModal">
     <template #header>
-
+      Create Entity
     </template>
     <template #body>
       <EntityCreateForm />
@@ -35,7 +35,7 @@ import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import ModalComponent from "./components/ModalComponent.vue"
 import CampaignForm from './components/CampaignForm.vue'
-import EntityCreateForm from './components/CampaignForm.vue'
+import EntityCreateForm from './components/EntityCreateForm.vue'
 
 export default {
   setup() {
@@ -52,9 +52,6 @@ export default {
 :root {
   --main-height: calc(100vh - 32px - 64px);
 }
-
-
-
 
 footer {
   display: grid;

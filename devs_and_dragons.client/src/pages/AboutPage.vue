@@ -1,32 +1,32 @@
 <template>
-  <div class="container-fluid about-page">
-    <div class="row">
-      <div class="col-12 col-md-6 pt-md-5 pb-3 d-flex align-items-center justify-content-center">
-        <img class="hero-img img-fluid" src="src\assets\img\DnD About Page.png" alt="">
+  <div class="container-fluid about-page bg-black">
+    <div class="row justify-content-around ">
+      <div class="col-12 col-md-4 pt-md-5 pb-3 d-flex justify-content-center ">
+        <img class="hero-img card img-fluid" src="src\assets\img\DnD About Page.png" alt="">
       </div>
 
-      <div class="col-12 col-md-6 text-center project-tools">
+      <div class="col-12 col-md-4 card project-tools text-light  px-3">
         <div>
           <p>Languages and Tools
             used on this project:</p>
-          <p>JavaScript</p>
-          <p>HTML</p>
-          <p>CSS</p>
-          <p>Vue</p>
-          <p>Git</p>
-          <p>MongoDB</p>
-          <p>node.js</p>
-          <p>Bootstrap</p>
-          <p>Auth0</p>
+          <p>•JavaScript</p>
+          <p>•HTML</p>
+          <p>•CSS</p>
+          <p>•Vue</p>
+          <p>•Git</p>
+          <p>•MongoDB</p>
+          <p>•node.js</p>
+          <p>•Bootstrap</p>
+          <p>•Auth0</p>
         </div>
       </div>
     </div>
 
 
 
-    <div class="row mt-3">
-      <div class="col-12 col-md-12">
-        <h1 class="d-flex text-dark quote-img justify-content-center">
+    <div class="row mt-3 justify-content-center">
+      <div class="col-11 col-md-10 card align-items-center justify-content-center">
+        <h1 class="d-flex text-light quote-img ">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
       </div>
@@ -34,24 +34,43 @@
 
 
     <div class="container card-names">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Devryn Zub</div>
+      <div class="row justify-content-center text-light mt-2">
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Devryn Zub</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Andrew Allison</div>
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Andrew Allison</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Jeremy Olds</div>
+      <div class="row justify-content-center text-light">
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Jeremy Olds</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Riley Thomas</div>
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Riley Thomas</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/Rilezzz"></a>
+            <a class="mdi mdi-linkedin fs-2" href="https://www.linkedin.com/in/idahosuperiorcustoms/"></a>
+          </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Brandon Riggs</div>
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Brandon Riggs</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
       </div>
     </div>
@@ -186,20 +205,25 @@ span:nth-child(18) {
 }
 
 
-.card-names {
-  margin-top: 5%;
-}
 
+
+
+.card {
+  background-color: rgba(30, 20, 20, 0.879);
+  border: 1px double rgba(255, 72, 0, 0.578);
+  box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
+  border-radius: 16px;
+  color: white;
+
+}
 
 .project-tools {
 
   font-size: 25px;
-  margin-top: 5%;
+  margin-top: 2.5%;
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(9.5px);
-  -webkit-backdrop-filter: blur(9.5px);
-  border: 1px solid rgba(246, 243, 196, 1);
+  box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
+  border: 1px solid rgba(255, 72, 0, 0.578);
   margin-left: -1.5%
 }
 
@@ -211,13 +235,12 @@ span:nth-child(18) {
 
 
 .about-page {
-  background-image: url('https://th.bing.com/th/id/R.b3f7eef14148eb23697fe1857c6995b9?rik=shhZE%2f0fBF2FyQ&pid=ImgRaw&r=0');
-  background-color: #5f3f2485;
-  background-size: cover;
-  background-position: center;
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   background-attachment: fixed;
-  min-height: 95vh;
-  // opacity: 80%;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+
 
 }
 
