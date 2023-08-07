@@ -238,6 +238,8 @@ span:nth-child(18) {
   background-color: #000000;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   background-attachment: fixed;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 
 
 }
