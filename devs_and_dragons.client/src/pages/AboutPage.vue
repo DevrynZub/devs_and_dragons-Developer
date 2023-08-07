@@ -26,7 +26,7 @@
 
     <div class="row mt-3">
       <div class="col-12 col-md-12">
-        <h1 class="d-flex text-dark quote-img">
+        <h1 class="d-flex text-dark quote-img justify-content-center">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
       </div>
@@ -89,9 +89,9 @@ export default {
 h1 {
   font-family: "Montserrat Medium";
   text-align: center;
-  transform: scale(1.5);
+  transform: scale(.9);
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-  padding-left: 15%;
+  // padding-left: 15%;
 }
 
 @keyframes scale {
