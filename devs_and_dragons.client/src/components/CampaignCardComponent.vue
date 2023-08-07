@@ -2,7 +2,7 @@
   <router-link :to="{ name: 'ActiveCampaign', params: { campaignId: campaignProp.id } }">
     <div class="text-white">
       <div class="d-flex flex-column box rounded elevation-5 selectable p-2">
-        <div class="card text-light mb-2 p-2">
+        <div class="elevation-5 mb-3 info-card rounded">
           <h3>{{ campaignProp.name }}</h3>
           <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
           <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
@@ -43,6 +43,7 @@ export default {
 
 }
 
+
 .box:hover {
   background-color: rgb(73, 73, 73);
   outline: 2px double rgb(112, 213, 241);
@@ -56,11 +57,16 @@ export default {
 
 }
 
-.card:hover {
-  background-color: rgba(30, 20, 20, 0.644);
-  border: 1px double rgb(112, 213, 241);
-
+.info-card {
+  background-color: rgba(0, 0, 0, 0.555);
+  padding: 10px;
 }
+
+// .card {
+//   background-color: rgba(30, 20, 20, 0.644);
+//   border: 1px double rgb(112, 213, 241);
+
+// }
 
 .cover-Img {
   height: 15vh;
