@@ -4,6 +4,7 @@ import { logger } from "../utils/Logger.js"
 import { api } from "./AxiosService.js"
 
 class CampaignsService {
+
     async getCampaigns() {
         const res = await api.get('api/campaigns')
         logger.log('[Got Campaigns]', res.data)
@@ -27,6 +28,13 @@ class CampaignsService {
 
     }
 
-
+    async getActiveCampaign(campaignId) {
+        const res = await api.get(`api/campaigns/${campaignId}`)
+        // logger.log('active campaign res data', res.data)
+        const campaign = new Campaign(res.data)
+        // logger.log('new Campaign from active campaign', campaign)
+        AppState.activeCampaign = campaign
+        logger.log('Appstate activecampaign', AppState.activeCampaign)
+    }
 }
 export const campaignsService = new CampaignsService()
