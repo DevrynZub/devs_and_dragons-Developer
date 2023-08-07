@@ -1,5 +1,15 @@
 <template>
-    <div class="container-fluid background">
+    <div class="container-fluid p-0">
+
+      <div class="background-img1">
+        <img class="demon-img img-fluid" src="https://wallpapercave.com/wp/wp2770331.jpg" alt="">
+      </div>
+
+
+
+
+
+
       <div class="row justify-content-center pt-5 pe-5 p-2">
 
         <div class="text-center py-4">
@@ -14,7 +24,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-end pt-5 pe-5 p-2">
+      <div class="row justify-content-end bg-secondary pt-5 pe-5 p-2">
         <div class="col-md-6 col-12 home-card text-shadow p-4 mt-5 rounded elevation-3">
           <h4 class="text-center">
             Foucs On The Adventure</h4>
@@ -59,7 +69,7 @@
           </router-link>
         </div>
       </div>
-      
+
     </div>
 </template>
 
@@ -75,6 +85,13 @@ export default {
 <style scoped lang="scss">
 .background {
   background-image: url(https://wallpapercave.com/wp/wp2770331.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.demon-img{
+  max-width:100vw;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -97,9 +114,6 @@ export default {
   border-radius: 5px;
   box-shadow: 3px 3px rgb(219, 215, 219);
 }
-
-
-
 
 .text-shadow {
   color: rgb(228, 41, 41);
