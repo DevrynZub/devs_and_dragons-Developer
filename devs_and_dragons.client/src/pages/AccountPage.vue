@@ -1,16 +1,16 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid account-page">
     <div class="row justify-content-around mt-2">
       <div class="col-3 mb-5">
         <div class="card">
           <img class="card-img-top " :src="account.picture" alt="profile">
-          <div class="card-body">
+          <div class="card-body text-white">
             <p class="card-text">{{ account.name }}</p>
             <p class="card-text">{{ account.email }}</p>
           </div>
         </div>
       </div>
-      <div class="col-6 mb-4">
+      <div class="col-6 mb-4 text-white">
         <p>Edit Account</p>
         <form action="" @submit.prevent="editAccount()">
           <div class="mb-2">
@@ -18,8 +18,8 @@
             <input class="form-control" type="text" id="name" minlength="3" maxlength="75" v-model="editable.name">
           </div>
           <div class="mb-2">
-            <label for="name">Email</label>
-            <input class="form-control" type="text" id="email" minlength="3" maxlength="75" v-model="editable.email">
+            <label for="email">Email</label>
+            <input v-model="editable.email" type="text" class="form-control" name="email" id="email">
           </div>
           <div class="mb-2">
             <label for="picture">Picture</label>
@@ -45,12 +45,20 @@
           data-bs-target="#createEntityModal">
           Create Entity</button>
       </div>
+
       <div class="col-12 col-md-4 pt-3" v-for="entity in myEntities" :key="entity.id">
-        <div class="card mb-3">
-          <p class="card-header">{{ entity.name }}</p>
-          <p>{{ entity.body }}</p>
-          <p>Type: {{ entity.type }}</p>
-          <p>{{ entity.desc }}</p>
+        <div class="text-white">
+          <div class="d-flex flex-column box rounded elevation-5 p-2">
+            <div class="elevation-5 mb-3 info-card rounded">
+              <h3>{{ entity.name }}</h3>
+              <p>Type: {{ entity.type }}</p>
+              <p>{{ entity.desc }}</p>
+              <p>{{ entity.body }}</p>
+            </div>
+            <div class="text-center mb-2">
+              <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -131,6 +139,28 @@ img {
   max-width: 100px;
 }
 
+.account-page {
+  background-image: url('https://wallpapercave.com/wp/2iIPx6K.png');
+  background-color: white#5f3f2485;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 95vh;
+}
+
+.box {
+  background-color: rgba(73, 73, 73, 0.719);
+  outline: 1px double red;
+  box-shadow: 3px 1px 5px rgb(255, 0, 0);
+
+}
+
+.cover-Img {
+  height: 15vh;
+  width: 35vh;
+  object-fit: cover;
+}
+
 .card-img-top {
 
   max-width: 500px;
@@ -138,5 +168,16 @@ img {
   object-fit: cover;
   position: relative;
 
+}
+
+.card {
+  background-color: rgba(30, 20, 20, 0.644);
+  border: 1px double rgba(255, 0, 0, 0.395);
+
+}
+
+.info-card {
+  background-color: rgba(0, 0, 0, 0.555);
+  padding: 10px;
 }
 </style>
