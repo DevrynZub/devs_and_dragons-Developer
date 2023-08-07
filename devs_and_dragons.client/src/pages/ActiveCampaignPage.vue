@@ -25,7 +25,7 @@
     </div>
     <!-- SECTION players -->
     <div class="row">
-
+      
     </div>
     <!-- SECTION (imgage?), main body, information section -->
     <div class="row">

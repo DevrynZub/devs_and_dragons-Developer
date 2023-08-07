@@ -110,12 +110,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.background {
-  background-image: url(https://wallpapercave.com/wp/wp2770331.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
 
 .demon-img{
   background-image: url(https://wallpapercave.com/wp/wp2770331.jpg);
@@ -156,6 +150,7 @@ export default {
   top: -13em;
   right: -2em;
   height: 13em;
+  opacity: revert;
 }
 
 .info-card2{
