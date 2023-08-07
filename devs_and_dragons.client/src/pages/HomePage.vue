@@ -1,8 +1,6 @@
 <template>
-  <div class="background">
-
-    <div class="container-fluid">
-      <div class="row justify-content-center p-2 ps-5">
+    <div class="container-fluid background">
+      <div class="row">
 
         <div class="text-center py-4">
           <!-- <img class="img-fluid logo-card" src="../assets/img/DnD_Logo2-removebg-preview.png" alt="Title"> -->
@@ -65,7 +63,6 @@
 
 
     </div>
-  </div>
 </template>
 
 
