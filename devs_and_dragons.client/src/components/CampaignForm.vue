@@ -1,33 +1,38 @@
 <template>
-    <form @submit.prevent="createCampaign">
-        <div class="mb-3">
-            <label for="name" class="form-label">Campaign Name</label>
-            <input v-model="editable.name" type="text" class="form-control" id="name" minlength="1" maxlength="35" required>
-        </div>
-        <div class="mb-3">
-            <label for="coverImg" class="form-label">Event Image</label>
-            <input v-model="editable.coverImg" type="url" class="form-control" id="coverImg" minlength="3" maxlength="250"
-                required>
-        </div>
-        <div class="mb-3">
-            <label for="capacity" class="form-label">Event Capacity</label>
-            <input v-model="editable.capacity" type="number" class="form-control" id="capacity" min="0" max="1000" required>
-        </div>
-        <div class="mb-3">
-            <label for="nextSessionDate" class="form-label">Next Session Date</label>
-            <input v-model="editable.nextSessionDate" type="datetime-local" class="form-control" id="nextSessionDate"
-                required>
-        </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Event Description</label>
-            <textarea v-model="editable.desc" class="form-control" aria-label="eventDescription" required></textarea>
-        </div>
-        <!-- <div class="mb-3">
+    <div class="background">
+
+        <form @submit.prevent="createCampaign">
+            <div class="mb-3">
+                <label for="name" class="form-label">Campaign Name</label>
+                <input v-model="editable.name" type="text" class="form-control" id="name" minlength="1" maxlength="35"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="coverImg" class="form-label">Event Image</label>
+                <input v-model="editable.coverImg" type="url" class="form-control" id="coverImg" minlength="3"
+                    maxlength="250" required>
+            </div>
+            <div class="mb-3">
+                <label for="capacity" class="form-label">Event Capacity</label>
+                <input v-model="editable.capacity" type="number" class="form-control" id="capacity" min="0" max="1000"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="nextSessionDate" class="form-label">Next Session Date</label>
+                <input v-model="editable.nextSessionDate" type="datetime-local" class="form-control" id="nextSessionDate"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Event Description</label>
+                <textarea v-model="editable.desc" class="form-control" aria-label="eventDescription" required></textarea>
+            </div>
+            <!-- <div class="mb-3">
             <label for="tags" class="form-label">Campaign Tags</label>
             <textarea v-model="editable.tags" class="form-control" aria-label="tags"></textarea>
         </div> -->
-        <button type="submit" class="btn btn-primary" title="Submit">Submit</button>
-    </form>
+            <button type="submit" class="btn btn-primary" title="Submit">Submit</button>
+        </form>
+    </div>
 </template>
 
 
@@ -67,4 +72,12 @@ export default {
 </script>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.background {
+    // background-position: center;
+    background-image: url("../assets/img/solarized-colorscheme-dungeons-and-dragons-minimalism-vector-simple-background-hd-wallpaper-preview.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+}
+</style>
