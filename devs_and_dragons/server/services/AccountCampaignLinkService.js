@@ -3,6 +3,14 @@ import { BadRequest, Forbidden } from "../utils/Errors.js"
 import { campaignService } from "./CampaignService.js"
 
 class AccountCampaignLinkService {
+  async getAccountLinksByCampaignId(campaignId) {
+    // const campaign = await campaignService.getCampaignById(campaignId)
+    // if (!campaign) {
+    //   throw new BadRequest('Cannot find a campaign with that ID')
+    // }
+    const accountLinks = await dbContext.AccountCampaignLink.find({ campaignId })
+    return accountLinks
+  }
   async createAccountLink(linkData) {
     const campaign = await campaignService.getCampaignById(linkData.campaignId)
     if (campaign.isArchived == true) {
