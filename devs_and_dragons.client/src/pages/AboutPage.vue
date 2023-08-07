@@ -1,11 +1,11 @@
 <template>
-  <div class="container-fluid about-page">
+  <div class="container-fluid about-page bg-black">
     <div class="row justify-content-around ">
       <div class="col-12 col-md-4 pt-md-5 pb-3 d-flex justify-content-center ">
         <img class="hero-img card img-fluid" src="src\assets\img\DnD About Page.png" alt="">
       </div>
 
-      <div class="col-12 col-md-3 card project-tools text-light  px-3">
+      <div class="col-12 col-md-4 card project-tools text-light  px-3">
         <div>
           <p>Languages and Tools
             used on this project:</p>
@@ -34,24 +34,43 @@
 
 
     <div class="container card-names">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Devryn Zub</div>
+      <div class="row justify-content-center text-light mt-2">
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Devryn Zub</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Andrew Allison</div>
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Andrew Allison</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Jeremy Olds</div>
+      <div class="row justify-content-center text-light">
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Jeremy Olds</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Riley Thomas</div>
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Riley Thomas</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="card mt-4">Brandon Riggs</div>
+        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+          <div class="mt-4">Brandon Riggs</div>
+          <div>
+            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" href=""></a>
+          </div>
         </div>
       </div>
     </div>
@@ -186,16 +205,15 @@ span:nth-child(18) {
 }
 
 
-.card-names {
-  margin-top: 5%;
-}
+
 
 
 .card {
   background-color: rgba(30, 20, 20, 0.879);
-  border: 1px double rgba(0, 255, 191, 0.578);
-  box-shadow: 2px 0px 4px rgb(0, 255, 191, 0.578);
+  border: 1px double rgba(255, 72, 0, 0.578);
+  box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
   border-radius: 16px;
+  color: white;
 
 }
 
@@ -204,8 +222,8 @@ span:nth-child(18) {
   font-size: 25px;
   margin-top: 2.5%;
   border-radius: 16px;
-  box-shadow: 2px 0px 4px rgb(0, 255, 191, 0.578);
-  border: 1px solid rgba(0, 255, 191, 0.578);
+  box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
+  border: 1px solid rgba(255, 72, 0, 0.578);
   margin-left: -1.5%
 }
 
@@ -217,13 +235,10 @@ span:nth-child(18) {
 
 
 .about-page {
-  background-image: url('https://i.redd.it/ifw1keannjw41.jpg');
-  background-color: #5f3f2485;
-  background-size: cover;
-  background-position: center;
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   background-attachment: fixed;
-  min-height: 95vh;
-  // opacity: ;
+
 
 }
 
