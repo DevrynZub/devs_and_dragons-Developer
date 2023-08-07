@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid account-page">
-    <div class="row justify-content-around mt-2">
+    <div class="row justify-content-around">
       <div class="col-3 mb-5">
         <div class="card">
           <img class="card-img-top " :src="account.picture" alt="profile">
@@ -10,53 +10,40 @@
           </div>
         </div>
       </div>
-      <div class="col-6 mb-4 text-white">
-        <p>Edit Account</p>
-        <form action="" @submit.prevent="editAccount()">
-          <div class="mb-2">
-            <label for="name">Name</label>
-            <input class="form-control" type="text" id="name" minlength="3" maxlength="75" v-model="editable.name">
-          </div>
-          <div class="mb-2">
-            <label for="email">Email</label>
-            <input v-model="editable.email" type="text" class="form-control" name="email" id="email">
-          </div>
-          <div class="mb-2">
-            <label for="picture">Picture</label>
-            <input class="form-control" type="url" id="picture" minlength="3" maxlength="200" v-model="editable.picture">
-          </div>
-          <button type="submit">Update</button>
-        </form>
-      </div>
-    </div>
+      <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+        data-bs-target="#editAccount">
+        Update Account
+      </button>
 
-    <div class="row">
-      <p>My Campaigns</p>
-      <div class="col-12 col-md-4" v-for="campaign in myCampaigns" :key="campaign.id">
-        <div class="card mb-3">
-          <CampaignCardComponent :campaignProp="campaign" />
+
+      <div class="row">
+        <p>My Campaigns</p>
+        <div class="col-12 col-md-4" v-for="campaign in myCampaigns" :key="campaign.id">
+          <div class="card mb-3">
+            <CampaignCardComponent :campaignProp="campaign" />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div>
-        <p>My Entities</p>
-        <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-          data-bs-target="#createEntityModal">
-          Create Entity</button>
-      </div>
+      <div class="row">
+        <div>
+          <p>My Entities</p>
+          <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+            data-bs-target="#createEntityModal">
+            Create Entity</button>
+        </div>
 
-      <div class="col-12 col-md-4 pt-3" v-for="entity in myEntities" :key="entity.id">
-        <div class="text-white">
-          <div class="d-flex flex-column box rounded elevation-5 p-2">
-            <div class="elevation-5 mb-3 info-card rounded">
-              <h3>{{ entity.name }}</h3>
-              <p>Type: {{ entity.type }}</p>
-              <p>{{ entity.desc }}</p>
-              <p>{{ entity.body }}</p>
-            </div>
-            <div class="text-center mb-2">
-              <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
+        <div class="col-12 col-md-4 pt-3" v-for="entity in myEntities" :key="entity.id">
+          <div class="text-white">
+            <div class="d-flex flex-column box rounded elevation-5 p-2">
+              <div class="elevation-5 mb-3 info-card rounded">
+                <h3>{{ entity.name }}</h3>
+                <p>Type: {{ entity.type }}</p>
+                <p>{{ entity.desc }}</p>
+                <p>{{ entity.body }}</p>
+              </div>
+              <div class="text-center mb-2">
+                <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
+              </div>
             </div>
           </div>
         </div>
@@ -68,8 +55,6 @@
 <script>
 import { computed, onMounted, ref } from 'vue';
 import { AppState } from '../AppState';
-import Pop from '../utils/Pop.js';
-import { accountService } from '../services/AccountService.js';
 import { campaignsService } from '../services/CampaignsService.js';
 import { entityService } from '../services/EntityService.js';
 import { logger } from '../utils/Logger.js';
@@ -107,8 +92,6 @@ export default {
 
 
 
-
-
     return {
       editable,
       account: computed(() => AppState.account),
@@ -117,15 +100,7 @@ export default {
 
 
 
-      async editAccount() {
-        try {
-          const formData = editable.value
-          await accountService.editAccount(formData)
-          logger.log('[EDITING ACCOUNT]', editable)
-        } catch (error) {
-          Pop.error(error.message)
-        }
-      }
+
 
 
 
