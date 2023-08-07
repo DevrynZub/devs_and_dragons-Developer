@@ -64,8 +64,8 @@ export class CampaignController extends BaseController {
 
   async getAccountLinksByCampaignId(req, res, next) {
     try {
-      const camapignId = req.params.camapignId
-      const accountLinks = await accountCampaignLinkService.getAccountLinksByCampaignId(camapignId)
+      const campaignId = req.params.campaignId
+      const accountLinks = await accountCampaignLinkService.getAccountLinksByCampaignId(campaignId)
       res.send(accountLinks)
     } catch (error) {
       next(error)
