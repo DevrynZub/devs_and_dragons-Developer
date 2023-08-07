@@ -16,6 +16,10 @@
       <label for="desc" class="form-label">Entity Description</label>
       <textarea v-model="editable.desc" class="form-control" aria-label="entityDescription" required></textarea>
     </div>
+    <div class="mb-3">
+      <label for="body" class="form-label">Entity Body</label>
+      <textarea v-model="editable.body" class="form-control" aria-label="entityBody" required></textarea>
+    </div>
     <button type="submit" class="btn btn-primary" title="Submit">Submit</button>
   </form>
 </template>
