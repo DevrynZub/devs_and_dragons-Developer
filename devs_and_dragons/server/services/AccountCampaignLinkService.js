@@ -3,6 +3,10 @@ import { BadRequest, Forbidden } from "../utils/Errors.js"
 import { campaignService } from "./CampaignService.js"
 
 class AccountCampaignLinkService {
+  async getAccountLinksByCampaignId(campaignId) {
+    const accountLinks = await dbContext.AccountCampaignLink.find().populate('Profile', 'name picture')
+    return accountLinks
+  }
   async createAccountLink(linkData) {
     const campaign = await campaignService.getCampaignById(linkData.campaignId)
     if (campaign.isArchived == true) {

@@ -61,8 +61,8 @@
         <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
           <div class="mt-4">Riley Thomas</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
-            <a class="mdi mdi-linkedin fs-2" href=""></a>
+            <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/Rilezzz"></a>
+            <a class="mdi mdi-linkedin fs-2" href="https://www.linkedin.com/in/idahosuperiorcustoms/"></a>
           </div>
         </div>
         <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
@@ -238,6 +238,8 @@ span:nth-child(18) {
   background-color: #000000;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   background-attachment: fixed;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 
 
 }
