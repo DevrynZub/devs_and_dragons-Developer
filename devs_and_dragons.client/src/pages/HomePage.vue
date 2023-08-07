@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid background">
-      <div class="row">
+      <div class="row justify-content-center pt-5 pe-5 p-2">
 
         <div class="text-center py-4">
           <!-- <img class="img-fluid logo-card" src="../assets/img/DnD_Logo2-removebg-preview.png" alt="Title"> -->
@@ -58,10 +58,8 @@
             </button>
           </router-link>
         </div>
-
       </div>
-
-
+      
     </div>
 </template>
 
@@ -80,11 +78,7 @@ export default {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
 }
-
-
-
 
 .home {
   display: grid;
