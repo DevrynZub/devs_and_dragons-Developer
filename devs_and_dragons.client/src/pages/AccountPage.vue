@@ -31,18 +31,41 @@
     </div>
 
     <div class="row">
-      <div class="col-4" v-for="campaign in myCampaigns" :key="campaign.id">
+      <p>My Campaigns</p>
+      <div class="col-12 col-md-4" v-for="campaign in myCampaigns" :key="campaign.id">
         <div class="card mb-3">
           <CampaignCardComponent :campaignProp="campaign" />
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-4" v-for="entity in myEntities" :key="entity.id">
+      <p>My Entities</p>
+      <form @submit.prevent="createEntity">
+        <div class="mb-3">
+          <label for="name" class="form-label">Entity Name</label>
+          <input v-model="editable.name" type="text" class="form-control" id="name" minlength="1" maxlength="35" required>
+        </div>
+        <div class="mb-3">
+          <label for="imgUrl" class="form-label">Entity Image</label>
+          <input v-model="editable.imgUrl" type="url" class="form-control" id="imgUrl" minlength="3" maxlength="250"
+            required>
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Entity Type</label>
+          <input v-model="editable.type" type="text" class="form-control" id="type" min="0" max="1000" required>
+        </div>
+        <div class="mb-3">
+          <label for="desc" class="form-label">Entity Description</label>
+          <textarea v-model="editable.desc" class="form-control" aria-label="entityDescription" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" title="Submit">Submit</button>
+      </form>
+      <div class="col-12 col-md-4" v-for="entity in myEntities" :key="entity.id">
         <div class="card mb-3">
-          <div class="card-header">
-            {{ entity.body }}
-          </div>
+          <p class="card-header">{{ entity.name }}</p>
+          <p>{{ entity.body }}</p>
+          <p>Type: {{ entity.type }}</p>
+          <p>{{ entity.desc }}</p>
         </div>
       </div>
     </div>
@@ -97,7 +120,7 @@ export default {
       editable,
       account: computed(() => AppState.account),
       myCampaigns: computed(() => AppState.myCampaigns),
-      myEntities: computed(() => AppState.entities),
+      myEntities: computed(() => AppState.myEntities),
 
 
 
