@@ -9,16 +9,26 @@
       <input v-model="editable.imgUrl" type="url" class="form-control" id="imgUrl" minlength="3" maxlength="250" required>
     </div>
     <div class="mb-3">
-      <label for="type" class="form-label">Entity Type</label>
-      <input v-model="editable.type" type="text" class="form-control" id="type" min="0" max="1000" required>
+      <label for="type">Type: Select One</label>
+      <select class="form-control">
+        <option>Location</option>
+        <option>Character</option>
+        <option>Quest</option>
+        <option>Magic Item</option>
+        <option>Equipment</option>
+        <option>NPC</option>
+        <option>Monster</option>
+      </select>
     </div>
     <div class="mb-3">
       <label for="desc" class="form-label">Entity Description</label>
-      <textarea v-model="editable.desc" class="form-control" aria-label="entityDescription" required></textarea>
+      <textarea v-model="editable.desc" class="form-control" aria-label="entityDescription" required
+        placeholder="Leave a brief description here"></textarea>
     </div>
     <div class="mb-3">
       <label for="body" class="form-label">Entity Body</label>
-      <textarea v-model="editable.body" class="form-control" aria-label="entityBody" required></textarea>
+      <textarea v-model="editable.body" class="form-control" aria-label="entityBody" required cols="30" rows="10"
+        placeholder="Tell us about your Entity"></textarea>
     </div>
     <button type="submit" class="btn btn-primary" title="Submit">Submit</button>
   </form>

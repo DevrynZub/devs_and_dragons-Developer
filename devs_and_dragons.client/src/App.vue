@@ -27,6 +27,15 @@
 
     </template>
   </ModalComponent>
+
+  <ModalComponent id="editAccount">
+    <template #header>
+      Update Account
+    </template>
+    <template #body>
+      <UpdateAccount />
+    </template>
+  </ModalComponent>
 </template>
 
 <script>
@@ -36,6 +45,7 @@ import Navbar from './components/Navbar.vue'
 import ModalComponent from "./components/ModalComponent.vue"
 import CampaignForm from './components/CampaignForm.vue'
 import EntityCreateForm from './components/EntityCreateForm.vue'
+import UpdateAccount from './components/UpdateAccount.vue'
 
 export default {
   setup() {
@@ -43,7 +53,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount }
 }
 </script>
 <style lang="scss">
