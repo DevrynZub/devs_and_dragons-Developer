@@ -17,6 +17,16 @@
 
     </template>
   </ModalComponent>
+
+  <ModalComponent id="createEntityModal">
+    <template #header>
+
+    </template>
+    <template #body>
+      <EntityCreateForm />
+
+    </template>
+  </ModalComponent>
 </template>
 
 <script>
@@ -25,6 +35,7 @@ import { AppState } from './AppState'
 import Navbar from './components/Navbar.vue'
 import ModalComponent from "./components/ModalComponent.vue"
 import CampaignForm from './components/CampaignForm.vue'
+import EntityCreateForm from './components/CampaignForm.vue'
 
 export default {
   setup() {
@@ -32,7 +43,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm }
 }
 </script>
 <style lang="scss">

@@ -16,6 +16,14 @@ class EntityService {
     logger.log('[GETTING MY ENTITIES]', res.data)
     AppState.myEntities = res.data.map(c => new Entity(c))
   }
+
+  async createEntity(entityData) {
+    const res = await api.post('api/entity', entityData)
+    logger.log('[CREATING ENTITY]', res.data)
+    const entity = new Entity(res.data)
+    AppState.entities.push(entity)
+    return entityData
+  }
 }
 
 export const entityService = new EntityService()
