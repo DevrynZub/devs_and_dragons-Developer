@@ -10,12 +10,12 @@
       </div>
       <!-- STUB  Title and session date-->
       <div class="col-md-8 col-12">
-        <div class="text-white d-flex flex-column align-items-center">
+        <div class="text-white d-flex flex-column align-items-center pt-3">
           <h1>{{ campaign?.name }}</h1>
-          <h1>Session Date: {{ campaign?.nextSessionDate.toDateString() }} {{
+          <h2>Next Session Date: {{ formattedDate }} {{
             campaign?.nextSessionDate.toLocaleTimeString()
           }}
-          </h1>
+          </h2>
         </div>
       </div>
       <!-- STUB Join us/ add character -->
@@ -42,7 +42,7 @@
 
       </div>
       <!-- STUB child routing section -->
-      <div class="col-8">
+      <div class="col-8 bg-black">
         <div>
           <router-view>
 
@@ -123,8 +123,8 @@ export default {
     onMounted(() => {
       getActiveCampaign()
       getAccountCampaignLinks()
-      getNotesByCampaign()
       getEntityLinksByCampaign()
+      getNotesByCampaign()
     })
 
     async function getEntityLinksByCampaign() {
@@ -172,7 +172,10 @@ export default {
       campaign: computed(() => AppState.activeCampaign),
       accountLinks: computed(() => AppState.AccountLinks),
       entityLinks: computed(() => AppState.entityLinks),
-      account: computed(() => AppState.account)
+      account: computed(() => AppState.account),
+      formattedDate: computed(() => {
+        return AppState.activeCampaign.nextSessionDate.toLocaleDateString()
+      }),
     }
   }
 }
