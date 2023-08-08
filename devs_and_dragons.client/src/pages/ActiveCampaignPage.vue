@@ -159,7 +159,8 @@ export default {
       notes: computed(() => AppState.Notes),
       campaign: computed(() => AppState.activeCampaign),
       accountLinks: computed(() => AppState.AccountLinks),
-      entityLinks: computed(() => AppState.entityLinks)
+      entityLinks: computed(() => AppState.entityLinks),
+      account: computed(() => AppState.account)
     }
   }
 }
