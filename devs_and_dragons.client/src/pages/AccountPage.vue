@@ -25,7 +25,8 @@
 
           <div id="carouselExample" class="carousel slide carousel-fade">
             <div class="carousel-inner">
-              <div class="carousel-item active" v-for="campaign in myCampaigns" :key="campaign.id">
+              <div class="carousel-item" :class="{ active: index == 0 }" v-for="campaign, index in myCampaigns"
+                :key="campaign.id">
                 <div class="m-3 p-3">
                   <CampaignCardComponent :campaignProp="campaign" />
                 </div>
@@ -52,7 +53,8 @@
           </div>
           <div id="entityCarousel" class="carousel slide carousel-fade">
             <div class="carousel-inner">
-              <div class="carousel-item active" v-for="entity in myEntities" :key="entity.id">
+              <div class="carousel-item " :class="{ active: index == 0 }" v-for="entity, index in myEntities"
+                :key="entity.id">
                 <div class="text-white">
                   <div class="d-flex flex-column box rounded elevation-5 m-3 p-3">
                     <div class="elevation-5 mb-3 info-card rounded">
