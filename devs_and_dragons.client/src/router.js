@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { authGuard } from '@bcwdev/auth0provider-client'
-import DescriptionComponent from './components/DescriptionComponent.vue'
-import NotesComponent from './components/NotesComponent.vue'
+import DescriptionPage from './pages/DescriptionPage.vue'
+import NotesPage from './pages/NotesPage.vue'
 
 function loadPage(page) {
   return () => import(`./pages/${page}.vue`)
@@ -37,13 +37,13 @@ const routes = [
       {
         path: '',
         name: 'description',
-        component: DescriptionComponent,
+        component: DescriptionPage,
 
       },
       {
-        path: 'notes',
+        path: ':noteId',
         name: 'notes',
-        component: NotesComponent,
+        component: NotesPage,
       }
     ]
   }
