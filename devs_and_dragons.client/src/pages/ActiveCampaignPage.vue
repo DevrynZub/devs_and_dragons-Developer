@@ -52,19 +52,22 @@
       <div class="col-2 bg-dark text-light">
         <!-- NOTE description -->
         <div>
-          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#description">Description</h1>
-          <div id="description" class="collapse">
-            testing the collapse
-          </div>
+
+          <h1 class="selectable">Description</h1>
+
         </div>
+        <!-- NOTE Notes Section -->
         <div>
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note.id">
+
               <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+
             </ul>
           </div>
         </div>
+        <!-- NOTE Recaps section -->
         <div>
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
           <div id="recaps" class="collapse">
@@ -73,6 +76,7 @@
             </ul>
           </div>
         </div>
+        <!-- NOTE Entities Section -->
         <div>
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
           <div id="entities" class="collapse">
