@@ -1,7 +1,10 @@
 <template>
-  <h1 class="text-light">
-    {{ note?.name }}
-  </h1>
+  <div class="row bg-black text-white">
+    <h2 class="text-center">{{ note?.name }}</h2>
+    <div class="m-auto">
+      <p>{{ note?.body }}</p>
+    </div>
+  </div>
 </template>
 
 
