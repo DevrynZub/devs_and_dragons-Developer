@@ -24,8 +24,12 @@
       </div>
     </div>
     <!-- SECTION players -->
-    <div class="row">
-      
+    <div class="row player-info-background">
+      <div class="col-12 d-flex justify-content-around p-3">
+        <div v-for="links in accountLinks" :key="links.id">
+          <img class="player-avatar" :src="links.Profile?.picture" alt="Picture Missing" :title="links.Profile.name">
+        </div>
+      </div>
     </div>
     <!-- SECTION (imgage?), main body, information section -->
     <div class="row">
@@ -77,7 +81,8 @@ export default {
 
     return {
 
-      campaign: computed(() => AppState.activeCampaign)
+      campaign: computed(() => AppState.activeCampaign),
+      accountLinks: computed(()=> AppState.AccountLinks)
     }
   }
 }
@@ -97,5 +102,18 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.player-avatar{
+  height: 10vh;
+  width: 10vh;
+  border-radius: 50%;
+}
+
+.player-info-background{
+  background-image: url(https://www.shutterstock.com/image-photo/flameburning-banner-black-flames-fire-260nw-2123476919.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>
