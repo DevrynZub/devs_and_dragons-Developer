@@ -7,9 +7,22 @@
 
 
 <script>
+import { watchEffect } from "vue";
+import { useRoute } from "vue-router";
+
 export default {
   setup() {
-    return {}
+
+    const route = useRoute()
+
+    watchEffect(() => {
+
+    })
+
+    return {
+
+
+    }
   }
 }
 </script>
