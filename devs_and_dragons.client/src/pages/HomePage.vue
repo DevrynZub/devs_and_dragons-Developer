@@ -123,7 +123,7 @@ export default {
   background-position: center;
   background-attachment: fixed;
   background-image: url(https://cdn.openart.ai/stable_diffusion/17fd347ca1d954d8a33c3e4eb5511402fdf3a1e7_2000x2000.webp);
-  opacity: 60%;
+  opacity: 75%;
   height: 50em;
 }
 
@@ -134,7 +134,7 @@ export default {
   background-attachment: fixed;
   padding-left: 0;
   padding-right: 0;
-  opacity: 65%;
+  opacity: 75%;
   height: 50em;
 }
 
