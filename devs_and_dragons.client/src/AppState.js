@@ -17,10 +17,12 @@ export const AppState = reactive({
   /** @type {import('./models/Entity.js').Entity[]} */
   entities: [],
 
-  /** @type {import('./models/Entity.js').Entity[]} */
-  myEntities: [],
-
+  /** @type {import('./models/EntityCampaignLink.js').EntityCampaignLink[]} */
+  entityLinks: [],
   /** @type {import('./models/AccountLinks.js').AccountLinks[]} */
-  AccountLinks: []
+  AccountLinks: [],
+  /** @type {import('./models/Notes.js').Notes[]} */
+  Notes: [],
+
 
 })

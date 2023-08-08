@@ -6,13 +6,13 @@ import { api } from "./AxiosService.js"
 class AccountCampaignLinkService {
 
   async getAccountCampaignLinks(campaignId) {
-    logger.log(campaignId, 'campaignId in the service')
+    // logger.log(campaignId, 'campaignId in the service')
     const res = await api.get(`api/campaigns/${campaignId}/accountcampaignlinks`)
-    logger.log('account links res data', res.data)
+    // logger.log('account links res data', res.data)
     const accountLinks = res.data.map(a => new AccountCampaignLink(a))
-    logger.log('account links as model', accountLinks)
+    // logger.log('account links as model', accountLinks)
     AppState.AccountLinks = accountLinks
-    logger.log('Appstate account Links', AppState.AccountLinks)
+    // logger.log('Appstate account Links', AppState.AccountLinks)
   }
 }
 

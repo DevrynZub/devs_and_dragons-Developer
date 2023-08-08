@@ -11,7 +11,7 @@ class NotesService {
     return note
   }
   async getNotesByCampaignId(campaignId) {
-    const notes = await dbContext.Notes.find(campaignId)
+    const notes = await dbContext.Notes.find({ campaignId })
     return notes
   }
 
