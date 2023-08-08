@@ -44,7 +44,9 @@
       <!-- STUB child routing section -->
       <div class="col-8">
         <div>
-          <router-view></router-view>
+          <router-view>
+
+          </router-view>
         </div>
 
       </div>
@@ -61,8 +63,9 @@
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note.id">
-
-              <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id } }">
+                <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+              </router-link>
 
             </ul>
           </div>

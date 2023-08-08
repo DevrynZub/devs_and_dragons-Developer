@@ -36,10 +36,13 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'description',
         component: DescriptionComponent,
+
       },
       {
         path: 'notes',
+        name: 'notes',
         component: NotesComponent,
       }
     ]
