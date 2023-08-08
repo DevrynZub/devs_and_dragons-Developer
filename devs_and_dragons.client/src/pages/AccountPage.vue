@@ -19,41 +19,63 @@
 
 
       <div class="row justify-content-center mb-3">
-        <div class="col-10 d-flex card scroll p-3">
+        <div class="col-11 col-md-6 d-flex card p-3">
           <h4 class="text-light">My Campaigns: </h4>
-          <div class="d-flex justify-content-center">
-            <div class="col-12 col-md-4 m-3" v-for="campaign in myCampaigns" :key="campaign.id">
-              <div class="card mb-3">
-                <CampaignCardComponent :campaignProp="campaign" />
+
+
+          <div id="carouselExample" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active" v-for="campaign in myCampaigns" :key="campaign.id">
+                <div class="m-3 p-3">
+                  <CampaignCardComponent :campaignProp="campaign" />
+                </div>
               </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-11 col-md-10 card d-flex scroll ">
-          <h3 class="text-light">My Entities: </h3>
+      <div class="row justify-content-center mb-4">
+        <div class="col-11 col-md-6 card d-flex ">
+          <h3 class="text-light">My Entities: {{ myEntities?.length }}</h3>
           <div>
             <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
               data-bs-target="#createEntityModal">
               Create Entity</button>
           </div>
-          <div class="d-flex justify-content-center">
-            <div class="col-12 col-md-4 pt-3 align-items-center" v-for="entity in myEntities" :key="entity.id">
-              <div class="text-white">
-                <div class="d-flex flex-column box rounded elevation-5 p-2">
-                  <div class="elevation-5 mb-3 info-card rounded">
-                    <h3>{{ entity.name }}</h3>
-                    <p>Type: {{ entity.type }}</p>
-                    <p>{{ entity.desc }}</p>
-                    <p>{{ entity.body }}</p>
-                  </div>
-                  <div class="text-center mb-2">
-                    <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
+          <div id="entityCarousel" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+              <div class="carousel-item active" v-for="entity in myEntities" :key="entity.id">
+                <div class="text-white">
+                  <div class="d-flex flex-column box rounded elevation-5 m-3 p-3">
+                    <div class="elevation-5 mb-3 info-card rounded">
+                      <h3>{{ entity.name }}</h3>
+                      <p>Type: {{ entity.type }}</p>
+                      <p>{{ entity.desc }}</p>
+                      <p>{{ entity.body }}</p>
+                    </div>
+                    <div class="text-center mb-2">
+                      <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#entityCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#entityCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
       </div>

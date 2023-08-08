@@ -11,6 +11,8 @@ export const AppState = reactive({
 
   /** @type {import('./models/Campaign.js').Campaign[]} */
   myCampaigns: [],
+  /** @type {import('./models/Entity.js').Entity[]} */
+  myEntities: [],
   /** @type {import('./models/Campaign.js').Campaign | null} */
   activeCampaign: null,
 
