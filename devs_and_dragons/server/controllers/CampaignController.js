@@ -44,7 +44,7 @@ export class CampaignController extends BaseController {
 
   async getNotesByCampaignId(req, res, next) {
     try {
-      const campaignId = req.params.camapignId
+      const campaignId = req.params.campaignId
       const notes = await notesService.getNotesByCampaignId(campaignId)
       return res.send(notes)
     } catch (error) {

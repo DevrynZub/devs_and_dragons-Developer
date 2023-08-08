@@ -1,5 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { authGuard } from '@bcwdev/auth0provider-client'
+import DescriptionComponent from './components/DescriptionComponent.vue'
+import NotesComponent from './components/NotesComponent.vue'
 
 function loadPage(page) {
   return () => import(`./pages/${page}.vue`)
@@ -30,7 +32,20 @@ const routes = [
   {
     path: '/campaign/:campaignId',
     name: 'ActiveCampaign',
-    component: loadPage('ActiveCampaignPage')
+    component: loadPage('ActiveCampaignPage'),
+    children: [
+      {
+        path: '',
+        name: 'description',
+        component: DescriptionComponent,
+
+      },
+      {
+        path: 'notes',
+        name: 'notes',
+        component: NotesComponent,
+      }
+    ]
   }
 
 

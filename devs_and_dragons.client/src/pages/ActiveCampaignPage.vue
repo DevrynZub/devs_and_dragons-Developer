@@ -3,13 +3,13 @@
     <!-- SECTION links, join us, title, and session date -->
     <div class="row">
       <!-- STUB Discord Link -->
-      <div class="col-2 d-flex align-items-center">
+      <div class="col-md-2 col-12 d-flex align-items-center">
         <img class="discord"
           src="https://logo.com/image-cdn/images/kts928pd/production/5b24e49fd89287ff1eb5bbc4cf93cb038c3384ef-512x512.png?w=1080&q=72"
           alt="">
       </div>
       <!-- STUB  Title and session date-->
-      <div class="col-8">
+      <div class="col-md-8 col-12">
         <div class="text-white d-flex flex-column align-items-center">
           <h1>{{ campaign?.name }}</h1>
           <h1>Session Date: {{ campaign?.nextSessionDate.toDateString() }} {{
@@ -19,39 +19,97 @@
         </div>
       </div>
       <!-- STUB Join us/ add character -->
-      <div class="col-2 d-flex justify-content-center align-items-center">
+      <div class="col-md-2 col-12 d-flex justify-content-center align-items-center">
         <button class="btn btn-outline-danger">Join Us!</button>
       </div>
     </div>
     <!-- SECTION players -->
 
-<!--  REVIEW does the creator of the campaign need a link to interact with the other players? are they given a link when creating a campaign? -->
+    <!--  REVIEW does the creator of the campaign need a link to interact with the other players? are they given a link when creating a campaign? -->
 
-    <div class="row player-info-background">
+    <div class="row">
       <div class="col-12 d-flex justify-content-around p-4">
         <div v-for="links in accountLinks" :key="links.id">
           <img class="player-avatar" :src="links.Profile?.picture" :alt="links.Profile.name" :title="links.Profile.name">
         </div>
       </div>
     </div>
-    
-    <!-- SECTION (imgage?), main body, information section -->
-    <div class="row">
 
+    <!-- SECTION (image?), main body, information section -->
+    <div class="row">
+      <!-- STUB picture/chatbox reservation -->
+      <div class="col-2">
+
+      </div>
+      <!-- STUB child routing section -->
+      <div class="col-8">
+        <div>
+          <router-view>
+
+          </router-view>
+        </div>
+
+      </div>
+      <!-- STUB information collapsibles -->
+      <div class="col-2 bg-dark text-light">
+        <!-- NOTE description -->
+        <div>
+
+          <h1 class="selectable">Description</h1>
+
+        </div>
+        <!-- NOTE Notes Section -->
+        <div>
+          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
+          <div id="notes" class="collapse">
+            <ul v-for="note in notes" :key="note.id">
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id } }">
+                <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+              </router-link>
+
+            </ul>
+          </div>
+        </div>
+        <!-- NOTE Recaps section -->
+        <div>
+          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
+          <div id="recaps" class="collapse">
+            <ul v-for="note in notes" :key="note.id">
+              <li v-if="note.isRecap == true" class="selectable">{{ note.name }}</li>
+            </ul>
+          </div>
+        </div>
+        <!-- NOTE Entities Section -->
+        <div>
+          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
+          <div id="entities" class="collapse">
+            <ul v-for="entity in entityLinks" :key="entity.id">
+              <li
+                v-if="entity.Entity.isPrivate == false || entity.Entity.isPrivate == true && account.id == entity.Entity.creatorId"
+                class="selectable">{{ entity.Entity.name }}</li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
     </div>
   </div>
 </template>
 
 
 <script>
-import { computed, onMounted, ref,} from "vue";
+import { computed, onMounted, ref, } from "vue";
 import { useRoute } from "vue-router";
 import Pop from "../utils/Pop.js";
 import { logger } from "../utils/Logger.js";
 import { campaignsService } from "../services/CampaignsService.js";
 import { AppState } from "../AppState.js";
 import { accountCampaignLinkService } from "../services/AccountCampaignLinkService.js"
-
+import { notesService } from "../services/NotesService.js"
+import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js"
+import { router } from "../router.js";
 export default {
   setup() {
 
@@ -61,7 +119,29 @@ export default {
     onMounted(() => {
       getActiveCampaign()
       getAccountCampaignLinks()
+      getNotesByCampaign()
+      getEntityLinksByCampaign()
     })
+
+    async function getEntityLinksByCampaign() {
+      try {
+        const campaignId = route.params.campaignId
+        await entitiesCampaignLinkService.getEntityLinksByCampaign(campaignId)
+      } catch (error) {
+        Pop.error(error.message)
+        logger.log(error)
+      }
+    }
+
+    async function getNotesByCampaign() {
+      try {
+        const campaignId = route.params.campaignId
+        await notesService.getNotesByCampaign(campaignId)
+      } catch (error) {
+        Pop.error(error.message)
+        logger.log(error)
+      }
+    }
 
     async function getActiveCampaign() {
       try {
@@ -84,9 +164,11 @@ export default {
     }
 
     return {
-
+      notes: computed(() => AppState.Notes),
       campaign: computed(() => AppState.activeCampaign),
-      accountLinks: computed(()=> AppState.AccountLinks)
+      accountLinks: computed(() => AppState.AccountLinks),
+      entityLinks: computed(() => AppState.entityLinks),
+      account: computed(() => AppState.account)
     }
   }
 }
@@ -108,13 +190,13 @@ export default {
   background-attachment: fixed;
 }
 
-.player-avatar{
+.player-avatar {
   height: 10vh;
   width: 10vh;
   border-radius: 50%;
 }
 
-.player-info-background{
+.player-info-background {
   background-image: url(https://www.shutterstock.com/image-photo/flameburning-banner-black-flames-fire-260nw-2123476919.jpg);
   background-position: center;
   background-size: cover;
