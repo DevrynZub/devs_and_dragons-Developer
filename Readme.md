@@ -1,4 +1,4 @@
-Devs and Dragons™️ is a D&D campaign management application designed to streamline players and dungeon masters (DM's) connections and communications across conquests and adventures. Creating and managing campaigns, notes, and recaps have become easier to manage and access to keep the crazy and wild adventures only a few clicks away!
+Devs and Dragons™️ is a D&D campaign management application designed to streamline players and dungeon masters (DM's) connections and communications across conquests and adventures. Creating and managing campaigns, notes, and recaps have become easier to manage and access so the crazy and wild adventures are only a few clicks away!
 
 DM's and players are able to create and share their own unique content with others from around the world!
 
