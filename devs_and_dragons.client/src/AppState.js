@@ -19,6 +19,8 @@ export const AppState = reactive({
 
   /** @type {import('./models/Entity.js').Entity[]} */
   myEntities: [],
+
+  /** @type {import('./models/AccountLinks.js').AccountLinks[]} */
   AccountLinks: []
 
 })

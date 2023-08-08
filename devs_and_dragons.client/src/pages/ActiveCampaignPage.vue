@@ -25,9 +25,9 @@
     </div>
     <!-- SECTION players -->
     <div class="row player-info-background">
-      <div class="col-12 d-flex justify-content-around p-3">
+      <div class="col-12 d-flex justify-content-around p-4">
         <div v-for="links in accountLinks" :key="links.id">
-          <img class="player-avatar" :src="links.Profile?.picture" alt="Picture Missing" :title="links.Profile.name">
+          <img class="player-avatar" :src="links.Profile?.picture" :alt="links.Profile.name" :title="links.Profile.name">
         </div>
       </div>
     </div>
@@ -40,7 +40,7 @@
 
 
 <script>
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import Pop from "../utils/Pop.js";
 import { logger } from "../utils/Logger.js";
@@ -57,8 +57,8 @@ export default {
     onMounted(() => {
       getActiveCampaign()
       getAccountCampaignLinks()
-
     })
+
     async function getActiveCampaign() {
       try {
         const campaignId = route.params.campaignId
@@ -77,7 +77,6 @@ export default {
         logger.log(error)
       }
     }
-
 
     return {
 
@@ -115,5 +114,7 @@ export default {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow:
+    inset 0 0 20px 7px #0cfc8cb6,
 }
 </style>
