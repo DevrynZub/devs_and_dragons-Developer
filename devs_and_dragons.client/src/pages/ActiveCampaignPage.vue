@@ -63,7 +63,7 @@
             <ul v-for="note in notes" :key="note.id">
 
               <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
-
+              
             </ul>
           </div>
         </div>
@@ -106,6 +106,7 @@ import { AppState } from "../AppState.js";
 import { accountCampaignLinkService } from "../services/AccountCampaignLinkService.js"
 import { notesService } from "../services/NotesService.js"
 import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js"
+import { router } from "../router.js";
 export default {
   setup() {
 
