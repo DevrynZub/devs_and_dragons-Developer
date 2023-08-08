@@ -109,6 +109,7 @@ import { AppState } from "../AppState.js";
 import { accountCampaignLinkService } from "../services/AccountCampaignLinkService.js"
 import { notesService } from "../services/NotesService.js"
 import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js"
+import { router } from "../router.js";
 export default {
   setup() {
 
