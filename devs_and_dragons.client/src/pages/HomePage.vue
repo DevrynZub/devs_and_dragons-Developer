@@ -150,9 +150,7 @@ export default {
   top: -13em;
   right: -2em;
   height: 13em;
-  opacity: revert;
 }
-
 .info-card2{
   position: relative;
   top:11em;
@@ -210,5 +208,58 @@ export default {
 p{
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 4px rgb(150, 109, 117);
+}
+
+@media screen and (max-width: 769px){ 
+  .info-card-top{
+    position: relative;
+    top: 1em;
+    left: 17px;
+    height: 18em;
+    width: 90%;
+  }
+
+  .info-card1{
+    position: relative;
+    top: -17em;
+    right: -1em;
+    height: 20em;
+    width: 90%;
+  }
+
+  .info-card2{
+  position: relative;
+  top: -12em;
+  left: 1em;
+  height: 25em;
+  width: 90%;
+}
+
+.info-card3{
+  position: relative;
+  top: -5em;
+  left: 1em;
+  height: 17em;
+  width: 90%;
+}
+
+.info-card4{
+  position: relative;
+  top: -2em;
+  left: 1em;
+  height: 26em;
+  width: 90%;
+}
+
+.start-button {
+  position: relative;
+  top: 1em;
+  left: 2em;
+  margin-bottom: 3em;
+}
+
+.horse-img{
+  height: 62em;
+}
 }
 </style>
