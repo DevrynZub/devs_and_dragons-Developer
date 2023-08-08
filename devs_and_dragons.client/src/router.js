@@ -44,7 +44,8 @@ const routes = [
         path: ':noteId',
         name: 'notes',
         component: NotesPage,
-      }
+      },
+
     ]
   }
 
