@@ -44,7 +44,9 @@
       <!-- STUB child routing section -->
       <div class="col-8">
         <div>
-          <router-view></router-view>
+          <router-view>
+
+          </router-view>
         </div>
 
       </div>
@@ -52,19 +54,23 @@
       <div class="col-2 bg-dark text-light">
         <!-- NOTE description -->
         <div>
-          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#description">Description</h1>
-          <div id="description" class="collapse">
-            testing the collapse
-          </div>
+          <router-link :to="{ name: 'description', }">
+            <h1 class="selectable">Description</h1>
+          </router-link>
         </div>
+        <!-- NOTE Notes Section -->
         <div>
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note.id">
-              <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id }, }">
+                <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+              </router-link>
+
             </ul>
           </div>
         </div>
+        <!-- NOTE Recaps section -->
         <div>
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
           <div id="recaps" class="collapse">
@@ -73,6 +79,7 @@
             </ul>
           </div>
         </div>
+        <!-- NOTE Entities Section -->
         <div>
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
           <div id="entities" class="collapse">
@@ -102,6 +109,7 @@ import { AppState } from "../AppState.js";
 import { accountCampaignLinkService } from "../services/AccountCampaignLinkService.js"
 import { notesService } from "../services/NotesService.js"
 import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js"
+import { router } from "../router.js";
 export default {
   setup() {
 

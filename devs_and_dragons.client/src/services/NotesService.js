@@ -13,6 +13,12 @@ class NotesService {
     AppState.Notes = notes
     // logger.log('appstate notes', AppState.Notes)
   }
+  async getActiveNote(noteId) {
+    const res = await api.get(`api/notes/${noteId}`)
+    logger.log('res data of active note', res.data)
+    const activeNote = new Note(res.data)
+    AppState.activeNote = activeNote
+  }
 }
 
 

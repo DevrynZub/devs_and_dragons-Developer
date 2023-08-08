@@ -1,16 +1,52 @@
-Devs and dragons is a D&D campaign management application designed to steamline players and dungeon masters connections and communications across conquests and adventures.
+Devs and Dragons™️ is a D&D campaign management application designed to streamline players and dungeon masters (DM's) connections and communications across conquests and adventures. Creating and managing campaigns, notes, and recaps have become easier to manage and access to keep the crazy and wild adventures only a few clicks away!
 
-allowing creators to create and share their own snippets of content to the world beyond
+DM's and players are able to create and share their own unique content with others from around the world!
 
 ### Features
-- create and manage campaigns
-  create and manage campaigns with player counts, events, npcs, locations, and more.
-- recaps
-  allowing your DM to create recaps for your players to access in memory of previous play sessions
-- notes
-  creating group notes to share with your fellow players in a campaign
-- entities
-  Create and share entities with the wider audience
-  importing entities into your campaign for personal use
+- Create and manage campaigns:
+Create your own campaigns to go on wild and crazy adventures with friends or foes or manage the many intricacies of any campaign!
 
-- relationships
+- Recaps:
+DM's (Dungeon Master's) are able to write a recap for any of your campaigns so the next time your friends sit down to play you can instantly remember whats going on and continue your journey!
+
+
+- Notes:
+Players are able to create notes for themselves and others involved in the campaign to help keep track of any events or items that have been gathered or lost along the way.
+
+- Entities:
+When creating a campaign you are able to make your own unique entities or bring in other entities from different campaigns to increase and change the variety of your campaigns!
+
+- API Endpoints:
+
+- Campaigns:
+  'api/campaigns'
+
+- Campaigns by ID:
+  'api/campaigns/{{campaignId}}'
+
+- Notes:
+  'api/notes'
+
+- Notes by Campaign ID:
+  'api/campaigns/{{campaignId}}/notes'
+
+- Entities:
+  'api/entities'
+
+- Entities with Campaign link:
+  'api/entitycampaignlinks'
+
+- Getting links by Campaign ID:
+  'api/campaigns/{{campaignId}}/entitycampaignlinks'
+
+- Account to Campaign links:
+  'api/accountcampaignlinks'
+
+- Getting Campaigns by Account-Link:
+  'account/accountcampaignlinks'
+
+- Get account by Campaign ID:
+  '{{campaignId}}/accountcampaignlinks'
+
+Devs and Dragons UML Link:
+  https://www.figma.com/file/Q2QUP9UdENjAe6f4frWzAw/Untitled?type=whiteboard&node-id=0-1&t=AaxlwMI3Nd7G3RoO-0

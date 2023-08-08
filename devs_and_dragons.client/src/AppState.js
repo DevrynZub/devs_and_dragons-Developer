@@ -25,6 +25,8 @@ export const AppState = reactive({
   AccountLinks: [],
   /** @type {import('./models/Notes.js').Notes[]} */
   Notes: [],
+  /** @type {import('./models/Notes.js').Notes | null} */
+  activeNote: null,
 
 
 })

@@ -8,11 +8,11 @@ class EntitiesCampaignLinkService {
 
   async getEntityLinksByCampaign(campaignId) {
     const res = await api.get(`api/campaigns/${campaignId}/entitycampaignlinks`)
-    logger.log('res data from entity links', res.data);
+    // logger.log('res data from entity links', res.data);
     const entityLinks = res.data.map(e => new EntityCampaignLink(e))
-    logger.log('entity Links as class', entityLinks)
+    // logger.log('entity Links as class', entityLinks)
     AppState.entityLinks = entityLinks
-    logger.log('appstate entity links', AppState.entityLinks)
+    // logger.log('appstate entity links', AppState.entityLinks)
   }
 }
 
