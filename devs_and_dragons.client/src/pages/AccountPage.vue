@@ -19,7 +19,7 @@
 
 
       <div class="row justify-content-center mb-3">
-        <div class="col-10 d-flex card scroll">
+        <div class="col-10 d-flex card scroll p-3">
           <h4 class="text-light">My Campaigns: </h4>
           <div class="d-flex justify-content-center">
             <div class="col-12 col-md-4 m-3" v-for="campaign in myCampaigns" :key="campaign.id">
