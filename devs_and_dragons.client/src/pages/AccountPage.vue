@@ -2,47 +2,56 @@
   <div class="container-fluid account-page">
     <div class="row justify-content-around">
       <div class="col-3 mb-5">
-        <div class="card">
+        <div class="card m-2">
           <img class="card-img-top " :src="account.picture" alt="profile">
           <div class="card-body text-white">
             <p class="card-text">{{ account.name }}</p>
             <p class="card-text">{{ account.email }}</p>
           </div>
         </div>
+        <div>
+          <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+            data-bs-target="#editAccount">
+            Update Account
+          </button>
+        </div>
       </div>
-      <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-        data-bs-target="#editAccount">
-        Update Account
-      </button>
 
 
-      <div class="row">
-        <p>My Campaigns</p>
-        <div class="col-12 col-md-4" v-for="campaign in myCampaigns" :key="campaign.id">
-          <div class="card mb-3">
-            <CampaignCardComponent :campaignProp="campaign" />
+      <div class="row justify-content-center mb-3">
+        <div class="col-10 d-flex card">
+          <h4 class="text-light">My Campaigns: </h4>
+          <div class="d-flex justify-content-center">
+            <div class="col-12 col-md-4 m-3" v-for="campaign in myCampaigns" :key="campaign.id">
+              <div class="card mb-3">
+                <CampaignCardComponent :campaignProp="campaign" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div>
-          <p>My Entities</p>
-          <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-            data-bs-target="#createEntityModal">
-            Create Entity</button>
-        </div>
-
-        <div class="col-12 col-md-4 pt-3" v-for="entity in myEntities" :key="entity.id">
-          <div class="text-white">
-            <div class="d-flex flex-column box rounded elevation-5 p-2">
-              <div class="elevation-5 mb-3 info-card rounded">
-                <h3>{{ entity.name }}</h3>
-                <p>Type: {{ entity.type }}</p>
-                <p>{{ entity.desc }}</p>
-                <p>{{ entity.body }}</p>
-              </div>
-              <div class="text-center mb-2">
-                <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
+      <div class="row justify-content-center">
+        <div class="col-11 col-md-10 card d-flex ">
+          <h3 class="text-light">My Entities: </h3>
+          <div>
+            <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+              data-bs-target="#createEntityModal">
+              Create Entity</button>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="col-12 col-md-4 pt-3 align-items-center" v-for="entity in myEntities" :key="entity.id">
+              <div class="text-white">
+                <div class="d-flex flex-column box rounded elevation-5 p-2">
+                  <div class="elevation-5 mb-3 info-card rounded">
+                    <h3>{{ entity.name }}</h3>
+                    <p>Type: {{ entity.type }}</p>
+                    <p>{{ entity.desc }}</p>
+                    <p>{{ entity.body }}</p>
+                  </div>
+                  <div class="text-center mb-2">
+                    <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -146,7 +155,7 @@ img {
 }
 
 .card {
-  background-color: rgba(30, 20, 20, 0.644);
+  background-color: rgba(19, 13, 13, 0.765);
   border: 1px double rgba(255, 0, 0, 0.395);
 
 }
