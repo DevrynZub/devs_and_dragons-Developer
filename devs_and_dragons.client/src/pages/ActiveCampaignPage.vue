@@ -24,6 +24,9 @@
       </div>
     </div>
     <!-- SECTION players -->
+
+<!--  REVIEW does the creator of the campaign need a link to interact with the other players? are they given a link when creating a campaign? -->
+
     <div class="row player-info-background">
       <div class="col-12 d-flex justify-content-around p-4">
         <div v-for="links in accountLinks" :key="links.id">
@@ -31,6 +34,7 @@
         </div>
       </div>
     </div>
+    
     <!-- SECTION (imgage?), main body, information section -->
     <div class="row">
 
@@ -40,7 +44,7 @@
 
 
 <script>
-import { computed, onMounted, ref, watchEffect } from "vue";
+import { computed, onMounted, ref,} from "vue";
 import { useRoute } from "vue-router";
 import Pop from "../utils/Pop.js";
 import { logger } from "../utils/Logger.js";
