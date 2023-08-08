@@ -75,6 +75,7 @@ export default {
     async function getAccountCampaignLinks() {
       try {
         const campaignId = route.params.campaignId
+        logger.log('here is the campaign id on page', campaignId)
         await accountCampaignLinkService.getAccountCampaignLinks(campaignId)
       } catch (error) {
         Pop.error(error.message)
