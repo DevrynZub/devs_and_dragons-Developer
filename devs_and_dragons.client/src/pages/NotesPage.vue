@@ -1,7 +1,8 @@
 <template>
-  <div class="row bg-black text-white">
-    <h2 class="text-center">{{ note?.name }}</h2>
-    <div class="m-auto">
+  <div class="row bg-black text-white text-center">
+    <h2 class="py-3">{{ note?.name }}</h2>
+    <p>{{ formattedDate }}</p>
+    <div class="col-10 m-auto text-center">
       <p>{{ note?.body }}</p>
     </div>
   </div>
@@ -43,7 +44,11 @@ export default {
 
     return {
 
-      note: computed(() => AppState.activeNote)
+      note: computed(() => AppState.activeNote),
+
+      formattedDate: computed (() => {
+        return AppState.activeNote?.createdAt.toLocaleTimeString()
+      }),
 
 
     }
