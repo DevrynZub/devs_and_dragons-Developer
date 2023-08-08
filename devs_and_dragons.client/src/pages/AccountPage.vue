@@ -19,7 +19,7 @@
 
 
       <div class="row justify-content-center mb-3">
-        <div class="col-10 d-flex card">
+        <div class="col-10 d-flex card scroll">
           <h4 class="text-light">My Campaigns: </h4>
           <div class="d-flex justify-content-center">
             <div class="col-12 col-md-4 m-3" v-for="campaign in myCampaigns" :key="campaign.id">
@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-11 col-md-10 card d-flex ">
+        <div class="col-11 col-md-10 card d-flex scroll ">
           <h3 class="text-light">My Entities: </h3>
           <div>
             <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
@@ -121,6 +121,10 @@ export default {
 <style scoped>
 img {
   max-width: 100px;
+}
+
+.scroll {
+  overflow-x: scroll;
 }
 
 .account-page {
