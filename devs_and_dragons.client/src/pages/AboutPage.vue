@@ -9,15 +9,15 @@
         <div>
           <p>Languages and Tools
             used on this project:</p>
-          <p>•JavaScript</p>
-          <p>•HTML</p>
-          <p>•CSS</p>
-          <p>•Vue</p>
-          <p>•Git</p>
-          <p>•MongoDB</p>
-          <p>•node.js</p>
-          <p>•Bootstrap</p>
-          <p>•Auth0</p>
+          <p>• JavaScript</p>
+          <p>• HTML</p>
+          <p>• CSS</p>
+          <p>• Vue</p>
+          <p>• Git</p>
+          <p>• MongoDB</p>
+          <p>• node.js</p>
+          <p>• Bootstrap</p>
+          <p>• Auth0</p>
         </div>
       </div>
     </div>
