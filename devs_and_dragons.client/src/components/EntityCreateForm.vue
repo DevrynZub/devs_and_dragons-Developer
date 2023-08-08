@@ -10,14 +10,8 @@
     </div>
     <div class="mb-3">
       <label for="type">Type: Select One</label>
-      <select class="form-control">
-        <option>Location</option>
-        <option>Character</option>
-        <option>Quest</option>
-        <option>Magic Item</option>
-        <option>Equipment</option>
-        <option>NPC</option>
-        <option>Monster</option>
+      <select class="form-control" v-model="editable.type">
+        <option class="text-capitalize" v-for="t in types" :key="t" :value="t">{{ t }}</option>
       </select>
     </div>
     <div class="mb-3">
@@ -51,7 +45,7 @@ export default {
 
     return {
       editable,
-
+      types: ['character', 'location', 'quest', 'magic item', 'equipment', 'npc', 'monster'],
       async createEntity() {
         try {
           if (!AppState.account.id) {

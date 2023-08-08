@@ -1,7 +1,7 @@
 import { Schema } from "mongoose";
 
 export const EntitySchema = new Schema({
-  type: { type: String, enum: ['character', 'location', 'quest', 'magic item', 'equipment', 'npc', 'monster'], required: true },
+  type: { type: String, enum: ['character', 'location', 'quest', 'magic item', 'equipment', 'npc', 'monster'], lowercase: true, required: true },
   tags: [{ type: String, maxlength: 20, }],
   desc: { type: String, required: true, maxlength: 500 },
   connections: { type: String, maxlength: 100 },
