@@ -41,13 +41,15 @@
               A world is only as interesting as the objects that exist within it. To aid in populating your journey, Devs and Dragons allows you to create and save ENTITIES. Create, detail, save, and reference any object you envision within your world. Make them public and share them with the party or quickly reference the custom objects that stand in their path as the DM during a session. View and track the entities you have designed or browse all of the communities creations while searching for inspiration on your next great adventure.
           </p>
         </div>
+        <div>
 
-        <router-link :to="{ name: 'Campaign' }">
-            <button class=" btn btn-rounded start-button" title="To Campaign Page">
-              <img class="rounded start-button elevation-5"
-                src="https://tse3.mm.bing.net/th?id=OIP.XK5GfaI4mfcNUIQh-yngSQHaDL&pid=Api&P=0&h=220">
-            </button>
-          </router-link>
+          <router-link :to="{ name: 'Campaign' }">
+              
+                <img class="rounded start-button elevation-5" title="To Campaign Page"
+                  src="https://tse3.mm.bing.net/th?id=OIP.XK5GfaI4mfcNUIQh-yngSQHaDL&pid=Api&P=0&h=220">
+              
+            </router-link>
+        </div>
 
       </div>
 
@@ -177,9 +179,10 @@ export default {
 
 .start-button{
     position: relative;
-  top: 5em;
-  left: 19em;
-    opacity: 100%;
+  top: 8em;
+  left: 39em;
+  height: 10vh;
+  width: 30vh;
 }
 
 .home {
@@ -187,11 +190,6 @@ export default {
   place-content: center;
   text-align: center;
   user-select: none;
-}
-
-.start-button {
-  height: 10vh;
-  width: 30vh;
 }
 
 .home-card {
@@ -254,8 +252,7 @@ p{
 .start-button {
   position: relative;
   top: 1em;
-  left: 2em;
-  margin-bottom: 3em;
+  left: 5em;
 }
 
 .horse-img{
