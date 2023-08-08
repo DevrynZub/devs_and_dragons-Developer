@@ -69,7 +69,7 @@ export default {
 .edit-button{
   position: relative;
   top: -2em;
-  right: -10em;
+  right: -14em;
   color: rgb(209, 209, 6)
   ;
 }
