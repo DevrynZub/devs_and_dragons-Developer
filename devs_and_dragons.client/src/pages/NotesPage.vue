@@ -23,7 +23,9 @@ export default {
     })
 
     watchEffect(() => {
-      getActiveNote()
+      if (route.params.noteId) {
+        getActiveNote()
+      }
     })
 
     async function getActiveNote() {

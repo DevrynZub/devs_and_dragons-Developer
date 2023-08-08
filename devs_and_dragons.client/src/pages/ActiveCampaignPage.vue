@@ -54,9 +54,9 @@
       <div class="col-2 bg-dark text-light">
         <!-- NOTE description -->
         <div>
-
-          <h1 class="selectable">Description</h1>
-
+          <router-link :to="{ name: 'description', }">
+            <h1 class="selectable">Description</h1>
+          </router-link>
         </div>
         <!-- NOTE Notes Section -->
         <div>
