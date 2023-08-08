@@ -1,6 +1,6 @@
 <template>
   <div class="text-light">
-    <p>{{ campaign.desc }}</p>
+    <p>{{ campaign?.desc }}</p>
   </div>
 </template>
 

@@ -86,9 +86,11 @@
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
           <div id="entities" class="collapse">
             <ul v-for="entity in entityLinks" :key="entity.id">
-              <li
-                v-if="entity.Entity.isPrivate == false || entity.Entity.isPrivate == true && account.id == entity.Entity.creatorId"
-                class="selectable">{{ entity.Entity.name }}</li>
+              <router-link :to="{ name: 'entities', params: { campaignId: campaign.id, entityId: entity.Entity.id } }">
+                <li
+                  v-if="entity.Entity.isPrivate == false || entity.Entity.isPrivate == true && account.id == entity.Entity.creatorId"
+                  class="selectable">{{ entity.Entity.name }}</li>
+              </router-link>
             </ul>
           </div>
         </div>
