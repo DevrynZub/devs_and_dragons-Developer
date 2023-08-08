@@ -54,7 +54,7 @@
       <div class="col-2 bg-dark text-light">
         <!-- NOTE description -->
         <div>
-          <router-link :to="{ name: 'description', }">
+          <router-link :to="{ name: 'description' }">
             <h1 class="selectable">Description</h1>
           </router-link>
         </div>
@@ -63,7 +63,7 @@
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note.id">
-              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id }, }">
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
                 <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
               </router-link>
 
@@ -75,7 +75,9 @@
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
           <div id="recaps" class="collapse">
             <ul v-for="note in notes" :key="note.id">
-              <li v-if="note.isRecap == true" class="selectable">{{ note.name }}</li>
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
+                <li v-if="note.isRecap == true" class="selectable">{{ note.name }}</li>
+              </router-link>
             </ul>
           </div>
         </div>
