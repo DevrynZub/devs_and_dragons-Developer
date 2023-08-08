@@ -1,6 +1,6 @@
 <template>
   <div class="text-light">
-    This is the description component
+    <p>{{ campaign.desc }}</p>
   </div>
 </template>
 
