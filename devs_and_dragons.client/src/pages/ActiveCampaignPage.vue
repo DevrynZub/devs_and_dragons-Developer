@@ -63,7 +63,7 @@
           <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note.id">
-              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id } }">
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id }, }">
                 <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
               </router-link>
 
