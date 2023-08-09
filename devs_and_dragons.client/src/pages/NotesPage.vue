@@ -4,6 +4,7 @@
       <h2 class="py-3">{{ note?.name }}</h2>
       <i v-if="note?.isRecap == false && note?.accountId == account.id" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" data-bs-toggle="modal"
               data-bs-target="#editNote" ></i>
+      <i v-if="note?.isRecap == false && note?.accountId == account.id" class="mdi mdi-delete selectable fs-2 delete-button" title="Delete Note" @click="removeNote()"></i>
     </div>
     <p>{{ formattedDate }}</p>
     <div class="col-10 m-auto text-center">
@@ -57,6 +58,19 @@ export default {
         return AppState.activeNote?.createdAt.toLocaleDateString()
       }),
 
+      async removeNote() {
+        try {
+          if (!Pop.confirm('Are you sure you want to delete this note?')) {
+            return
+          }
+          const noteId = route.params.noteId
+          await notesService.removeNote(noteId)
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error.message)
+        }
+      }
+
     }
   }
 }
@@ -68,8 +82,15 @@ export default {
 .edit-button{
   position: relative;
   top: -2em;
-  right: -14em;
+  right: -13em;
   color: rgb(209, 209, 6)
+  ;
+}
+.delete-button{
+  position: relative;
+  top: -2em;
+  right: -14em;
+  color: rgb(252, 21, 21)
   ;
 }
 </style>

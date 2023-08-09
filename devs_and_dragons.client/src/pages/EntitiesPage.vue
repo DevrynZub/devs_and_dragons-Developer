@@ -1,6 +1,6 @@
 <template>
   <div class="text-light">
-    this is the entities Page
+    Type of Entity: {{ entityLink?.Entity.type }}
 
 
   </div>
@@ -8,27 +8,18 @@
 
 
 <script>
-import { onMounted, watchEffect } from "vue";
+import { computed, onMounted, watchEffect } from "vue";
 import { useRoute } from "vue-router";
 import Pop from "../utils/Pop.js";
 import { entityService } from "../services/EntityService.js";
 import { logger } from "../utils/Logger.js";
 import { Entity } from "../models/Entity.js";
+import { AppState } from "../AppState.js";
+import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js";
 
 export default {
   setup() {
     const route = useRoute()
-    async function getEntityLinkById() {
-
-      try {
-        const entityLinkId = route.params.entityId
-        await entityService.getEntity(entityLinkId);
-        logger.log('entity data')
-      }
-      catch (error) {
-        Pop.error(error.message)
-      }
-    }
 
 
     // const route = useRoute()
@@ -36,9 +27,20 @@ export default {
     onMounted(() => {
       getEntityLinkById()
     })
+    async function getEntityLinkById() {
+
+      try {
+        const entityLinkId = route.params.entityId
+        await entitiesCampaignLinkService.getEntityLinkById(entityLinkId);
+        // logger.log('entity data')
+      }
+      catch (error) {
+        Pop.error(error.message)
+      }
+    }
 
     return {
-
+      entityLink: computed(() => AppState.ActiveEntityLink)
 
     }
   }
