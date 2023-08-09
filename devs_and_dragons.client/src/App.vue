@@ -36,7 +36,19 @@
       <UpdateAccount />
     </template>
   </ModalComponent>
+
+
+  <ModalComponent id="createNote">
+    <template #header>
+      Create a Note
+    </template>
+    <template #body>
+      
+
+    </template>
+  </ModalComponent>
 </template>
+
 
 <script>
 import { computed } from 'vue'
