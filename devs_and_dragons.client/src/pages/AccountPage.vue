@@ -26,7 +26,7 @@
             <div class="carousel-inner">
               <div class="carousel-item d-flex justify-content-center" :class="{ active: index == 0 }"
                 v-for="campaign, index in myCampaigns" :key="campaign.id">
-                <div class="col-10 col-md-6 p-3">
+                <div class="col-9 col-md-7 p-3">
                   <CampaignCardComponent :campaignProp="campaign" />
                 </div>
               </div>
@@ -44,7 +44,7 @@
       </div>
       <div class="row justify-content-center mb-4">
         <div class="col-11 col-md-6 card d-flex p-3 ">
-          <div class="d-flex justify-content-around">
+          <div class="d-flex justify-content-between">
             <h3 class="text-light">My Entities: {{ myEntities?.length }}</h3>
             <div>
               <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
