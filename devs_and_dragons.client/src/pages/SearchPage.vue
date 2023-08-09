@@ -35,9 +35,11 @@
 
       </div>
       <div class="d-flex justify-content-center pt-2">
-        <label class="" for="dnd-api">Search:</label>
-        <input v-model="filterBy" type="search" id="dnd-api" class="rounded">
-        <button type="submit" class="btn btn-primary"><i class="mdi mdi-magnify"></i></button>
+        <form @submit.prevent="">
+          <label class="" for="dnd-api">Search:</label>
+          <input v-model="filterBy.name" type="search" id="dnd-api" class="rounded">
+          <button type="submit" class="btn btn-primary"><i class="mdi mdi-magnify"></i></button>
+        </form>
       </div>
     </div>
   </div>
@@ -50,7 +52,7 @@ import { ref } from "vue";
 export default {
   setup() {
 
-    const filterBy = ref('')
+    const filterBy = ref({})
     let selectedCategory = null
 
 
