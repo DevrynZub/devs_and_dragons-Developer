@@ -42,12 +42,12 @@ const routes = [
 
       },
       {
-        path: ':noteId',
+        path: 'notes/:noteId',
         name: 'notes',
         component: NotesPage,
       },
       {
-        path: ':entityId',
+        path: 'entity/:entityId',
         name: 'entities',
         component: EntitiesPage,
       }
