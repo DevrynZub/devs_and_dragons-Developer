@@ -27,11 +27,11 @@ class NotesService {
     AppState.Notes.push(newNote)
   }
 
-  // async editNote(formData) {
-  //   const res = await api.put(`api/notes/`, formData)
-  //   let updatedNote = new Note(res.data)
-  //   AppState.activeNote = updatedNote
-  // }
+  async editNote(formData, noteId) {
+    const res = await api.put(`api/notes/${noteId}`, formData)
+    let updatedNote = new Note(res.data)
+    AppState.activeNote = updatedNote
+  }
 }
 
 
