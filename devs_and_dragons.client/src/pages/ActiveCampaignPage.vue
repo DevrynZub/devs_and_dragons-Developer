@@ -65,7 +65,7 @@
           </div>
 
           <div id="notes" class="collapse">
-            <ul v-for="note in notes" :key="note.id">
+            <ul v-for="note in notes" :key="note?.id">
               <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
                 <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
               </router-link>

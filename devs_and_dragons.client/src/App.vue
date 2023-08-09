@@ -46,6 +46,15 @@
       <CreateNoteForm />
     </template>
   </ModalComponent>
+
+  <ModalComponent id="editNote">
+    <template #header>
+      Edit Your Note
+    </template>
+    <template #body>
+      <EditNoteForm />
+    </template>
+  </ModalComponent>
 </template>
 
 
@@ -58,6 +67,7 @@ import CampaignForm from './components/CampaignForm.vue'
 import EntityCreateForm from './components/EntityCreateForm.vue'
 import UpdateAccount from './components/UpdateAccount.vue'
 import CreateNoteForm from "./components/CreateNoteForm.vue"
+import EditNoteForm from "./components/EditNoteForm.vue"
 
 export default {
   setup() {
@@ -65,7 +75,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm }
 }
 </script>
 <style lang="scss">

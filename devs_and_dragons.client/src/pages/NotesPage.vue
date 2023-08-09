@@ -2,7 +2,8 @@
   <div class="row text-white text-center">
     <div>
       <h2 class="py-3">{{ note?.name }}</h2>
-      <i v-if="note?.isRecap == false" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" @click="editNote()" ></i>
+      <i v-if="note?.isRecap == false && note?.creatorId == account.id" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" data-bs-toggle="modal"
+              data-bs-target="#editNote" ></i>
     </div>
     <p>{{ formattedDate }}</p>
     <div class="col-10 m-auto text-center">
@@ -50,22 +51,11 @@ export default {
       editable,
 
       note: computed(() => AppState.activeNote),
+      account: computed(()=> AppState.account),
 
       formattedDate: computed (() => {
         return AppState.activeNote?.createdAt.toLocaleDateString()
       }),
-
-      async editNote() {
-        try {
-          const formData = editable.value
-          await notesService.editNote(formData)
-          logger.log('sending to service')
-        } catch (error) {
-          Pop.error(error.message)
-          logger.log(error.message)
-        }
-      }
-
 
     }
   }

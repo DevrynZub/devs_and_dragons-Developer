@@ -2,6 +2,7 @@
   <div class="text-light">
     this is the entities Page
 
+
   </div>
 </template>
 
@@ -16,10 +17,12 @@ import { Entity } from "../models/Entity.js";
 
 export default {
   setup() {
-    async function getEntity() {
+    const route = useRoute()
+    async function getEntityLinkById() {
 
       try {
-        await entityService.getEntity();
+        const entityLinkId = route.params.entityId
+        await entityService.getEntity(entityLinkId);
         logger.log('entity data')
       }
       catch (error) {
@@ -28,10 +31,10 @@ export default {
     }
 
 
-    const route = useRoute()
+    // const route = useRoute()
 
     onMounted(() => {
-      getEntity()
+      getEntityLinkById()
     })
 
     return {
