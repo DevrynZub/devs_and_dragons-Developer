@@ -1,75 +1,103 @@
 <template>
-  <p>This is my test chat</p>
-  <ul id="messages"></ul>
-  <form id="form" action="">
-    <input id="input" autocomplete="off" /><button>Send</button>
-  </form>
+  <div class="chat-container">
+    <div class="chat-messages">
+      <div v-for="(message, index) in messages" :key="index" class="message">
+        {{ message.content }}
+      </div>
+    </div>
+    <div class="chat-input">
+      <input v-model="messageInput" @keyup.enter="sendMessage" placeholder="Type your message">
+      <button @click="sendMessage">Send</button>
+    </div>
+  </div>
 </template>
 
 
 <script>
+import io from 'socket.io-client';
+
 export default {
-  setup() {
-    return {}
-  }
-}
+  data() {
+    return {
+      messages: [],
+      messageInput: '',
+    };
+  },
+  created() {
+
+    this.socket = io();
+
+    this.socket.on('chatMessage', (message) => {
+      this.messages.push(message);
+    });
+  },
+  methods: {
+    sendMessage() {
+      if (this.messageInput.trim() !== '') {
+        this.socket.emit('chatMessage', {
+          content: this.messageInput,
+        });
+        this.messageInput = '';
+      }
+    },
+  },
+  beforeUnmount() {
+
+    if (this.socket) {
+      this.socket.disconnect();
+    }
+  },
+};
 </script>
 
 
 <style lang="scss" scoped>
-body {
-  margin: 0;
-  padding-bottom: 3rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-#form {
-  background: rgba(0, 0, 0, 0.15);
-  padding: 0.25rem;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.chat-container {
   display: flex;
-  height: 3rem;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
   box-sizing: border-box;
-  backdrop-filter: blur(10px);
 }
 
-#input {
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.message {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  background-color: #007bff;
+  color: white;
   border: none;
-  padding: 0 1rem;
-  flex-grow: 1;
-  border-radius: 2rem;
-  margin: 0.25rem;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
 }
 
-#input:focus {
-  outline: none;
-}
-
-#form>button {
-  background: #333;
-  border: none;
-  padding: 0 1rem;
-  margin: 0.25rem;
-  border-radius: 3px;
-  outline: none;
-  color: #fff;
-}
-
-#messages {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-#messages>li {
-  padding: 0.5rem 1rem;
-}
-
-#messages>li:nth-child(odd) {
-  background: #efefef;
+.chat-input button:hover {
+  background-color: #0056b3;
 }
 </style>
 

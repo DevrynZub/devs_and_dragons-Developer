@@ -43,14 +43,22 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div v-for="item in searchResults" :key="item.name" class="col-4">
+      <h3 class="text-white selectable">
+        {{ item.name }}
+      </h3>
+    </div>
+  </div>
 </template>
 
 
 <script>
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { logger } from "../utils/Logger.js";
 import Pop from "../utils/Pop.js";
 import { dndApiService } from "../services/DnDApiService.js"
+import { AppState } from "../AppState.js";
 
 export default {
   setup() {
@@ -64,6 +72,7 @@ export default {
 
 
     return {
+      searchResults: computed(() => AppState.dndApiResults),
       filterBy,
       selectedCategory,
       setCategory(category) {
