@@ -7,7 +7,7 @@
           <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
           <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
           <p>{{ campaignProp.desc }}</p>
-          <p>Player Capacity: {{ campaignProp.capacity }}</p>
+          <p>Player Capacity: {{ partySpotsLeft }} / {{ campaignProp?.capacity }}</p>
         </div>
         <div class="text-center mb-2">
           <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
@@ -19,7 +19,9 @@
 
 
 <script>
+import { computed } from "vue";
 import { Campaign } from "../models/Campaign.js";
+import { AppState } from "../AppState.js";
 
 export default {
   props: {
@@ -28,7 +30,11 @@ export default {
 
   setup() {
 
-    return {}
+    return {
+            partySpotsLeft: computed(() => {
+            return AppState.campaigns.capacity - AppState.AccountLinks
+        }),
+    }
   }
 }
 </script>

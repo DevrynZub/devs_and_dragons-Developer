@@ -56,6 +56,7 @@ export default {
         return {
             account: computed(() => AppState.account),
             filterBy,
+
             campaigns: computed(() => {
                 if (filterBy.value == "") {
                     return AppState.campaigns;
