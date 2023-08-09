@@ -3,14 +3,14 @@
     <form action="" @submit.prevent="createNote()">
       <div class="mb-2">
         <label for="name">Name</label>
-        <input class="form-control" type="text" id="name" minlength="3" maxlength="75" v-model="editable.name">
+        <input class="form-control" type="text" id="name" minlength="3" maxlength="75">
       </div>
       <div class="mb-2">
         <label for="body">Body</label>
         <textarea name="body" id="body" cols="30" rows="10"></textarea>
       </div>
       <div class="mb-2">
-        
+
       </div>
       <button type="submit">Update</button>
     </form>
@@ -20,13 +20,11 @@
 
 <script>
 export default {
-  setup(){
+  setup() {
     return {}
   }
 }
 </script>
 
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
