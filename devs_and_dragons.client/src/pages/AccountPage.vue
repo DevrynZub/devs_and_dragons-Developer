@@ -44,11 +44,13 @@
       </div>
       <div class="row justify-content-center mb-4">
         <div class="col-11 col-md-6 card d-flex p-3 ">
-          <h3 class="text-light">My Entities: {{ myEntities?.length }}</h3>
-          <div>
-            <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-              data-bs-target="#createEntityModal">
-              Create Entity</button>
+          <div class="d-flex justify-content-around">
+            <h3 class="text-light">My Entities: {{ myEntities?.length }}</h3>
+            <div>
+              <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+                data-bs-target="#createEntityModal">
+                Create Entity</button>
+            </div>
           </div>
           <div id="entityCarousel" class="carousel slide carousel-fade">
             <div class="carousel-inner">
