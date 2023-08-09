@@ -21,16 +21,33 @@
 <script>
 import { ref } from "vue";
 import { logger } from "../utils/Logger.js";
+import { useRoute } from "vue-router";
+import { AppState } from "../AppState.js";
+import { notesService } from "../services/NotesService.js";
+import Pop from "../utils/Pop.js";
+import { Modal } from "bootstrap";
 
 export default {
   setup() {
     const editable = ref({})
+    const route = useRoute()
 
     return {
       editable,
 
       async createRecap() {
-        logger.log('You gotta write this function')
+        try {
+          const formData = editable.value
+        formData.campaignId = route.params.campaignId
+          formData.accountId = AppState.account.id
+        formData.isRecap = true
+          await notesService.createRecap(formData)
+        editable.value = {}
+          Modal.getOrCreateInstance('#createRecap').hide()
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error.message)
+        }
       }
     }
   }

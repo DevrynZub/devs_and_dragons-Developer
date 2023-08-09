@@ -39,6 +39,13 @@ class NotesService {
     const noteIndex = AppState.Notes.findIndex(n => n.id == noteId)
     AppState.Notes.splice(noteIndex, 1)
   }
+
+  async createRecap(formData) {
+    const res = await api.post(`api/notes`, formData)
+    // logger.log(res.data)
+    const newRecap = new Note(res.data)
+    AppState.Notes.push(newRecap)
+  }
 }
 
 
