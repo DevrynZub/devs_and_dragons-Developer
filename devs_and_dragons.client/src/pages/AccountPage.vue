@@ -20,7 +20,7 @@
 
       <div class="row justify-content-center mb-3">
         <div class="col-11 col-md-6 d-flex card p-3">
-          <h4 class="text-light">My Campaigns: </h4>
+          <h4 class="text-light">My Campaigns: {{ myCampaigns?.length }}</h4>
 
 
           <div id="carouselExample" class="carousel slide carousel-fade">

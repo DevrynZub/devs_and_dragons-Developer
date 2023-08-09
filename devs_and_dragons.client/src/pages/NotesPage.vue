@@ -2,7 +2,7 @@
   <div class="row text-white text-center">
     <div>
       <h2 class="py-3">{{ note?.name }}</h2>
-      <i v-if="note.isRecap == false" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" @click="editNote()" ></i>
+      <i v-if="note?.isRecap == false" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" @click="editNote()" ></i>
     </div>
     <p>{{ formattedDate }}</p>
     <div class="col-10 m-auto text-center">
@@ -13,7 +13,7 @@
 
 
 <script>
-import { computed, onMounted, watchEffect } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 import { AppState } from "../AppState.js";
 import { useRoute } from "vue-router";
 import Pop from "../utils/Pop.js";
@@ -22,6 +22,7 @@ import { notesService } from "../services/NotesService.js";
 
 export default {
   setup() {
+    const editable = ref({})
     const route = useRoute()
 
 
@@ -46,6 +47,7 @@ export default {
     }
 
     return {
+      editable,
 
       note: computed(() => AppState.activeNote),
 
@@ -54,7 +56,14 @@ export default {
       }),
 
       async editNote() {
-        logger.log("editing note!")
+        try {
+          const formData = editable.value
+          await notesService.editNote(formData)
+          logger.log('sending to service')
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error.message)
+        }
       }
 
 

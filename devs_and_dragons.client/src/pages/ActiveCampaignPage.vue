@@ -12,9 +12,7 @@
       <div class="col-md-8 col-12">
         <div class="text-white d-flex flex-column align-items-center pt-3">
           <h1>{{ campaign?.name }}</h1>
-          <h2>Next Session Date: {{ formattedDate }} {{
-            campaign?.nextSessionDate.toLocaleTimeString()
-          }}
+          <h2>Next Session Date: {{ formattedDate }}
           </h2>
         </div>
       </div>
@@ -60,7 +58,10 @@
         </div>
         <!-- NOTE Notes Section -->
         <div>
-          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
+          <div class="d-flex justify-content-around align-items-center fs-4">
+            <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
+            <i class="mdi mdi-plus-circle selectable" @click="createNote()" title="Create a new Note"></i>
+          </div>
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note.id">
               <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
@@ -94,7 +95,12 @@
             </ul>
           </div>
         </div>
-
+        <!-- NOTE Search page routing -->
+        <div>
+          <router-link :to="{ name: 'search' }">
+            <h1>Search</h1>
+          </router-link>
+        </div>
 
 
       </div>
@@ -174,7 +180,7 @@ export default {
       entityLinks: computed(() => AppState.entityLinks),
       account: computed(() => AppState.account),
       formattedDate: computed(() => {
-        return AppState.activeCampaign.nextSessionDate.toLocaleDateString()
+        return AppState.activeCampaign?.nextSessionDate.toLocaleDateString()
       }),
     }
   }

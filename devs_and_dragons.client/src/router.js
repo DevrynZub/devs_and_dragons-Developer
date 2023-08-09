@@ -3,6 +3,7 @@ import { authGuard } from '@bcwdev/auth0provider-client'
 import DescriptionPage from './pages/DescriptionPage.vue'
 import NotesPage from './pages/NotesPage.vue'
 import EntitiesPage from './pages/EntitiesPage.vue'
+import SearchPage from './pages/SearchPage.vue'
 
 function loadPage(page) {
   return () => import(`./pages/${page}.vue`)
@@ -47,14 +48,19 @@ const routes = [
 
       },
       {
-        path: ':noteId',
+        path: 'notes/:noteId',
         name: 'notes',
         component: NotesPage,
       },
       {
-        path: ':entityId',
+        path: 'entity/:entityId',
         name: 'entities',
         component: EntitiesPage,
+      },
+      {
+        path: 'search',
+        name: 'search',
+        component: SearchPage,
       }
 
     ]
