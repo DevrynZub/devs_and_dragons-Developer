@@ -26,7 +26,7 @@
             <div class="carousel-inner">
               <div class="carousel-item d-flex justify-content-center" :class="{ active: index == 0 }"
                 v-for="campaign, index in myCampaigns" :key="campaign.id">
-                <div class="col-8 col-md-6 p-3">
+                <div class="col-10 col-md-6 p-3">
                   <CampaignCardComponent :campaignProp="campaign" />
                 </div>
               </div>
