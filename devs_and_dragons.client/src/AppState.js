@@ -29,6 +29,6 @@ export const AppState = reactive({
   Notes: [],
   /** @type {import('./models/Notes.js').Notes | null} */
   activeNote: null,
-  dndApiResults: [],
+
 
 })
