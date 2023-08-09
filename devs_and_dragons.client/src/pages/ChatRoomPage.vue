@@ -1,5 +1,20 @@
 <template>
-  <title>Socket.IO chat</title>
+  <html>
+
+  <head>
+    <title>Socket.IO chat</title>
+
+  </head>
+
+
+  <body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+  </body>
+
+  </html>
 </template>
 
 

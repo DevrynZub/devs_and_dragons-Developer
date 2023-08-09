@@ -16,7 +16,7 @@ const routes = [
     component: loadPage('HomePage')
   },
   {
-    path: '/',
+    path: '/chat',
     name: 'Chat',
     component: loadPage('ChatRoomPage')
   },
