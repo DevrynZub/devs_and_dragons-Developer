@@ -13,7 +13,7 @@
 
 
 <script>
-import { computed, onMounted, watchEffect } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 import { AppState } from "../AppState.js";
 import { useRoute } from "vue-router";
 import Pop from "../utils/Pop.js";
@@ -22,6 +22,7 @@ import { notesService } from "../services/NotesService.js";
 
 export default {
   setup() {
+    const editable = ref({})
     const route = useRoute()
 
 
@@ -46,6 +47,7 @@ export default {
     }
 
     return {
+      editable,
 
       note: computed(() => AppState.activeNote),
 
@@ -55,7 +57,9 @@ export default {
 
       async editNote() {
         try {
-          
+          const formData = editable.value
+          await notesService.editNote(formData)
+          logger.log('sending to service')
         } catch (error) {
           Pop.error(error.message)
           logger.log(error.message)
