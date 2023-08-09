@@ -24,6 +24,7 @@ class EntityService {
     AppState.entities.push(entity)
     return entityData
   }
+
 }
 
 export const entityService = new EntityService()
