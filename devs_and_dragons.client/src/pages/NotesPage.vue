@@ -2,7 +2,7 @@
   <div class="row text-white text-center">
     <div>
       <h2 class="py-3">{{ note?.name }}</h2>
-      <i v-if="note?.isRecap == false && note?.creatorId == account.id" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" data-bs-toggle="modal"
+      <i v-if="note?.isRecap == false && note?.accountId == account.id" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" data-bs-toggle="modal"
               data-bs-target="#editNote" ></i>
     </div>
     <p>{{ formattedDate }}</p>
