@@ -34,8 +34,8 @@
       <div>
 
       </div>
-      <div class="d-flex justify-content-center pt-2">
-        <form @submit.prevent="">
+      <div v-if="selectedCategory" class="d-flex justify-content-center pt-2">
+        <form @submit.prevent="searchDnDApi()">
           <label class="" for="dnd-api">Search:</label>
           <input v-model="filterBy.name" type="search" id="dnd-api" class="rounded">
           <button type="submit" class="btn btn-primary"><i class="mdi mdi-magnify"></i></button>
@@ -47,20 +47,39 @@
 
 
 <script>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import { logger } from "../utils/Logger.js";
+import Pop from "../utils/Pop.js";
+import { dndApiService } from "../services/DnDApiService.js"
 
 export default {
   setup() {
 
     const filterBy = ref({})
-    let selectedCategory = null
+    let selectedCategory = ref(null)
+
+    onMounted(() => {
+      logger.log(selectedCategory)
+    })
 
 
     return {
       filterBy,
       selectedCategory,
       setCategory(category) {
-        selectedCategory = category
+        selectedCategory.value = category
+        logger.log(selectedCategory)
+      },
+
+      async searchDnDApi() {
+        try {
+          const formData = filterBy.value
+
+          await dndApiService.searchDnDApi(formData, selectedCategory)
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error)
+        }
       }
 
     }
