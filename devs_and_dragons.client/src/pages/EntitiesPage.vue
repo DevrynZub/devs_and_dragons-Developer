@@ -1,19 +1,25 @@
 <template>
-  <div class="m-3 card rounded-3 text-light entityCard elevation-5">
-    <div class="m-1">
-      Type of Entity: {{ entityLink?.Entity.type }}
-    </div>
-    <div class="m-1">
-      Entity Name: {{ entityLink?.Entity.name }}
-    </div>
-    <div class="m-1">
-      Entity Description: {{ entityLink?.Entity.desc }}
-    </div>
-    <div class="m-1">
-      Entity Information: {{ entityLink?.Entity.body }}
+  <div class="container-fluid d-flex">
+    <div class="row">
+      <div class="mt-3 card rounded-3 text-light entityCard elevation-5">
+        <div class="m-1">
+          Type of Entity: {{ entityLink?.Entity.type }}
+        </div>
+        <div class="m-1">
+          Entity Name: {{ entityLink?.Entity.name }}
+        </div>
+        <div class="m-1">
+          Entity Description: {{ entityLink?.Entity.desc }}
+        </div>
+        <div class="m-1">
+          Entity Information: {{ entityLink?.Entity.body }}
+        </div>
+      </div>
+      <div class="entityImg  mt-3">
+        <img class="img-fluid rounded-5" :src="entityLink?.Entity.imgUrl">
+      </div>
     </div>
   </div>
-  <img class="rounded-5" :src="entityLink?.Entity.imgUrl">
 </template>
 
 
@@ -68,5 +74,9 @@ export default {
   background-color: rgba(172, 9, 9, 0.438);
   border: 1px double red;
   box-shadow: 3px 1px 5px rgb(255, 0, 0);
+}
+
+.entityImg {
+  max-width: 60%;
 }
 </style>

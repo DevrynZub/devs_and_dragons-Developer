@@ -77,7 +77,7 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
-            <i class="mdi mdi-plus-circle selectable" title="Create a new Recap" type="button" data-bs-toggle="modal"
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Recap" type="button" data-bs-toggle="modal"
                 data-bs-target="#createRecap"></i>
           </div>
 

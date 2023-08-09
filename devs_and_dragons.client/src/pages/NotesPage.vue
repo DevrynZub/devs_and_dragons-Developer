@@ -5,6 +5,14 @@
       <i v-if="note?.isRecap == false && note?.accountId == account.id" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" data-bs-toggle="modal"
               data-bs-target="#editNote" ></i>
       <i v-if="note?.isRecap == false && note?.accountId == account.id" class="mdi mdi-delete selectable fs-2 delete-button" title="Delete Note" @click="removeNote()"></i>
+
+      <i v-if="note?.isRecap == true && campaign?.creatorId == account.id" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" data-bs-toggle="modal"
+      data-bs-target="#editNote" ></i>
+
+      <i v-if="note?.isRecap == true && campaign?.creatorId == account.id" class="mdi mdi-delete selectable fs-2 delete-button" title="Delete Note" @click="removeNote()"></i>
+
+
+
     </div>
     <p>{{ formattedDate }}</p>
     <div class="col-10 m-auto text-center">
@@ -17,16 +25,16 @@
 <script>
 import { computed, onMounted, ref, watchEffect } from "vue";
 import { AppState } from "../AppState.js";
-import { useRoute } from "vue-router";
+import { useRoute} from "vue-router";
 import Pop from "../utils/Pop.js";
 import { logger } from "../utils/Logger.js";
 import { notesService } from "../services/NotesService.js";
+import { router } from "../router.js";
 
 export default {
   setup() {
     const editable = ref({})
     const route = useRoute()
-
 
     onMounted(() => {
       // getActiveNote()
@@ -52,7 +60,8 @@ export default {
       editable,
 
       note: computed(() => AppState.activeNote),
-      account: computed(()=> AppState.account),
+      account: computed(() => AppState.account),
+      campaign: computed(()=> AppState.activeCampaign),
 
       formattedDate: computed (() => {
         return AppState.activeNote?.createdAt.toLocaleDateString()
@@ -62,7 +71,9 @@ export default {
         try {
           if (await Pop.confirm('Are you sure you want to delete this note?')) {
             const noteId = route.params.noteId
+
             await notesService.removeNote(noteId)
+            router.push({name: 'ActiveCampaign', params: {campaignId: this.campaign.id}})
           }
           return
         } catch (error) {
