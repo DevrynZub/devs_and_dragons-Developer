@@ -19,6 +19,7 @@ export class EntityCampaignLinkController extends BaseController {
     try {
       const entityLinkId = req.params.entityLinkId
       const entityLink = await entityCampaignLinkService.getEntityLinkById(entityLinkId)
+      res.send(entityLink)
     } catch (error) {
       next(error)
     }

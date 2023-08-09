@@ -4,7 +4,7 @@ import { campaignService } from "./CampaignService.js"
 
 class EntityCampaignLinkService {
   async getEntityLinkById(entityLinkId) {
-    const entityLink = await dbContext.EntityCampaignLink.findById(entityLinkId)
+    const entityLink = await dbContext.EntityCampaignLink.findById(entityLinkId).populate('Entity')
     if (!entityLink) {
       throw new BadRequest('No Entity Link by that ID')
     }
