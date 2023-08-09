@@ -60,8 +60,10 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
-            <i class="mdi mdi-plus-circle selectable" @click="createNote()" title="Create a new Note"></i>
+            <i class="mdi mdi-plus-circle selectable" title="Create a new Note" data-bs-toggle="modal"
+            data-bs-target="#createNote"></i>
           </div>
+
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note.id">
               <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
