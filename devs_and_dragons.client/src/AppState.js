@@ -30,5 +30,7 @@ export const AppState = reactive({
   /** @type {import('./models/Notes.js').Notes | null} */
   activeNote: null,
 
+  messages: null
+
 
 })
