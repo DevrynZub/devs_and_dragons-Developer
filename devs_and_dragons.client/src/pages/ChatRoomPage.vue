@@ -1,20 +1,9 @@
 <template>
-  <html>
-
-  <head>
-    <title>Socket.IO chat</title>
-
-  </head>
-
-
-  <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
-  </body>
-
-  </html>
+  <p>This is my test chat</p>
+  <ul id="messages"></ul>
+  <form id="form" action="">
+    <input id="input" autocomplete="off" /><button>Send</button>
+  </form>
 </template>
 
 
@@ -83,3 +72,4 @@ body {
   background: #efefef;
 }
 </style>
+
