@@ -43,7 +43,7 @@
       Create a Note
     </template>
     <template #body>
-      <!-- <CreateNoteForm /> -->
+      <CreateNoteForm />
     </template>
   </ModalComponent>
 </template>
