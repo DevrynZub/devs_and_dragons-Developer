@@ -55,6 +55,15 @@
       <EditNoteForm />
     </template>
   </ModalComponent>
+
+  <ModalComponent id="createRecap">
+    <template #header>
+      RECAP
+    </template>
+    <template #body>
+      <RecapFormComponent />
+    </template>
+  </ModalComponent>
 </template>
 
 
@@ -68,6 +77,7 @@ import EntityCreateForm from './components/EntityCreateForm.vue'
 import UpdateAccount from './components/UpdateAccount.vue'
 import CreateNoteForm from "./components/CreateNoteForm.vue"
 import EditNoteForm from "./components/EditNoteForm.vue"
+import RecapFormComponent from "./components/RecapFormComponent.vue"
 
 export default {
   setup() {
@@ -75,7 +85,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent }
 }
 </script>
 <style lang="scss">

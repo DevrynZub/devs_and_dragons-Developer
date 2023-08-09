@@ -32,6 +32,13 @@ class NotesService {
     let updatedNote = new Note(res.data)
     AppState.activeNote = updatedNote
   }
+
+  async removeNote(noteId) {
+    const res = await api.delete(`api/notes/${noteId}`)
+    logger.log(res.data)
+    const noteIndex = AppState.Notes.findIndex(n => n.id == noteId)
+    AppState.Notes.splice(noteIndex, 1)
+  }
 }
 
 

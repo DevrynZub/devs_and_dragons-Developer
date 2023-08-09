@@ -75,7 +75,12 @@
         </div>
         <!-- NOTE Recaps section -->
         <div>
-          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
+          <div class="d-flex justify-content-around align-items-center fs-4">
+            <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
+            <i class="mdi mdi-plus-circle selectable" title="Create a new Recap" type="button" data-bs-toggle="modal"
+                data-bs-target="#createRecap"></i>
+          </div>
+
           <div id="recaps" class="collapse">
             <ul v-for="note in notes" :key="note.id">
               <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
