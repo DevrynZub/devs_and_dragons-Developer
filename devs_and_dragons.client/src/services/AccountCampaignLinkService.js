@@ -14,6 +14,11 @@ class AccountCampaignLinkService {
     AppState.AccountLinks = accountLinks
     // logger.log('Appstate account Links', AppState.AccountLinks)
   }
+
+  async createAccountLink(linkData) {
+    const res = await api.post('api/accountcampaignlinks')
+    logger.log(res.data)
+  }
 }
 
 

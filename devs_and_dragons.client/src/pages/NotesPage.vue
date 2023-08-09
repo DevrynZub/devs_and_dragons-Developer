@@ -1,7 +1,7 @@
 <template>
   <div class="row text-white text-center">
     <div>
-      <h2 class="py-3">{{ note?.name }}</h2>
+      <h2 class="pt-3">{{ note?.name }}</h2>
       <i v-if="note?.isRecap == false && note?.accountId == account.id" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" data-bs-toggle="modal"
               data-bs-target="#editNote" ></i>
       <i v-if="note?.isRecap == false && note?.accountId == account.id" class="mdi mdi-delete selectable fs-2 delete-button" title="Delete Note" @click="removeNote()"></i>
