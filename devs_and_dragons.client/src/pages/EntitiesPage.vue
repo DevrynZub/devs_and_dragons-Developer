@@ -1,8 +1,7 @@
 <template>
   <div class="text-light">
     this is the entities Page
-    <!-- {{ Entity.type }}:
-    {{ Entity.desc }} -->
+
 
   </div>
 </template>
@@ -32,7 +31,7 @@ export default {
     }
 
 
-    const route = useRoute()
+    // const route = useRoute()
 
     onMounted(() => {
       getEntityLinkById()
