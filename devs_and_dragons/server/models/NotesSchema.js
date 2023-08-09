@@ -6,5 +6,5 @@ export const NotesSchema = new Schema({
   body: { type: String, maxlength: 2000 },
   accountId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' },
   campaignId: { type: Schema.Types.ObjectId, required: true, ref: 'Campaign' },
-  isRecap: { type: Boolean, default: false }
+  isRecap: { type: Boolean, default: false },
 }, { timestamps: true })
