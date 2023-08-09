@@ -24,10 +24,6 @@ class EntityService {
     AppState.entities.push(entity)
     return entityData
   }
-
-  async getEntityByCampaign(campaignId) {
-    const res = await api.get('api/campaign/:campaignId/')
-  }
 }
 
 export const entityService = new EntityService()
