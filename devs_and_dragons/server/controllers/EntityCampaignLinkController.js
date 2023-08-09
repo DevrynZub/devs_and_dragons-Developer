@@ -9,9 +9,19 @@ export class EntityCampaignLinkController extends BaseController {
     super('api/entitycampaignlinks')
     this.router
 
+      .get('/:entityLinkId', this.getEntityLinkById)
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createEntityCampaignLink)
       .delete('/:entityLinkId', this.deleteEntityCampaignLink)
+  }
+
+  async getEntityLinkById(req, res, next) {
+    try {
+      const entityLinkId = req.params.entityLinkId
+      const entityLink = await entityCampaignLinkService.getEntityLinkById(entityLinkId)
+    } catch (error) {
+      next(error)
+    }
   }
   async deleteEntityCampaignLink(req, res, next) {
     try {
