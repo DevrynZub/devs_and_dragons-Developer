@@ -3,6 +3,13 @@ import { BadRequest, Forbidden } from "../utils/Errors.js"
 import { campaignService } from "./CampaignService.js"
 
 class EntityCampaignLinkService {
+  async getEntityLinkById(entityLinkId) {
+    const entityLink = await dbContext.EntityCampaignLink.findById(entityLinkId).populate('Entity')
+    if (!entityLink) {
+      throw new BadRequest('No Entity Link by that ID')
+    }
+    return entityLink
+  }
   async createEntityCampaignLink(data) {
     const campaign = await campaignService.getCampaignById(data.campaignId)
     if (campaign.isArchived == true) {
