@@ -7,5 +7,4 @@ export const NotesSchema = new Schema({
   accountId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' },
   campaignId: { type: Schema.Types.ObjectId, required: true, ref: 'Campaign' },
   isRecap: { type: Boolean, default: false },
-  creatorId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' },
 }, { timestamps: true })
