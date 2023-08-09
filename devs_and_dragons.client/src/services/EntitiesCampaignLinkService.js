@@ -16,8 +16,12 @@ class EntitiesCampaignLinkService {
   }
 
   async getEntityLinkById(entityLinkId) {
-    const res = await api.get(api / entitycampaignlinks / `${entityLinkId}`)
-    logger.log('entity camapaign links', res.data)
+    const res = await api.get(`api/entitycampaignlinks/${entityLinkId}`)
+    // logger.log('chosen entity link', res.data)
+    const entityLink = new EntityCampaignLink(res.data)
+    // logger.log('new data', entityLink)
+    AppState.ActiveEntityLink = entityLink
+    logger.log('appstate entitylink active', AppState.ActiveEntityLink)
   }
 }
 
