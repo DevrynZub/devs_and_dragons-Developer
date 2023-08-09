@@ -92,7 +92,12 @@
             </ul>
           </div>
         </div>
-
+        <!-- NOTE Search page routing -->
+        <div>
+          <router-link :to="{ name: 'search' }">
+            <h1>Search</h1>
+          </router-link>
+        </div>
 
 
       </div>
