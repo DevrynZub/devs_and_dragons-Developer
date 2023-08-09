@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid account-page">
     <div class="row justify-content-around">
-      <div class="col-3 mb-5">
+      <div class="col-11 col-md-3 mb-5">
         <div class="card m-2">
           <img class="card-img-top " :src="account.picture" alt="profile">
           <div class="card-body text-white">
@@ -9,14 +9,13 @@
             <p class="card-text">{{ account.email }}</p>
           </div>
         </div>
-        <div>
+        <div class="text-center">
           <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
             data-bs-target="#editAccount">
             Update Account
           </button>
         </div>
       </div>
-
 
       <div class="row justify-content-center mb-3">
         <div class="col-11 col-md-6 d-flex card p-3">
@@ -25,14 +24,14 @@
 
           <div id="carouselExample" class="carousel slide carousel-fade">
             <div class="carousel-inner">
-              <div class="carousel-item" :class="{ active: index == 0 }" v-for="campaign, index in myCampaigns"
-                :key="campaign.id">
-                <div class="m-3 p-3">
+              <div class="carousel-item d-flex justify-content-center" :class="{ active: index == 0 }"
+                v-for="campaign, index in myCampaigns" :key="campaign.id">
+                <div class="col-8 col-md-6 p-3">
                   <CampaignCardComponent :campaignProp="campaign" />
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
@@ -44,7 +43,7 @@
         </div>
       </div>
       <div class="row justify-content-center mb-4">
-        <div class="col-11 col-md-6 card d-flex ">
+        <div class="col-11 col-md-6 card d-flex p-3 ">
           <h3 class="text-light">My Entities: {{ myEntities?.length }}</h3>
           <div>
             <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
@@ -53,28 +52,26 @@
           </div>
           <div id="entityCarousel" class="carousel slide carousel-fade">
             <div class="carousel-inner">
-              <div class="carousel-item " :class="{ active: index == 0 }" v-for="entity, index in myEntities"
-                :key="entity.id">
-                <div class="text-white">
-                  <div class="d-flex flex-column box rounded elevation-5 m-3 p-3">
-                    <div class="elevation-5 mb-3 info-card rounded">
-                      <h3>{{ entity.name }}</h3>
-                      <p>Type: {{ entity.type }}</p>
-                      <p>{{ entity.desc }}</p>
-                      <p>{{ entity.body }}</p>
-                    </div>
-                    <div class="text-center mb-2">
-                      <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
-                    </div>
+              <div class="carousel-item d-flex justify-content-center " :class="{ active: index == 0 }"
+                v-for="entity, index in myEntities" :key="entity.id">
+                <div class=" col-8 col-md-6 d-flex flex-column text-white box rounded elevation-5 m-3 p-2">
+                  <div class="elevation-5 mb-3 info-card rounded">
+                    <h3>{{ entity.name }}</h3>
+                    <p>Type: {{ entity.type }}</p>
+                    <p>{{ entity.desc }}</p>
+                    <p>{{ entity.body }}</p>
+                  </div>
+                  <div class="text-center mb-2">
+                    <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
                   </div>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#entityCarousel" data-bs-slide="prev">
+            <button class="carousel-control-prev " type="button" data-bs-target="#entityCarousel" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#entityCarousel" data-bs-slide="next">
+            <button class="carousel-control-next " type="button" data-bs-target="#entityCarousel" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
