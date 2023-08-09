@@ -17,15 +17,17 @@
 <script>
 import { computed, onMounted, ref, watchEffect } from "vue";
 import { AppState } from "../AppState.js";
-import { useRoute } from "vue-router";
+import { useRoute} from "vue-router";
 import Pop from "../utils/Pop.js";
 import { logger } from "../utils/Logger.js";
 import { notesService } from "../services/NotesService.js";
+import { router } from "../router.js";
 
 export default {
   setup() {
     const editable = ref({})
     const route = useRoute()
+    // const router = useRouter()
 
 
     onMounted(() => {
@@ -52,7 +54,8 @@ export default {
       editable,
 
       note: computed(() => AppState.activeNote),
-      account: computed(()=> AppState.account),
+      account: computed(() => AppState.account),
+      campaign: computed(()=> AppState.activeCampaign),
 
       formattedDate: computed (() => {
         return AppState.activeNote?.createdAt.toLocaleDateString()
@@ -62,7 +65,9 @@ export default {
         try {
           if (await Pop.confirm('Are you sure you want to delete this note?')) {
             const noteId = route.params.noteId
+
             await notesService.removeNote(noteId)
+            router.push({name: 'ActiveCampaign', params: {campaignId: this.campaign.id}})
           }
           return
         } catch (error) {
