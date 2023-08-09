@@ -60,7 +60,7 @@ export default {
 
       async removeNote() {
         try {
-          if (!Pop.confirm('Are you sure you want to delete this note?')) {
+          if (await !Pop.confirm('Are you sure you want to delete this note?')) {
             return
           }
           const noteId = route.params.noteId
