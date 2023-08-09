@@ -30,6 +30,11 @@ import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkSer
 export default {
   setup() {
     const route = useRoute()
+    watchEffect(() => {
+      if (route.params.entityId) {
+        getEntityLinkById()
+      }
+    })
 
 
     // const route = useRoute()
