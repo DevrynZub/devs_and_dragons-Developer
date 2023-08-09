@@ -25,6 +25,7 @@ import Pop from "../utils/Pop.js";
 import { notesService } from "../services/NotesService.js";
 import { useRoute } from "vue-router";
 import { Modal } from "bootstrap";
+import { AppState } from "../AppState.js";
 
 export default {
   setup() {
@@ -39,6 +40,7 @@ export default {
         try {
           const noteData = editable.value
           noteData.campaignId = route.params.campaignId
+          noteData.accountId = AppState.account.id
           await notesService.createNote(noteData)
           editable.value = {}
           Modal.getOrCreateInstance('#createNote').hide()

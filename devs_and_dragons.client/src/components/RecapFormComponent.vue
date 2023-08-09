@@ -1,6 +1,6 @@
 <template>
   <div class="col-10 mb-4 text-white m-auto">
-    <form action="" @submit.prevent="">
+    <form action="" @submit.prevent="createRecap()">
       <div class="mb-2 text-center">
         <label class="mb-2" for="name">Name</label>
         <input class="form-control" type="text" id="name" minlength="3" maxlength="75" v-model="editable.name">
@@ -20,6 +20,7 @@
 
 <script>
 import { ref } from "vue";
+import { logger } from "../utils/Logger.js";
 
 export default {
   setup() {
@@ -27,6 +28,10 @@ export default {
 
     return {
       editable,
+
+      async createRecap() {
+        logger.log('You gotta write this function')
+      }
     }
   }
 }

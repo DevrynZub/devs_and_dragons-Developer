@@ -60,11 +60,11 @@ export default {
 
       async removeNote() {
         try {
-          if (!Pop.confirm('Are you sure you want to delete this note?')) {
-            return
+          if (await Pop.confirm('Are you sure you want to delete this note?')) {
+            const noteId = route.params.noteId
+            await notesService.removeNote(noteId)
           }
-          const noteId = route.params.noteId
-          await notesService.removeNote(noteId)
+          return
         } catch (error) {
           Pop.error(error.message)
           logger.log(error.message)
