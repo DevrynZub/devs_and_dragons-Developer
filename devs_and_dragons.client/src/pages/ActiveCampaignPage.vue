@@ -18,7 +18,7 @@
       </div>
       <!-- STUB Join us/ add character -->
       <div class="col-md-2 col-12 d-flex justify-content-center align-items-center">
-        <button class="btn btn-outline-danger" @click="createAccountLink()">Join Us!</button>
+        <button class="btn btn-outline-danger" :hidden="hasLink" @click="createAccountLink()">Join Us!</button>
       </div>
     </div>
     <!-- SECTION players -->
@@ -186,8 +186,13 @@ export default {
       accountLinks: computed(() => AppState.AccountLinks),
       entityLinks: computed(() => AppState.entityLinks),
       account: computed(() => AppState.account),
+
       formattedDate: computed(() => {
         return AppState.activeCampaign?.nextSessionDate.toLocaleDateString()
+      }),
+
+      hasLink: computed(() => {
+        return AppState.AccountLinks.find(l => l.campaignId == AppState.activeCampaign.id)
       }),
 
       async createAccountLink() {
