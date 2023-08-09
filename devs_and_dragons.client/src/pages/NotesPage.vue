@@ -2,7 +2,7 @@
   <div class="row text-white text-center">
     <div>
       <h2 class="py-3">{{ note?.name }}</h2>
-      <i v-if="note.isRecap == false" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" @click="editNote()" ></i>
+      <i v-if="note?.isRecap == false" class="mdi mdi-feather selectable fs-2 edit-button" title="Edit Notes" @click="editNote()" ></i>
     </div>
     <p>{{ formattedDate }}</p>
     <div class="col-10 m-auto text-center">
@@ -54,7 +54,12 @@ export default {
       }),
 
       async editNote() {
-        logger.log("editing note!")
+        try {
+          
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error.message)
+        }
       }
 
 
