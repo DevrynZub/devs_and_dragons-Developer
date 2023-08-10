@@ -23,6 +23,12 @@ class EntitiesCampaignLinkService {
     AppState.ActiveEntityLink = entityLink
     logger.log('appstate entitylink active', AppState.ActiveEntityLink)
   }
+
+  async createEntityCampaignLink(linkData) {
+    const res = await api.post(`api/entitycampaignlinks`, linkData)
+    logger.log('creating entity link', res.data)
+    AppState.entityLinks.push(new EntityCampaignLink(res.data))
+  }
 }
 
 

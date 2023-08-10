@@ -8,6 +8,8 @@ class EntityService {
   async getEntity() {
     const res = await api.get('api/entities')
     logger.log('[Got ENTITIES]', res.data)
+    const entities = res.data.map(e => new Entity(e))
+    AppState.entities = entities
   }
 
 
