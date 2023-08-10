@@ -6,7 +6,7 @@
           Type of Entity: {{ entityLink?.Entity.type }}
           
           <div v-if="activeCampaign?.creatorId == account?.id" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked @click="makeEntityPrivate()">
             <label class="btn btn-outline-warning" for="btnradio1">Private</label>
 
             <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
@@ -72,12 +72,17 @@ export default {
     return {
       entityLink: computed(() => AppState.ActiveEntityLink),
       activeCampaign: computed(() => AppState.activeCampaign),
-      account: computed(()=> AppState.account)
+      account: computed(() => AppState.account),
+      activeEntity: computed(() => AppState.ActiveEntityLink)
+
+
+        
+      }
       
 
     }
   }
-}
+
 </script>
 
 
