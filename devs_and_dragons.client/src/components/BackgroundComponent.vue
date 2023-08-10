@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  backgroundinfo
+</template>
 
 
 <script>
