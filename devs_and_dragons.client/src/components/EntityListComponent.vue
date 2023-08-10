@@ -6,10 +6,10 @@
           <div class="d-flex justify-content-between align-items-center p-2">
             <img class="entity-img" :src="e.imgUrl" :alt="e.name" :title="e.name">
             <h5>{{ e.name }}</h5>
-            <div v-if="!hasLink">
+            <div v-if="evaluateEntityLink(e.id) == false">
               <i class="mdi mdi-star-outline fs-4"></i>
             </div>
-            <div v-if="hasLink">
+            <div v-else>
               <i class="mdi mdi-star fs-4"></i>
             </div>
           </div>
@@ -38,13 +38,20 @@ export default {
   setup() {
     const route = useRoute()
 
-    
+
     return {
       entities: computed(() => AppState.entities),
 
-      hasLink: computed(() => {
-        return AppState.entityLinks.includes(link => link.entityId == AppState.entities.forEach())
-      }),
+
+      evaluateEntityLink(entityId) {
+        let isTrue = false
+        for (let i = 0; i < AppState.entityLinks.length; i++) {
+          if (AppState.entityLinks[i].entityId == entityId) {
+            isTrue = true
+          }
+        }
+        return isTrue
+      },
 
 
       async createEntityCampaignLink(entityId) {
@@ -55,7 +62,7 @@ export default {
             await entitiesCampaignLinkService.createEntityCampaignLink(linkData)
             Modal.getOrCreateInstance('#addEntity').hide()
           }
-        return
+          return
         } catch (error) {
           Pop.error(error.message)
           logger.log(error.message)
@@ -68,8 +75,7 @@ export default {
 
 
 <style lang="scss" scoped>
-
-.entity-img{
+.entity-img {
   height: 7vh;
   width: 7vh;
   border-radius: 50%;
