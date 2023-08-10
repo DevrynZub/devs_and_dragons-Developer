@@ -37,5 +37,12 @@ class CampaignsService {
         AppState.activeCampaign = campaign
         logger.log('Appstate activecampaign', AppState.activeCampaign)
     }
+
+    async archiveCampaign(campaignId) {
+        const res = await api.delete(`api/campaigns/${campaignId}`)
+        logger.log('DELETING_CAMPAIGN', res.data)
+        AppState.activeCampaign.isArchived = true
+
+    }
 }
 export const campaignsService = new CampaignsService()
