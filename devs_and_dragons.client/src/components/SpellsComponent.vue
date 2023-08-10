@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-11 col-md-9" v-if="spells">
+            <div class="col-11 col-md-9" v-if="spells?.url.includes('spell')">
                 <div>
                     <h3> {{ spells.name }}</h3>
                 </div>
@@ -13,7 +13,7 @@
                     <p>{{ spells.duration }}</p>
                     <p>{{ spells.concentration }}</p>
                     <p>{{ spells.casting_time }}</p>
-                    <p>{{ spells.classes }}</p>
+                    <!-- <p>{{ spells.classes }}</p> -->
                     <p>{{ spells.desc }}</p>
                 </div>
             </div>

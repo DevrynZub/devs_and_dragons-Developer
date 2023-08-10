@@ -12,16 +12,17 @@
       <div class="col-md-8 col-12">
         <div class="text-white d-flex flex-column align-items-center pt-3">
           <h1>{{ campaign?.name }}</h1>
-          <h2>Next Session Date: {{ formattedDate }}
+          <h2 v-if="campaign?.isArchived == false">Next Session Date: {{ formattedDate }}
           </h2>
+          <h2 v-else class="text-warning">This Adventure Has Ended</h2>
         </div>
       </div>
       <!-- STUB Join us/ add character -->
-      <div v-if="campaign?.creatorId != account.id && !hasLink"
+      <div 
         class="col-md-2 col-12 d-flex justify-content-center align-items-center">
-        <button class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
+        <button v-if="campaign?.creatorId != account.id && !hasLink && campaign?.isArchived == false" class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
           @click="createAccountLink()">Join Us!</button>
-          <button class="btn btn-outline-info">Delete Campaign</button>
+          <button v-if="campaign?.creatorId == account.id && campaign?.isArchived == false" @click="archiveCampaign()" class="btn btn-outline-info">Delete Campaign</button>
       </div>
     </div>
     <!-- SECTION players -->
@@ -64,7 +65,7 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
-            <i v-if="hasLink || campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable"
+            <i v-if="hasLink || campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" :hidden="campaign?.isArchived == true"
               title="Create a new Note" type="button" data-bs-toggle="modal" data-bs-target="#createNote"></i>
           </div>
 
@@ -81,7 +82,7 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
-            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Recap"
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Recap" :hidden="campaign?.isArchived == true"
               type="button" data-bs-toggle="modal" data-bs-target="#createRecap"></i>
           </div>
 
@@ -97,7 +98,7 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
-            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity"
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity" :hidden="campaign?.isArchived == true"
               type="button" data-bs-toggle="modal" data-bs-target="#addEntity"></i>
           </div>
           <div id="entities" class="collapse">
@@ -214,6 +215,20 @@ export default {
           Pop.error(error.message)
           logger.log(error)
         }
+      },
+
+      async archiveCampaign() {
+        try {
+          if (await Pop.confirm('Are you sure you want to archive this campaign? You will not be able to undo this.')) {
+            const campaignId = route.params.campaignId
+            await campaignsService.archiveCampaign(campaignId)
+          }
+          return
+        } catch (error) {
+          Pop.error(error.message)
+          logger.error
+        }
+
       }
     }
   }

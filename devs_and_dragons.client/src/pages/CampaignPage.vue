@@ -3,14 +3,13 @@
 
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-md-5 col-12 p-3 text-center">
-                    <div class="elevation-3 rounded fs-5 bg-black text-light p-1">
+                <div class="col-md-6 col-12 p-3 text-center">
+                    <div class="elevation-3 rounded fs-5 box text-light p-1 ">
+                        <label for="site-campaigns">Search for Campaigns: </label>
+                        <input v-model="filterBy" class="rounded m-2" type="search" id="site-campaigns" name="q" />
                         <button v-if="account.id" class="btn btn-outline-danger mx-2" type="button" data-bs-toggle="modal"
                             data-bs-target="#createCampaignModal">
                             <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
-                        <label for="site-campaigns">Search for Campaigns: </label>
-                        <input v-model="filterBy" class="rounded m-2" type="search" id="site-campaigns" name="q" />
-
                     </div>
                 </div>
             </div>
@@ -86,7 +85,7 @@ export default {
 }
 
 .box {
-    background-color: rgba(73, 73, 73, 0.719);
+    background-color: rgba(10, 7, 7, 0.719);
     border: 1px double red;
     box-shadow: 3px 1px 5px rgb(255, 0, 0);
 
