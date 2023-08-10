@@ -10,5 +10,6 @@ export class Campaign {
         this.capacity = data.capacity
         this.isArchived = data.isArchived
         this.nextSessionDate = new Date(data.nextSessionDate)
+        this.partyCount = data.partyCount
     }
 }

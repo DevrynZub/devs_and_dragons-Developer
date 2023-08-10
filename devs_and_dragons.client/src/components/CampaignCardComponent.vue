@@ -7,7 +7,7 @@
           <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
           <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
           <p>{{ campaignProp.desc }}</p>
-          <p>Player Capacity: {{ partySpotsLeft }} / {{ campaignProp?.capacity }}</p>
+          <p>Player Capacity: {{ campaignProp.partyCount }} / {{ campaignProp?.capacity }}</p>
         </div>
         <div class="text-center mb-2">
           <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
@@ -31,9 +31,6 @@ export default {
   setup() {
 
     return {
-            partySpotsLeft: computed(() => {
-            return AppState.campaigns.capacity - AppState.AccountLinks
-        }),
     }
   }
 }
