@@ -1,5 +1,9 @@
 <template>
-  {{ equipment.name }}
+  <div>
+
+  </div>
+  {{ equipment?.name }}
+  <!-- <h1>Somethin</h1> -->
 </template>
 
 
@@ -9,6 +13,7 @@ import { AppState } from "../AppState.js";
 
 export default {
   setup() {
+
     return {
       equipment: computed(() => AppState.selectedResult)
     }
