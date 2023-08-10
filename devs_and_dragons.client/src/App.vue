@@ -64,6 +64,15 @@
       <RecapFormComponent />
     </template>
   </ModalComponent>
+
+  <ModalComponent id="addEntity">
+    <template #header>
+      ENTITIES
+    </template>
+    <template #body>
+      <EntityListComponent />
+    </template>
+  </ModalComponent>
 </template>
 
 
@@ -78,6 +87,7 @@ import UpdateAccount from './components/UpdateAccount.vue'
 import CreateNoteForm from "./components/CreateNoteForm.vue"
 import EditNoteForm from "./components/EditNoteForm.vue"
 import RecapFormComponent from "./components/RecapFormComponent.vue"
+import EntityListComponent from "./components/EntityListComponent.vue"
 
 export default {
   setup() {
@@ -85,7 +95,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent }
 }
 </script>
 <style lang="scss">

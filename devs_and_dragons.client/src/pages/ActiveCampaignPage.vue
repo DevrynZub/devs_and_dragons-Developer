@@ -91,7 +91,11 @@
         </div>
         <!-- NOTE Entities Section -->
         <div>
-          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
+          <div class="d-flex justify-content-around align-items-center fs-4">
+            <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity" type="button" data-bs-toggle="modal"
+                data-bs-target="#addEntity"></i>
+          </div>
           <div id="entities" class="collapse">
             <ul v-for="entity in entityLinks" :key="entity.id">
               <router-link :to="{ name: 'entities', params: { campaignId: campaign.id, entityId: entity.id } }">
@@ -127,6 +131,7 @@ import { accountCampaignLinkService } from "../services/AccountCampaignLinkServi
 import { notesService } from "../services/NotesService.js"
 import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js"
 import { router } from "../router.js";
+import { entityService } from "../services/EntityService.js";
 export default {
   setup() {
 
@@ -138,6 +143,7 @@ export default {
       getAccountCampaignLinks()
       getEntityLinksByCampaign()
       getNotesByCampaign()
+      entityService.getEntity()
     })
 
     async function getEntityLinksByCampaign() {
