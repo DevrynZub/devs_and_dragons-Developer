@@ -111,7 +111,7 @@
       Magic Item Name
     </template>
     <template #body>
-
+      <MagicItemsComponent />
     </template>
   </ModalComponent>
 
@@ -141,6 +141,7 @@ import EntityListComponent from "./components/EntityListComponent.vue"
 import SpellsComponent from './components/SpellsComponent.vue'
 import MonstersComponent from './components/MonstersComponent.vue'
 import EquipmentComponent from "./components/EquipmentComponent.vue"
+import MagicItemsComponent from "./components/MagicItemsComponent.vue"
 
 export default {
   setup() {
@@ -148,7 +149,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, MagicItemsComponent }
 }
 </script>
 <style lang="scss">

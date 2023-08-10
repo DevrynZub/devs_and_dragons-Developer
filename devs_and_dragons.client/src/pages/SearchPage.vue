@@ -113,7 +113,7 @@ export default {
       setCategory(category) {
         selectedCategory.value = category
 
-        // logger.log(selectedCategory)
+        logger.log(selectedCategory)
       },
 
       async searchDnDApi() {
