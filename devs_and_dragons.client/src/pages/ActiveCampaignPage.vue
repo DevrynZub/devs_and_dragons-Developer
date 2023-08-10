@@ -17,11 +17,11 @@
         </div>
       </div>
       <!-- STUB Join us/ add character -->
-      <div v-if="campaign?.creatorId != account.id && !hasLink"
+      <div 
         class="col-md-2 col-12 d-flex justify-content-center align-items-center">
-        <button class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
+        <button v-if="campaign?.creatorId != account.id && !hasLink" class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
           @click="createAccountLink()">Join Us!</button>
-          <button class="btn btn-outline-info">Delete Campaign</button>
+          <button v-if="campaign?.creatorId == account.id" class="btn btn-outline-info">Delete Campaign</button>
       </div>
     </div>
     <!-- SECTION players -->
