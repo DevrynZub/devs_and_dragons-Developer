@@ -17,7 +17,7 @@
         </div>
       </div>
       <!-- STUB Join us/ add character -->
-      <div v-if="campaign?.creatorId != account.id" class="col-md-2 col-12 d-flex justify-content-center align-items-center">
+      <div v-if="campaign?.creatorId != account.id || !hasLink" class="col-md-2 col-12 d-flex justify-content-center align-items-center">
         <button class="btn btn-outline-danger" :hidden="hasLink" @click="createAccountLink()">Join Us!</button>
       </div>
     </div>
@@ -192,7 +192,7 @@ export default {
       }),
 
       hasLink: computed(() => {
-        return AppState.AccountLinks.find(l => l.campaignId == AppState.activeCampaign.id)
+        return AppState.AccountLinks.find(l => l.accountId == AppState.account.id)
       }),
 
       async createAccountLink() {
