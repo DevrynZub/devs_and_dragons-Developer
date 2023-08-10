@@ -17,8 +17,10 @@
         </div>
       </div>
       <!-- STUB Join us/ add character -->
-      <div v-if="campaign?.creatorId != account.id && !hasLink" class="col-md-2 col-12 d-flex justify-content-center align-items-center">
-        <button class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount  >= campaign?.capacity" @click="createAccountLink()">Join Us!</button>
+      <div v-if="campaign?.creatorId != account.id && !hasLink"
+        class="col-md-2 col-12 d-flex justify-content-center align-items-center">
+        <button class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
+          @click="createAccountLink()">Join Us!</button>
       </div>
     </div>
     <!-- SECTION players -->
@@ -60,8 +62,8 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
-            <i v-if="hasLink || campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Note" type="button" data-bs-toggle="modal"
-              data-bs-target="#createNote"></i>
+            <i v-if="hasLink || campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable"
+              title="Create a new Note" type="button" data-bs-toggle="modal" data-bs-target="#createNote"></i>
           </div>
 
           <div id="notes" class="collapse">
@@ -77,8 +79,8 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
-            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Recap" type="button" data-bs-toggle="modal"
-                data-bs-target="#createRecap"></i>
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Recap"
+              type="button" data-bs-toggle="modal" data-bs-target="#createRecap"></i>
           </div>
 
           <div id="recaps" class="collapse">
@@ -91,7 +93,11 @@
         </div>
         <!-- NOTE Entities Section -->
         <div>
-          <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
+          <div class="d-flex justify-content-around align-items-center fs-4">
+            <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity" type="button" data-bs-toggle="modal"
+                data-bs-target="#addEntity"></i>
+          </div>
           <div id="entities" class="collapse">
             <ul v-for="entity in entityLinks" :key="entity.id">
               <router-link :to="{ name: 'entities', params: { campaignId: campaign.id, entityId: entity.id } }">
@@ -127,6 +133,7 @@ import { accountCampaignLinkService } from "../services/AccountCampaignLinkServi
 import { notesService } from "../services/NotesService.js"
 import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js"
 import { router } from "../router.js";
+import { entityService } from "../services/EntityService.js";
 export default {
   setup() {
 
@@ -138,6 +145,7 @@ export default {
       getAccountCampaignLinks()
       getEntityLinksByCampaign()
       getNotesByCampaign()
+      entityService.getEntity()
     })
 
     async function getEntityLinksByCampaign() {
