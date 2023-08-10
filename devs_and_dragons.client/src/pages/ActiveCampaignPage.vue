@@ -21,6 +21,7 @@
         class="col-md-2 col-12 d-flex justify-content-center align-items-center">
         <button class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
           @click="createAccountLink()">Join Us!</button>
+          <button class="btn btn-outline-info">Delete Campaign</button>
       </div>
     </div>
     <!-- SECTION players -->
