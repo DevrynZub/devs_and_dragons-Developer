@@ -14,6 +14,13 @@ export const CampaignSchema = new Schema({
   { timestamps: true, toJSON: { virtuals: true } }
 )
 
+CampaignSchema.virtual('partyCount', {
+  localField: '_id',
+  foreignField: 'campaignId',
+  ref: 'AccountCampaignLink',
+  count: true
+})
+
 
 // TODO ADD CREATOR VIRTUAL // CoverImg
 

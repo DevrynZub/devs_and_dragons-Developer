@@ -7,19 +7,19 @@ class CampaignService {
     return campaigns
   }
   async getAllCampaigns() {
-    const campaigns = await dbContext.Campaigns.find()
+    const campaigns = await dbContext.Campaigns.find().populate('partyCount')
     return campaigns
   }
 
   async getCampaignById(campaignId) {
-    const campaign = await dbContext.Campaigns.findById(campaignId)
+    const campaign = await dbContext.Campaigns.findById(campaignId).populate('partyCount')
     if (!campaign) {
       throw new BadRequest('Cannot find any campaigns by that ID')
     }
     return campaign
   }
   async createCampaign(campaignData) {
-    const newCampaigns = await dbContext.Campaigns.create(campaignData)
+    const newCampaigns = (await dbContext.Campaigns.create(campaignData)).populate('partyCount')
     return newCampaigns
   }
 

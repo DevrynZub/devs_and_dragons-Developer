@@ -17,7 +17,7 @@
         </div>
       </div>
       <!-- STUB Join us/ add character -->
-      <div v-if="campaign?.creatorId != account.id || !hasLink" class="col-md-2 col-12 d-flex justify-content-center align-items-center">
+      <div v-if="campaign?.creatorId != account.id && !hasLink" class="col-md-2 col-12 d-flex justify-content-center align-items-center">
         <button class="btn btn-outline-danger" :hidden="hasLink" @click="createAccountLink()">Join Us!</button>
       </div>
     </div>
