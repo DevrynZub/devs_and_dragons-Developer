@@ -9,7 +9,7 @@
             <div v-if="!hasLink">
               <i class="mdi mdi-star-outline fs-4"></i>
             </div>
-            <div v-else>
+            <div v-if="hasLink">
               <i class="mdi mdi-star fs-4"></i>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default {
       entities: computed(() => AppState.entities),
 
       hasLink: computed(() => {
-        return AppState.entityLinks.find(l => l.campaignId == AppState.activeCampaign.id)
+        return AppState.entityLinks.find(e => e.campaignId == AppState.activeCampaign.id)
       }),
 
 

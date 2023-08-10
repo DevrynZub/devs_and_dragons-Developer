@@ -1,9 +1,20 @@
 <template>
-  <div>
-
+  <div class="container-fluid">
+    <div class="row">
+      <div>
+        Name: {{ equipment?.name }}
+      </div>
+      <div>
+        Cost: {{ equipment?.cost.quantity }}{{ equipment?.cost.unit }}
+      </div>
+      <div>
+        Item Weight: {{ equipment?.weight }}
+      </div>
+      <div>
+        Description: {{ equipment?.desc }}
+      </div>
+    </div>
   </div>
-  {{ equipment?.name }}
-  <!-- <h1>Somethin</h1> -->
 </template>
 
 

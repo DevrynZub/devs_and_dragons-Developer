@@ -42,7 +42,7 @@
 
       </div>
       <!-- STUB child routing section -->
-      <div class="col-8 bg-black">
+      <div class="col-7 rounded elevation-5 child-field">
         <div>
           <router-view>
 
@@ -51,7 +51,7 @@
 
       </div>
       <!-- STUB information collapsibles -->
-      <div class="col-2 bg-dark text-light">
+      <div class="col-2 bg-dark text-light m-2">
         <!-- NOTE description -->
         <div>
           <router-link :to="{ name: 'description' }">
@@ -95,8 +95,8 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
-            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity" type="button" data-bs-toggle="modal"
-                data-bs-target="#addEntity"></i>
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity"
+              type="button" data-bs-toggle="modal" data-bs-target="#addEntity"></i>
           </div>
           <div id="entities" class="collapse">
             <ul v-for="entity in entityLinks" :key="entity.id">
@@ -228,10 +228,11 @@ export default {
 
 .background {
   background-position: center;
-  background-image: url("../assets/img/solarized-colorscheme-dungeons-and-dragons-minimalism-vector-simple-background-hd-wallpaper-preview.jpg");
+  background-image: url("https://preview.redd.it/ifw1keannjw41.jpg?auto=webp&s=e123ab1d8fc20faed9894298f7efbd6cde32aab5");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  height: 93dvh;
 }
 
 .player-avatar {
@@ -247,5 +248,10 @@ export default {
   background-repeat: no-repeat;
   box-shadow:
     inset 0 0 20px 7px #0cfc8cb6,
+}
+
+
+.child-field {
+  background-color: rgba(0, 0, 0, 0.813);
 }
 </style>
