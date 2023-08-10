@@ -65,6 +65,7 @@ export default {
 
     const filterBy = ref({})
     let selectedCategory = ref(null)
+    let savedCategory = null
 
     onMounted(() => {
       logger.log(selectedCategory)
@@ -77,7 +78,8 @@ export default {
       selectedCategory,
       setCategory(category) {
         selectedCategory.value = category
-        logger.log(selectedCategory)
+
+        // logger.log(selectedCategory)
       },
 
       async searchDnDApi() {
