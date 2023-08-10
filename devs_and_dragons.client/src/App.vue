@@ -95,7 +95,7 @@
       Class Name
     </template>
     <template #body>
-
+      <ClassesComponent />
     </template>
   </ModalComponent>
   <ModalComponent id="backgroundsSearch">
@@ -141,6 +141,7 @@ import EntityListComponent from "./components/EntityListComponent.vue"
 import SpellsComponent from './components/SpellsComponent.vue'
 import MonstersComponent from './components/MonstersComponent.vue'
 import EquipmentComponent from "./components/EquipmentComponent.vue"
+import ClassesComponent from './components/ClassesComponent.vue'
 import MagicItemsComponent from "./components/MagicItemsComponent.vue"
 
 export default {
@@ -149,7 +150,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, MagicItemsComponent }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, ClassesComponent, MagicItemsComponent }
 }
 </script>
 <style lang="scss">

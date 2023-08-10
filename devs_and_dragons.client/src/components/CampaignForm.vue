@@ -8,12 +8,12 @@
                     required>
             </div>
             <div class="mb-3">
-                <label for="coverImg" class="form-label">Event Image</label>
+                <label for="coverImg" class="form-label">Campaign Image</label>
                 <input v-model="editable.coverImg" type="url" class="form-control" id="coverImg" minlength="3"
                     maxlength="250" required>
             </div>
             <div class="mb-3">
-                <label for="capacity" class="form-label">Event Capacity</label>
+                <label for="capacity" class="form-label">Campaign Capacity</label>
                 <input v-model="editable.capacity" type="number" class="form-control" id="capacity" min="0" max="1000"
                     required>
             </div>
@@ -23,7 +23,7 @@
                     required>
             </div>
             <div class="mb-3">
-                <label for="description" class="form-label">Event Description</label>
+                <label for="description" class="form-label">Campaign Description</label>
                 <textarea v-model="editable.desc" class="form-control" aria-label="eventDescription" required></textarea>
             </div>
             <!-- <div class="mb-3">
