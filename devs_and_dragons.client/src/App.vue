@@ -73,6 +73,55 @@
       <EntityListComponent />
     </template>
   </ModalComponent>
+
+  <ModalComponent id="spellsSearch">
+    <template #header>
+      Spell Name
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="monstersSearch">
+    <template #header>
+      Monster Name
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="classesSearch">
+    <template #header>
+      Class Name
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="backgroundsSearch">
+    <template #header>
+      Background Name
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="magicItemsSearch">
+    <template #header>
+      Magic Item Name
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="equipmentSearch">
+    <template #header>
+      equipment name
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
 </template>
 
 
