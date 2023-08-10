@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div v-if="magicItems?.url.includes('magic-items')" class="container-fluid">
     <div class="row">
       <div>
         Name: {{ magicItems?.name }}
