@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div v-if="equipment?.url.includes('equipment')" class="container-fluid">
     <div class="row">
       <div>
         Name: {{ equipment?.name }}
