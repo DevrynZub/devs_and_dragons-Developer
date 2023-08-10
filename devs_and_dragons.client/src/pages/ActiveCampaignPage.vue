@@ -21,6 +21,7 @@
         class="col-md-2 col-12 d-flex justify-content-center align-items-center">
         <button class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
           @click="createAccountLink()">Join Us!</button>
+          <button class="btn btn-outline-info">Delete Campaign</button>
       </div>
     </div>
     <!-- SECTION players -->
@@ -30,7 +31,8 @@
     <div class="row">
       <div class="col-12 d-flex justify-content-around p-4">
         <div v-for="links in accountLinks" :key="links.id">
-          <img class="player-avatar" :src="links.Profile?.picture" :alt="links.Profile.name" :title="links.Profile.name">
+          <img class="player-avatar img-fluid" :src="links.Profile?.picture" :alt="links.Profile.name"
+            :title="links.Profile.name">
         </div>
       </div>
     </div>
@@ -42,7 +44,7 @@
 
       </div>
       <!-- STUB child routing section -->
-      <div class="col-7 rounded elevation-5 child-field">
+      <div class="col-10 col-md-7 colrounded elevation-5 child-field">
         <div>
           <router-view>
 

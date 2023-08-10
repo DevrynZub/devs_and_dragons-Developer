@@ -1,9 +1,9 @@
 <template>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-11 col-md-9">
+            <div class="col-11 col-md-9" v-if="spells">
                 <div>
-                    <h3> {{ spells?.name }}</h3>
+                    <h3> {{ spells.name }}</h3>
                 </div>
                 <div>
                     <p>{{ spells.range }}</p>
