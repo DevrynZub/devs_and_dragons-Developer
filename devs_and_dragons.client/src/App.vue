@@ -79,7 +79,7 @@
       Spell Name
     </template>
     <template #body>
-
+      <SpellsComponent />
     </template>
   </ModalComponent>
   <ModalComponent id="monstersSearch">
@@ -87,7 +87,7 @@
       Monster Name
     </template>
     <template #body>
-
+      <MonstersComponent />
     </template>
   </ModalComponent>
   <ModalComponent id="classesSearch">
@@ -138,6 +138,8 @@ import CreateNoteForm from "./components/CreateNoteForm.vue"
 import EditNoteForm from "./components/EditNoteForm.vue"
 import RecapFormComponent from "./components/RecapFormComponent.vue"
 import EntityListComponent from "./components/EntityListComponent.vue"
+import SpellsComponent from './components/SpellsComponent.vue'
+import MonstersComponent from './components/MonstersComponent.vue'
 import EquipmentComponent from "./components/EquipmentComponent.vue"
 
 export default {
@@ -146,7 +148,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent }
 }
 </script>
 <style lang="scss">
