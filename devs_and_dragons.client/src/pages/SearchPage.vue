@@ -45,9 +45,11 @@
   </div>
   <div class="row">
     <div v-for="item in searchResults" :key="item.name" class="col-4">
-      <h3 class="text-white selectable">
-        {{ item.name }}
-      </h3>
+      <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="">
+        <h4 class="text-white">
+          {{ item.name }}
+        </h4>
+      </button>
     </div>
   </div>
 </template>
@@ -87,6 +89,7 @@ export default {
           const formData = filterBy.value
 
           await dndApiService.searchDnDApi(formData, selectedCategory)
+          savedCategory = selectedCategory
         } catch (error) {
           Pop.error(error.message)
           logger.log(error)
