@@ -43,7 +43,7 @@ export default {
       entities: computed(() => AppState.entities),
 
       hasLink: computed(() => {
-        return AppState.entityLinks.find(e => e.campaignId == AppState.activeCampaign.id)
+        return AppState.entityLinks.includes(link => link.entityId == AppState.entities.forEach())
       }),
 
 
