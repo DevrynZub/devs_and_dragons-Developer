@@ -24,6 +24,7 @@ import { AppState } from "../AppState.js";
 
 export default {
   setup() {
+
     return {
       equipment: computed(() => AppState.selectedResult)
     }

@@ -114,12 +114,13 @@
 
     </template>
   </ModalComponent>
+
   <ModalComponent id="equipmentSearch">
     <template #header>
       equipment name
     </template>
     <template #body>
-
+      <EquipmentComponent />
     </template>
   </ModalComponent>
 </template>
@@ -137,6 +138,7 @@ import CreateNoteForm from "./components/CreateNoteForm.vue"
 import EditNoteForm from "./components/EditNoteForm.vue"
 import RecapFormComponent from "./components/RecapFormComponent.vue"
 import EntityListComponent from "./components/EntityListComponent.vue"
+import EquipmentComponent from "./components/EquipmentComponent.vue"
 
 export default {
   setup() {
@@ -144,7 +146,7 @@ export default {
       appState: computed(() => AppState)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent }
 }
 </script>
 <style lang="scss">
