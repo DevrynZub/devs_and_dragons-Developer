@@ -45,38 +45,38 @@
   </div>
   <div class="row">
     <div v-for="item in searchResults" :key="item.name" class="col-4">
-      <h4 class="text-white">
-        <button v-if="savedCategory == 'spells'" class="btn btn-outline-dark" data-bs-toggle="modal"
-          data-bs-target="#spellsSearch">
+      <button v-if="savedCategory == 'spells'" class="btn btn-outline-dark" data-bs-toggle="modal"
+        data-bs-target="#spellsSearch">
+        <h4 class="text-white">
           {{ item.name }}
-        </button>
-      </h4>
+        </h4>
+      </button>
       <button v-if="savedCategory == 'monsters'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="monstersSearch">
+        data-bs-target="#monstersSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
       <button v-if="savedCategory == 'classes'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="classesSearch">
+        data-bs-target="#classesSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
       <button v-if="savedCategory == 'backgrounds'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="backgroundsSearch">
+        data-bs-target="#backgroundsSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
       <button v-if="savedCategory == 'magic-items'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="magicItemsSearch">
+        data-bs-target="#magicItemsSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
       <button v-if="savedCategory == 'equipment'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="equipmentSearch">
+        data-bs-target="#equipmentSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
