@@ -6,7 +6,12 @@
           <div class="d-flex justify-content-between align-items-center p-2">
             <img class="entity-img" :src="e.imgUrl" :alt="e.name" :title="e.name">
             <h5>{{ e.name }}</h5>
-            <i class="mdi mdi-star-outline fs-4"></i>
+            <div v-if="!hasLink">
+              <i class="mdi mdi-star-outline fs-4"></i>
+            </div>
+            <div v-else>
+              <i class="mdi mdi-star fs-4"></i>
+            </div>
           </div>
           <div class="text-center">
             <p>{{ e.desc }}</p>
@@ -27,6 +32,7 @@ import Pop from "../utils/Pop.js";
 import { AppState } from "../AppState.js";
 import { useRoute } from "vue-router";
 import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js";
+import { Modal } from "bootstrap";
 
 export default {
   setup() {
@@ -36,6 +42,10 @@ export default {
     return {
       entities: computed(() => AppState.entities),
 
+      hasLink: computed(() => {
+        return AppState.entityLinks.find(l => l.campaignId == AppState.activeCampaign.id)
+      }),
+
 
       async createEntityCampaignLink(entityId) {
         try {
@@ -43,6 +53,7 @@ export default {
             const activeCampaign = route.params.campaignId
             const linkData = { campaignId: activeCampaign, entityId: entityId }
             await entitiesCampaignLinkService.createEntityCampaignLink(linkData)
+            Modal.getOrCreateInstance('#addEntity').hide()
           }
         return
         } catch (error) {
