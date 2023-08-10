@@ -68,7 +68,6 @@ export default {
             const activeCampaign = route.params.campaignId
             const linkData = { campaignId: activeCampaign, entityId: entityId }
             await entitiesCampaignLinkService.createEntityCampaignLink(linkData)
-
             Modal.getOrCreateInstance('#addEntity').hide()
           }
           return
