@@ -45,6 +45,7 @@ class NotesService {
     // logger.log(res.data)
     const newRecap = new Note(res.data)
     AppState.Notes.push(newRecap)
+    return newRecap
   }
 }
 

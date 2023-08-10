@@ -26,6 +26,7 @@ import { AppState } from "../AppState.js";
 import { notesService } from "../services/NotesService.js";
 import Pop from "../utils/Pop.js";
 import { Modal } from "bootstrap";
+import { router } from "../router.js";
 
 export default {
   setup() {
@@ -41,8 +42,9 @@ export default {
         formData.campaignId = route.params.campaignId
           formData.accountId = AppState.account.id
         formData.isRecap = true
-          await notesService.createRecap(formData)
-        editable.value = {}
+          const recap = await notesService.createRecap(formData)
+          editable.value = {}
+        // router.push({name: 'notes', params: {noteId: recap.id}})
           Modal.getOrCreateInstance('#createRecap').hide()
         } catch (error) {
           Pop.error(error.message)
