@@ -31,6 +31,7 @@ export const AppState = reactive({
   activeNote: null,
 
   dndApiResults: [],
+  selectedResult: null,
 
   messages: []
 
