@@ -45,38 +45,38 @@
   </div>
   <div class="row">
     <div v-for="item in searchResults" :key="item.name" class="col-4">
-      <button v-if="savedCategory == 'spells'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#spellsSearch">
+      <button @click="getSelectedSearch(item.url)" v-if="savedCategory == 'spells'" class="btn btn-outline-dark"
+        data-bs-toggle="modal" data-bs-target="#spellsSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
-      <button v-if="savedCategory == 'monsters'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#monstersSearch">
+      <button @click="getSelectedSearch(item.url)" v-if="savedCategory == 'monsters'" class="btn btn-outline-dark"
+        data-bs-toggle="modal" data-bs-target="#monstersSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
-      <button v-if="savedCategory == 'classes'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#classesSearch">
+      <button @click="getSelectedSearch(item.url)" v-if="savedCategory == 'classes'" class="btn btn-outline-dark"
+        data-bs-toggle="modal" data-bs-target="#classesSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
-      <button v-if="savedCategory == 'backgrounds'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#backgroundsSearch">
+      <button @click="getSelectedSearch(item.url)" v-if="savedCategory == 'backgrounds'" class="btn btn-outline-dark"
+        data-bs-toggle="modal" data-bs-target="#backgroundsSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
-      <button v-if="savedCategory == 'magic-items'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#magicItemsSearch">
+      <button @click="getSelectedSearch(item.url)" v-if="savedCategory == 'magic-items'" class="btn btn-outline-dark"
+        data-bs-toggle="modal" data-bs-target="#magicItemsSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
       </button>
-      <button v-if="savedCategory == 'equipment'" class="btn btn-outline-dark" data-bs-toggle="modal"
-        data-bs-target="#equipmentSearch">
+      <button @click="getSelectedSearch(item.url)" v-if="savedCategory == 'equipment'" class="btn btn-outline-dark"
+        data-bs-toggle="modal" data-bs-target="#equipmentSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
@@ -123,6 +123,14 @@ export default {
           await dndApiService.searchDnDApi(formData, selectedCategory)
           savedCategory.value = selectedCategory.value
 
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error)
+        }
+      },
+      async getSelectedSearch(url) {
+        try {
+          await dndApiService.getSelectedSearch(savedCategory, url)
         } catch (error) {
           Pop.error(error.message)
           logger.log(error)

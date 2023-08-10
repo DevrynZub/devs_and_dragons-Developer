@@ -11,6 +11,12 @@ class DnDApiService {
     AppState.dndApiResults = res.data.results
     logger.log('appstate dndapi results', AppState.dndApiResults)
   }
+  async getSelectedSearch(category, url) {
+    const res = await DnDApi.get(`${url}`)
+    logger.log('get selected search form dnd api', res.data)
+    AppState.selectedResult = res.data
+    logger.log('appstate selectedResult', AppState.selectedResult)
+  }
 
 }
 
