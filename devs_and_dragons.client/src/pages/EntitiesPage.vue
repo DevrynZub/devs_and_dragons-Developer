@@ -73,10 +73,18 @@ export default {
       entityLink: computed(() => AppState.ActiveEntityLink),
       activeCampaign: computed(() => AppState.activeCampaign),
       account: computed(() => AppState.account),
-      activeEntity: computed(() => AppState.ActiveEntityLink)
+      activeEntity: computed(() => AppState.ActiveEntityLink),
 
 
-        
+        async makeEntityPrivate() {
+          try {
+            const entity = AppState.ActiveEntityLink
+          await entitiesCampaignLinkService.makeEntityPrivate(entity)
+          } catch (error) {
+            Pop.error(error.message)
+            logger.log(error.message)
+          }
+        }
       }
       
 

@@ -6,6 +6,7 @@ export class EntityCampaignLink {
     this.campaignId = data.campaignId
     this.entityId = data.entityId
     this.creatorId = data.creatorId
+    this.isPrivate = data.isPrivate
     this.Entity = data.Entity
 
   }
