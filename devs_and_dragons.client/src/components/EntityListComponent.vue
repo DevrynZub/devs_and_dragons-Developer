@@ -2,20 +2,28 @@
   <div class="row">
     <div class="col-10 m-auto">
       <div v-for="e in entities" :key="e.id">
-        <div class="card elevation-4 mb-3 selectable" @click="createEntityCampaignLink(e.id)">
+        <div v-if="evaluateEntityLink(e.id) == false" class="card elevation-4 mb-3 selectable" @click="createEntityCampaignLink(e.id)">
           <div class="d-flex justify-content-between align-items-center p-2">
             <img class="entity-img" :src="e.imgUrl" :alt="e.name" :title="e.name">
             <h5>{{ e.name }}</h5>
-            <div v-if="evaluateEntityLink(e.id) == false">
-              <i class="mdi mdi-star-outline fs-4"></i>
-            </div>
-            <div v-else>
-              <i class="mdi mdi-star fs-4"></i>
-            </div>
+            <i class="mdi mdi-star-outline fs-4"></i>
           </div>
           <div class="text-center">
             <p>{{ e.desc }}</p>
           </div>
+        </div>
+
+        <div v-else>
+          <div class="card elevation-4 mb-3 bg-secondary">
+          <div class="d-flex justify-content-between align-items-center p-2">
+            <img class="entity-img" :src="e.imgUrl" :alt="e.name" :title="e.name">
+            <h5>{{ e.name }}</h5>
+            <i class="mdi mdi-star fs-4"></i>
+          </div>
+          <div class="text-center">
+            <p>{{ e.desc }}</p>
+          </div>
+        </div>
         </div>
       </div>
 
