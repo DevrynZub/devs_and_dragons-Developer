@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div>
-        Name: {{ equipment.name }}
+        Name: {{ equipment?.name }}
       </div>
       <div>
         Cost: {{ equipment?.cost.quantity }}{{ equipment?.cost.unit }}
