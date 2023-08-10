@@ -45,7 +45,8 @@
   </div>
   <div class="row">
     <div v-for="item in searchResults" :key="item.name" class="col-4">
-      <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="">
+      <button v-if="savedCategory.value == 'spells'" class="btn btn-outline-dark" data-bs-toggle="modal"
+        data-bs-target="spellsSearch">
         <h4 class="text-white">
           {{ item.name }}
         </h4>
@@ -67,7 +68,7 @@ export default {
 
     const filterBy = ref({})
     let selectedCategory = ref(null)
-    let savedCategory = null
+    let savedCategory = ref(null)
 
     onMounted(() => {
       logger.log(selectedCategory)
@@ -78,6 +79,7 @@ export default {
       searchResults: computed(() => AppState.dndApiResults),
       filterBy,
       selectedCategory,
+      savedCategory,
       setCategory(category) {
         selectedCategory.value = category
 
@@ -89,7 +91,7 @@ export default {
           const formData = filterBy.value
 
           await dndApiService.searchDnDApi(formData, selectedCategory)
-          savedCategory = selectedCategory
+          savedCategory.value = selectedCategory
         } catch (error) {
           Pop.error(error.message)
           logger.log(error)

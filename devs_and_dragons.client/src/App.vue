@@ -65,7 +65,47 @@
     </template>
   </ModalComponent>
 
-  <ModalComponent>
+  <ModalComponent id="spellsSearch">
+    <template #header>
+
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="monstersSearch">
+    <template #header>
+
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="classesSearch">
+    <template #header>
+
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="backgroundsSearch">
+    <template #header>
+
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="magicItemsSearch">
+    <template #header>
+
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
+  <ModalComponent id="equipmentSearch">
     <template #header>
 
     </template>
