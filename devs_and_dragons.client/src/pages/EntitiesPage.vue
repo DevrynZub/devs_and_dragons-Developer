@@ -5,7 +5,7 @@
         <div class="m-1 d-flex justify-content-between">
           Type of Entity: {{ entityLink?.Entity.type }}
           
-          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+          <div v-if="activeCampaign?.creatorId == account?.id" class="btn-group" role="group" aria-label="Basic radio toggle button group">
             <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
             <label class="btn btn-outline-warning" for="btnradio1">Private</label>
 
@@ -70,7 +70,10 @@ export default {
     }
 
     return {
-      entityLink: computed(() => AppState.ActiveEntityLink)
+      entityLink: computed(() => AppState.ActiveEntityLink),
+      activeCampaign: computed(() => AppState.activeCampaign),
+      account: computed(()=> AppState.account)
+      
 
     }
   }
