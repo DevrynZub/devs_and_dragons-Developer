@@ -37,12 +37,13 @@
 
 
 <script>
-import { ref } from 'vue'
+import { onUnmounted, ref } from 'vue'
 import { AppState } from '../AppState.js'
 import { campaignsService } from '../services/CampaignsService.js'
 import { router } from '../router.js'
 import { Modal } from 'bootstrap'
 import Pop from '../utils/Pop.js'
+import { accountCampaignLinkService } from "../services/AccountCampaignLinkService.js"
 
 export default {
     setup() {

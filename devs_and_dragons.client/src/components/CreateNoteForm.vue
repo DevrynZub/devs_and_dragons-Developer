@@ -26,6 +26,7 @@ import { notesService } from "../services/NotesService.js";
 import { useRoute } from "vue-router";
 import { Modal } from "bootstrap";
 import { AppState } from "../AppState.js";
+import { router } from "../router.js";
 
 export default {
   setup() {
@@ -44,6 +45,7 @@ export default {
           await notesService.createNote(noteData)
           editable.value = {}
           Modal.getOrCreateInstance('#createNote').hide()
+          
         } catch (error) {
           Pop.error(error.message)
           logger.log(error.message)
