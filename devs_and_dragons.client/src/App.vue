@@ -64,6 +64,15 @@
       <RecapFormComponent />
     </template>
   </ModalComponent>
+
+  <ModalComponent>
+    <template #header>
+
+    </template>
+    <template #body>
+
+    </template>
+  </ModalComponent>
 </template>
 
 
