@@ -9,7 +9,7 @@ export const EntitySchema = new Schema({
   name: { type: String, maxlength: 100 },
   imgUrl: { type: String, maxlength: 2000 },
   creatorId: { type: Schema.Types.ObjectId, required: true, ref: 'Account' },
-  isPrivate: { type: Boolean, default: false }
+  isPrivate: { type: Boolean, default: true }
 }, { timestamps: true, toJSON: { virtuals: true } })
 
 EntitySchema.virtual('Creator', {
