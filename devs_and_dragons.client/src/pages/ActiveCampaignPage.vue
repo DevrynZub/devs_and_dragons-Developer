@@ -49,11 +49,11 @@
     <!-- SECTION (image?), main body, information section -->
     <div class="row">
       <!-- STUB picture/chatbox reservation -->
-      <div class="col-2">
+      <div class="col-2 order-0">
 
       </div>
       <!-- STUB child routing section -->
-      <div class="col-12 col-md-7 colrounded elevation-5 child-field">
+      <div class="col-12 col-md-7 colrounded elevation-5 child-field order-2 order-md-1">
         <div>
           <router-view>
 
@@ -62,7 +62,7 @@
 
       </div>
       <!-- STUB information collapsibles -->
-      <div class="col-12 col-md-3 bg-dark text-light text-center top-menu d-flex flex-column justify-content-between">
+      <div class="col-12 col-md-3 bg-dark text-light text-center top-menu order-1 order-md2">
         <!-- NOTE description -->
         <div>
           <router-link :to="{ name: 'description' }">
@@ -304,8 +304,17 @@ export default {
 .top-menu {
   // overflow-x: hidden;
   min-height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 
 }
 
+@media screen and (max-width: 769px) {
 
+  .top-menu{
+    display: block;
+    min-height: 20vh;
+  }
+}
 </style>
