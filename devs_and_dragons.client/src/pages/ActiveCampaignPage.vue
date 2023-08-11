@@ -107,8 +107,11 @@
           <div id="entities" class="collapse">
             <ul v-for="entity in entityLinks" :key="entity.id">
               <router-link :to="{ name: 'entities', params: { campaignId: campaign.id, entityId: entity.id } }">
+                <div class="d-flex justify-content-between">
                 <li v-if="entity.isPrivate == false || campaign.creatorId == account.id" class="selectable">{{
                   entity.Entity.name }}</li>
+                  <i v-if="entity.isPrivate == false && campaign?.creatorId == account.id" class="mdi mdi-eye text-success" title="Everybody can see this Entity"></i>
+                </div>
               </router-link>
             </ul>
           </div>
