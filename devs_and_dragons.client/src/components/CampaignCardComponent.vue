@@ -1,31 +1,34 @@
 <template>
   <router-link :to="{ name: 'ActiveCampaign', params: { campaignId: campaignProp.id } }">
     <div class="row text-white text-center">
-      <div v-if="campaignProp.isArchived == false" class="d-flex flex-column box rounded elevation-5 selectable p-2 main-card" title="To this Campaign!">
-        <div class="elevation-5 mb-3 info-card rounded">
-          <h3>{{ campaignProp.name }}</h3>
-          <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
-          <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
-          <p class="campaign-desc">{{ campaignProp.desc }}</p>
-          <p>Player Capacity: {{ campaignProp.partyCount }} / {{ campaignProp?.capacity }}</p>
+      <div class="col-12">
+        <div v-if="campaignProp.isArchived == false" class="d-flex flex-column box rounded elevation-5 selectable p-2 main-card" title="To this Campaign!">
+          <div class="elevation-5 mb-3 info-card rounded">
+            <h3>{{ campaignProp.name }}</h3>
+            <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
+            <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
+            <p class="campaign-desc">{{ campaignProp.desc }}</p>
+            <p>Player Capacity: {{ campaignProp.partyCount }} / {{ campaignProp?.capacity }}</p>
+          </div>
+          <div class="text-center mb-2">
+            <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
+          </div>
         </div>
-        <div class="text-center mb-2">
-          <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
+  
+        <div v-else class="d-flex flex-column archived-box rounded elevation-5 selectable p-2" title="This campaign has ended but you can still view its details for inspiration!">
+          <div class="elevation-5 mb-3 info-card rounded">
+            <h3>{{ campaignProp.name }}</h3>
+            <!-- <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p> -->
+            <!-- <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p> -->
+            <!-- <p>{{ campaignProp.desc }}</p> -->
+            <p>This adventure has ended!</p>
+            <!-- <p>Player Capacity: {{ campaignProp.partyCount }} / {{ campaignProp?.capacity }}</p> -->
+          </div>
+          <div class="text-center mb-2">
+            <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
+          </div>
         </div>
-      </div>
 
-      <div v-else class="d-flex flex-column archived-box rounded elevation-5 selectable p-2" title="This campaign has ended but you can still view its details for inspiration!">
-        <div class="elevation-5 mb-3 info-card rounded">
-          <h3>{{ campaignProp.name }}</h3>
-          <!-- <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p> -->
-          <!-- <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p> -->
-          <!-- <p>{{ campaignProp.desc }}</p> -->
-          <p>This adventure has ended!</p>
-          <!-- <p>Player Capacity: {{ campaignProp.partyCount }} / {{ campaignProp?.capacity }}</p> -->
-        </div>
-        <div class="text-center mb-2">
-          <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
-        </div>
       </div>
 
     </div>
@@ -92,6 +95,9 @@ export default {
 //   border: 1px double rgb(112, 213, 241);
 
 // }
+.main-card{
+  height: 100%;
+}
 
 .cover-Img {
   height: 15vh;
