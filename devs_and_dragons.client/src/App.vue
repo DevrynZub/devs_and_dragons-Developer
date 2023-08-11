@@ -76,7 +76,7 @@
 
   <ModalComponent id="spellsSearch">
     <template #header>
-      Spell Name
+      {{ selectedResult?.name }}
     </template>
     <template #body>
       <SpellsComponent />
@@ -84,7 +84,7 @@
   </ModalComponent>
   <ModalComponent id="monstersSearch">
     <template #header>
-      Monster Name
+      {{ selectedResult?.name }}
     </template>
     <template #body>
       <MonstersComponent />
@@ -92,7 +92,7 @@
   </ModalComponent>
   <ModalComponent id="classesSearch">
     <template #header>
-      Class Name
+      {{ selectedResult?.name }}
     </template>
     <template #body>
       <ClassesComponent />
@@ -100,7 +100,7 @@
   </ModalComponent>
   <ModalComponent id="backgroundsSearch">
     <template #header>
-      Background Name
+      {{ selectedResult?.name }}
     </template>
     <template #body>
 
@@ -108,7 +108,7 @@
   </ModalComponent>
   <ModalComponent id="magicItemsSearch">
     <template #header>
-      Magic Item Name
+      {{ selectedResult?.name }}
     </template>
     <template #body>
       <MagicItemsComponent />
@@ -117,7 +117,7 @@
 
   <ModalComponent id="equipmentSearch">
     <template #header>
-      equipment name
+      {{ selectedResult?.name }}
     </template>
     <template #body>
       <EquipmentComponent />
@@ -147,7 +147,8 @@ import MagicItemsComponent from "./components/MagicItemsComponent.vue"
 export default {
   setup() {
     return {
-      appState: computed(() => AppState)
+      appState: computed(() => AppState),
+      selectedResult: computed(() => AppState.selectedResult)
     }
   },
   components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, ClassesComponent, MagicItemsComponent }

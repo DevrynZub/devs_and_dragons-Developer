@@ -3,10 +3,25 @@
         <div class="row">
             <div class="col-md-9 col-11" v-if="classes?.url.includes('class')">
                 <div>
-                    <h3>{{ classes.name }}</h3>
+                    Hit Die: d{{ classes.hit_die }}
                 </div>
                 <div>
-
+                    Skill Proficiencies: {{ classes.proficiency_choices.desc }}
+                </div>
+                <div>
+                    Proficiencies: <span v-for="(c, index) in classes.proficiencies" :key="index"><span
+                            v-if="!c.name.includes('Saving Throw')">{{ c.index }}, </span> </span>
+                </div>
+                <div>
+                    Saving Throws: <span v-for="(c, index) in classes.saving_throws" :key="index"> {{ c.name }}, </span>
+                </div>
+                <div>
+                    Starting Equipment: <span v-for="(c, index) in classes.starting_equipment" :key="index">{{ c.name }},
+                    </span>
+                    Choose From:
+                    <ul>
+                        <li v-for="(c, index) in classes.starting_equipment_options" :key="index">{{ c.desc }}</li>
+                    </ul>
                 </div>
 
 
