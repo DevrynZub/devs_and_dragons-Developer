@@ -11,7 +11,7 @@
               alt="">
           </a>
         </div>
-        <div v-else>
+        <div v-else-if="campaign?.creatorId == account.id">
           <img data-bs-toggle="modal" data-bs-target="#discordUpdate" class="discord selectable" title="Update Discord"
             src="https://static.vecteezy.com/system/resources/previews/011/912/003/original/plus-sign-icon-free-png.png"
             alt="">
@@ -312,7 +312,7 @@ export default {
 
 @media screen and (max-width: 769px) {
 
-  .top-menu{
+  .top-menu {
     display: block;
     min-height: 20vh;
   }
