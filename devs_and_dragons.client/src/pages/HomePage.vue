@@ -121,14 +121,14 @@ export default {
   position: relative;
   top: -13em;
   right: -2em;
-  height: 13em;
+  height: 14em;
 }
 
 .info-card2 {
   position: relative;
   top: 11em;
   left: -3em;
-  height: 14em;
+  height: 16em;
   opacity: 100%;
 }
 
@@ -144,7 +144,7 @@ export default {
   position: relative;
   top: 13em;
   left: -3em;
-  height: 16em;
+  height: 18em;
   opacity: 100%;
 }
 
