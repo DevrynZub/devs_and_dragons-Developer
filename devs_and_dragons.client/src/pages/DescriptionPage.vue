@@ -1,7 +1,7 @@
 <template>
   <div class="text-light text-center">
     <h2 class="mt-3">Description</h2>
-    <p>{{ campaign?.desc }}</p>
+    <p class="mt-2">{{ campaign?.desc }}</p>
   </div>
 </template>
 
