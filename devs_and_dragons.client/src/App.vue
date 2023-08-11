@@ -166,4 +166,19 @@ footer {
   place-content: center;
   height: 32px;
 }
+
+::-webkit-scrollbar {
+  box-shadow: inset 0 0 10px rgb(175, 30, 30);
+  // border-radius: 10px;
+  width: 25px;
+  margin: 3px;
+  background-color: black;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: url('https://i.pinimg.com/originals/15/d9/15/15d915a12800b3c5d0ec2f739f415996.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 </style>
