@@ -20,7 +20,7 @@
       <!-- STUB Join us/ add character -->
       <div class="col-md-2 col-12 d-flex justify-content-center align-items-center">
         <button v-if="campaign?.creatorId != account.id && !hasLink && campaign?.isArchived == false"
-          class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
+          class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity || !account.id"
           @click="createAccountLink()">Join Us!</button>
         <button v-if="campaign?.creatorId == account.id && campaign?.isArchived == false" @click="archiveCampaign()"
           class="btn btn-outline-info">Delete Campaign</button>
