@@ -51,6 +51,7 @@ class CampaignService {
     originalCampaign.capacity = campaignData.capacity || originalCampaign.capacity
     originalCampaign.isArchived = campaignData.isArchived || originalCampaign.isArchived || originalCampaign.isArchived
     originalCampaign.nextSessionDate = campaignData.nextSessionDate || originalCampaign.nextSessionDate
+    originalCampaign.discordLink = campaignData.discordLink || originalCampaign.discordLink
 
     await originalCampaign.save()
     return originalCampaign
