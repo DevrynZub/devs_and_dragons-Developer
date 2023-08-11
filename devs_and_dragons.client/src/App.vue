@@ -123,9 +123,9 @@
       <EquipmentComponent />
     </template>
   </ModalComponent>
-  <ModalComponent>
+  <ModalComponent id="discordUpdate">
     <template #body>
-
+      <DiscordForm />
     </template>
   </ModalComponent>
 </template>
@@ -149,6 +149,7 @@ import EquipmentComponent from "./components/EquipmentComponent.vue"
 import ClassesComponent from './components/ClassesComponent.vue'
 import MagicItemsComponent from "./components/MagicItemsComponent.vue"
 import BackgroundComponent from "./components/BackgroundComponent.vue"
+import DiscordForm from "./components/discordForm.vue"
 
 export default {
   setup() {
@@ -157,7 +158,7 @@ export default {
       selectedResult: computed(() => AppState.selectedResult)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, ClassesComponent, MagicItemsComponent, BackgroundComponent }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, ClassesComponent, MagicItemsComponent, BackgroundComponent, DiscordForm }
 }
 </script>
 <style lang="scss">

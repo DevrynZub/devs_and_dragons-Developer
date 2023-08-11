@@ -5,6 +5,15 @@ import { api } from "./AxiosService.js"
 
 class CampaignsService {
 
+    async updateDiscord(formData) {
+        const res = await api.put(`api/campaigns/${AppState.activeCampaign.id}`, formData)
+        logger.log('edit discord res data', res.data)
+        const updatedCampaign = new Campaign(res.data)
+        logger.log('stage 2', updatedCampaign)
+        AppState.activeCampaign = updatedCampaign
+        logger.log('Appstate discord change', AppState.activeCampaign)
+    }
+
     async getCampaigns() {
         const res = await api.get('api/campaigns')
         logger.log('[Got Campaigns]', res.data)

@@ -5,14 +5,14 @@
       <!-- STUB Discord Link -->
       <div class="col-md-2 col-12 d-flex align-items-center">
         <div v-if="campaign?.discordLink">
-          <a :href="campaign.discordLink">
+          <a :href="campaign?.discordLink">
             <img class="discord"
               src="https://logo.com/image-cdn/images/kts928pd/production/5b24e49fd89287ff1eb5bbc4cf93cb038c3384ef-512x512.png?w=1080&q=72"
               alt="">
           </a>
         </div>
         <div v-else>
-          <img @click="addDiscord()" class="discord selectable" title=""
+          <img data-bs-toggle="modal" data-bs-target="#discordUpdate" class="discord selectable" title="Update Discord"
             src="https://static.vecteezy.com/system/resources/previews/011/912/003/original/plus-sign-icon-free-png.png"
             alt="">
         </div>
