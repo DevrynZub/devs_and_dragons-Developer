@@ -79,6 +79,7 @@ export default {
         async makeEntityPrivate() {
           try {
             const entity = AppState.ActiveEntityLink
+            entity.isPrivate = true
           await entitiesCampaignLinkService.makeEntityPrivate(entity)
           } catch (error) {
             Pop.error(error.message)
