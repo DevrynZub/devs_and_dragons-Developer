@@ -105,8 +105,8 @@
             <ul v-for="entity in entityLinks" :key="entity.id">
               <router-link :to="{ name: 'entities', params: { campaignId: campaign.id, entityId: entity.id } }">
                 <li
-                  v-if="entity.Entity.isPrivate == false || entity.Entity.isPrivate == true && account.id == entity.Entity.creatorId"
-                  class="selectable">{{ entity.Entity.name }}</li>
+                  v-if="entityLinks.isPrivate == false || campaign.creatorId == account.id "
+                  class="selectable" >{{ entity.Entity.name }}</li>
               </router-link>
             </ul>
           </div>
@@ -126,7 +126,7 @@
 
 
 <script>
-import { computed, onMounted, ref, } from "vue";
+import { computed, onMounted, ref, watchEffect, } from "vue";
 import { useRoute } from "vue-router";
 import Pop from "../utils/Pop.js";
 import { logger } from "../utils/Logger.js";
@@ -149,6 +149,10 @@ export default {
       getEntityLinksByCampaign()
       getNotesByCampaign()
       entityService.getEntity()
+    })
+
+    watchEffect(() => {
+      getEntityLinksByCampaign()
     })
 
     async function getEntityLinksByCampaign() {
