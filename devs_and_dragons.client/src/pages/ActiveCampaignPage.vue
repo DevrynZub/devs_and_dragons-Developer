@@ -18,11 +18,12 @@
         </div>
       </div>
       <!-- STUB Join us/ add character -->
-      <div 
-        class="col-md-2 col-12 d-flex justify-content-center align-items-center">
-        <button v-if="campaign?.creatorId != account.id && !hasLink && campaign?.isArchived == false" class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
+      <div class="col-md-2 col-12 d-flex justify-content-center align-items-center">
+        <button v-if="campaign?.creatorId != account.id && !hasLink && campaign?.isArchived == false"
+          class="btn btn-outline-danger" :hidden="hasLink || campaign?.partyCount >= campaign?.capacity"
           @click="createAccountLink()">Join Us!</button>
-          <button v-if="campaign?.creatorId == account.id && campaign?.isArchived == false" @click="archiveCampaign()" class="btn btn-outline-info">Delete Campaign</button>
+        <button v-if="campaign?.creatorId == account.id && campaign?.isArchived == false" @click="archiveCampaign()"
+          class="btn btn-outline-info">Delete Campaign</button>
       </div>
     </div>
     <!-- SECTION players -->
@@ -65,8 +66,9 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#notes">Notes</h1>
-            <i v-if="hasLink || campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" :hidden="campaign?.isArchived == true"
-              title="Create a new Note" type="button" data-bs-toggle="modal" data-bs-target="#createNote"></i>
+            <i v-if="hasLink || campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable"
+              :hidden="campaign?.isArchived == true" title="Create a new Note" type="button" data-bs-toggle="modal"
+              data-bs-target="#createNote"></i>
           </div>
 
           <div id="notes" class="collapse">
@@ -82,8 +84,9 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#recaps">Recaps</h1>
-            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Recap" :hidden="campaign?.isArchived == true"
-              type="button" data-bs-toggle="modal" data-bs-target="#createRecap"></i>
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Create a new Recap"
+              :hidden="campaign?.isArchived == true" type="button" data-bs-toggle="modal"
+              data-bs-target="#createRecap"></i>
           </div>
 
           <div id="recaps" class="collapse">
@@ -98,15 +101,14 @@
         <div>
           <div class="d-flex justify-content-around align-items-center fs-4">
             <h1 class="selectable" data-bs-toggle="collapse" data-bs-target="#entities">Entities</h1>
-            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity" :hidden="campaign?.isArchived == true"
-              type="button" data-bs-toggle="modal" data-bs-target="#addEntity"></i>
+            <i v-if="campaign?.creatorId == account.id" class="mdi mdi-plus-circle selectable" title="Add an Entity"
+              :hidden="campaign?.isArchived == true" type="button" data-bs-toggle="modal" data-bs-target="#addEntity"></i>
           </div>
           <div id="entities" class="collapse">
             <ul v-for="entity in entityLinks" :key="entity.id">
               <router-link :to="{ name: 'entities', params: { campaignId: campaign.id, entityId: entity.id } }">
-                <li
-                  v-if="entityLinks.isPrivate == false || campaign.creatorId == account.id "
-                  class="selectable" >{{ entity.Entity.name }}</li>
+                <li v-if="entity.isPrivate == false || campaign.creatorId == account.id" class="selectable">{{
+                  entity.Entity.name }}</li>
               </router-link>
             </ul>
           </div>
