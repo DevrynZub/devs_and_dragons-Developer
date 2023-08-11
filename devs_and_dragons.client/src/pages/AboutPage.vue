@@ -38,15 +38,15 @@
         <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Devryn Zub</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
-            <a class="mdi mdi-linkedin fs-2" href=""></a>
+            <a class="mdi mdi-github mx-2 fs-2" title="To Devryn's Github" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" title="To Devryn's LinkedIn" href=""></a>
           </div>
         </div>
         <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Andrew Allison</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/AndrewAllison2"></a>
-            <a class="mdi mdi-linkedin fs-2" href=""></a>
+            <a class="mdi mdi-github mx-2 fs-2" title="To Andrew's Github" href="https://github.com/AndrewAllison2"></a>
+            <a class="mdi mdi-linkedin fs-2" title="To Andrew's LinkedIn" href="https://www.linkedin.com/in/andrew-allison-91a213288/"></a>
           </div>
         </div>
       </div>
@@ -54,22 +54,22 @@
         <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Jeremy Olds</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
-            <a class="mdi mdi-linkedin fs-2" href=""></a>
+            <a class="mdi mdi-github mx-2 fs-2" title="To Jeremy's Github" href=""></a>
+            <a class="mdi mdi-linkedin fs-2" title="To Jeremy's LinkedIn" href=""></a>
           </div>
         </div>
         <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Riley Thomas</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/Rilezzz"></a>
-            <a class="mdi mdi-linkedin fs-2" href="https://www.linkedin.com/in/idahosuperiorcustoms/"></a>
+            <a class="mdi mdi-github mx-2 fs-2" title="To Riley's Github" href="https://github.com/Rilezzz"></a>
+            <a class="mdi mdi-linkedin fs-2" title="To Riley's LinkedIn" href="https://www.linkedin.com/in/idahosuperiorcustoms/"></a>
           </div>
         </div>
         <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Brandon Riggs</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/BrandonRiggs-0104"></a>
-            <a class="mdi mdi-linkedin fs-2" href=""></a>
+            <a class="mdi mdi-github mx-2 fs-2" title="To Brandon's Github" href="https://github.com/BrandonRiggs-0104"></a>
+            <a class="mdi mdi-linkedin fs-2" title="To Brandon's LinkedIn" href=""></a>
           </div>
         </div>
       </div>
