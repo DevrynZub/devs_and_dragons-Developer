@@ -39,7 +39,7 @@ class EntityCampaignLinkService {
   async editEntityLink(data, entityLinkId, userId) {
     const originalLink = await this.getEntityLinkById(entityLinkId)
     if (!originalLink) {
-      throw new BadRequest('Cnnot find a link by that ID')
+      throw new BadRequest('Cannot find a link by that ID')
     }
     originalLink.isPrivate = data.isPrivate || true
 
