@@ -91,8 +91,7 @@
 
 
 
-
-<script>
+-lefipt>
 export default {
   setup() {
     return {}
@@ -270,7 +269,7 @@ span:nth-child(18) {
 @media(max-width: 767px) {
   .hero-img {
     max-width: 100%;
-    margin-left: 0;
+    margin-top: 12%;
     padding-top: 3%;
   }
 
