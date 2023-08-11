@@ -6,19 +6,32 @@
           <div class="d-flex justify-content-between align-items-center p-2">
             <img class="entity-img" :src="e.imgUrl" :alt="e.name" :title="e.name">
             <h5>{{ e.name }}</h5>
-            <i class="mdi mdi-star-outline fs-4"></i>
+            <div v-if="e.creatorId != account.id">
+              <i class="mdi mdi-star-outline fs-4"></i>
+            </div>
+            <div v-else>
+              <i class="mdi mdi-star text-warning fs-4" title="My Entity"></i>
+            </div>
           </div>
+          
+            
+          
           <div class="text-center">
             <p>{{ e.desc }}</p>
           </div>
         </div>
 
         <div v-else>
-          <div class="card elevation-4 mb-3 bg-secondary">
+          <div class="card elevation-4 mb-3 bg-secondary" title='This entity is already a part of your world!' >
           <div class="d-flex justify-content-between align-items-center p-2">
             <img class="entity-img" :src="e.imgUrl" :alt="e.name" :title="e.name">
             <h5>{{ e.name }}</h5>
-            <i class="mdi mdi-star fs-4"></i>
+            <div v-if="e.creatorId != account.id">
+              <i class="mdi mdi-star-outline fs-4"></i>
+            </div>
+            <div v-else>
+              <i class="mdi mdi-star text-warning fs-4"></i>
+            </div>
           </div>
           <div class="text-center">
             <p>{{ e.desc }}</p>
@@ -49,6 +62,7 @@ export default {
 
     return {
       entities: computed(() => AppState.entities),
+      account: computed(()=> AppState.account),
 
 
       evaluateEntityLink(entityId) {
