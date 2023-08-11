@@ -61,12 +61,12 @@
             <div class="carousel-inner">
               <div class="carousel-item d-flex justify-content-center " :class="{ active: index == 0 }"
                 v-for="entity, index in myEntities" :key="entity.id">
-                <div class=" col-8 col-md-6 d-flex flex-column text-white box rounded elevation-5 m-3 p-2">
+                <div class=" col-8 col-md-6 d-flex flex-column text-white text-center box rounded elevation-5 m-3 p-2">
                   <div class="elevation-5 mb-3 info-card rounded">
                     <h3>{{ entity.name }}</h3>
                     <p>Type: {{ entity.type }}</p>
-                    <p>{{ entity.desc }}</p>
-                    <p>{{ entity.body }}</p>
+                    <p >{{ entity.desc }}</p>
+                    <!-- <p class="entity-desc">{{ entity.body }}</p> -->
                   </div>
                   <div class="text-center mb-2">
                     <img class="img-fluid rounded cover-Img" :src="entity.imgUrl" alt="">
@@ -196,5 +196,12 @@ img {
 .info-card {
   background-color: rgba(0, 0, 0, 0.555);
   padding: 10px;
+}
+
+.entity-desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* max-height: 10em; */
 }
 </style>
