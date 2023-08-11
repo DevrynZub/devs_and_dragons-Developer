@@ -25,8 +25,8 @@
 
 
     <div class="row my-3 justify-content-center">
-      <div class="col-11 col-md-9 card align-items-center justify-content-center">
-        <h1 class="d-flex text-light quote-img  ">
+      <div class="col-12 col-md-9 card align-items-center justify-content-center">
+        <h1 class="d-flex text-light quote-img ">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
       </div>
@@ -223,7 +223,8 @@ span:nth-child(18) {
   box-shadow: 1px 3px 2px rgb(255, 72, 0, 0.578);
   border-radius: 16px;
   color: white;
-  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.329), rgba(85, 84, 84, 0.507) 10%, rgb(22, 22, 22) 20%);
+  background-image: linear-gradient(rgba(41, 39, 39, 0.541) 50%, rgba(105, 104, 104, 0.363) 80%, rgba(146, 146, 146, 0.747) 90%);
+  // background-image: linear-gradient(rgba(146, 146, 146, 0.747) 15%, rgba(105, 104, 104, 0.541) 20%, rgba(41, 39, 39, 0.541) 35%);
 
 }
 
@@ -285,8 +286,9 @@ span:nth-child(18) {
   .quote-img {
     font-size: 20px;
     padding-top: 3%;
-    margin-left: -14%;
+    margin-left: 0%;
   }
+
 
 
 }
