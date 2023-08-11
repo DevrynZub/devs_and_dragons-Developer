@@ -10,10 +10,10 @@
                         Components: <span v-for="(s, index) in spells.components" :key="index">{{ s }}, </span>
                     </div>
                     <div>
-                        {{ spells.material }}
+                        Materials: {{ spells.material }}
                     </div>
                     <div>
-                        {{ spells.ritual }}
+                        Ritual Spell: {{ spells.ritual }}
                     </div>
                     <div>
                         Spell Duration: {{ spells.duration }}
