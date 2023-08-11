@@ -1,20 +1,20 @@
 <template>
     <div class="background h-100 container-fluid">
-        <div class="row justify-content-center d-flex ">
-            <div class="col-md-4 col-12 p-3 text-center">
+        <div class="row justify-content-center m-0 d-flex ">
+            <div class="col-md-4 col-12 m-1 text-center">
                 <div class="elevation-3 rounded fs-5 search text-light p-1 ">
                     <input v-model="filterBy" class="rounded-pill m-2 w-75" placeholder="Search Campaigns" type="search"
                         id="site-campaigns" name="q" />
                 </div>
-                <button v-if="account.id" class="btn btn-danger m-2" type="button" data-bs-toggle="modal"
+                <button v-if="account.id" class="btn btn-danger mt-2" type="button" data-bs-toggle="modal"
                     data-bs-target="#createCampaignModal">
                     <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
             </div>
         </div>
-        <div class="row justify-content-center p-2">
+        <div class="row justify-content-center p-1">
             <div class="col-12 col-md-11 scroll backdrop rounded">
                 <div class="row justify-content-center p-2 ">
-                    <div class="col-md-3 col-12 m-4 text-light animate__animated animate__fadeIn camp-card"
+                    <div class="col-md-3 col-12 m-2 text-light animate__animated animate__fadeIn camp-card"
                         v-for="campaign in campaigns " :key="campaign.id">
                         <CampaignCardComponent :campaignProp="campaign" />
                     </div>
@@ -145,7 +145,7 @@ export default {
 
     .scroll {
         overflow-y: scroll;
-        height: 57vh;
+        height: 62vh;
     }
 
     // .scroll::-webkit-scrollbar {
