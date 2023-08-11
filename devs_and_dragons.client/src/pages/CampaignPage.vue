@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row justify-content-center p-2">
-            <div class="col-11 scroll backdrop rounded">
+            <div class="col-12 col-md-11 scroll backdrop rounded">
                 <div class="row justify-content-center p-2 ">
                     <div class="col-md-3 col-12 m-4 text-light animate__animated animate__fadeIn camp-card"
                         v-for="campaign in campaigns " :key="campaign.id">
@@ -106,6 +106,7 @@ export default {
     background-image: url('https://i.pinimg.com/originals/15/d9/15/15d915a12800b3c5d0ec2f739f415996.png');
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .box {
@@ -136,6 +137,29 @@ export default {
 }
 
 .camp-card {
-    height: 100%;
+    height: 80%;
+}
+
+
+@media screen and (max-width: 769px) {
+
+    .scroll {
+        overflow-y: scroll;
+        height: 57vh;
+    }
+
+    // .scroll::-webkit-scrollbar {
+    //     box-shadow: inset 0 0 5px rgb(175, 30, 30);
+    //     border-radius: 10px;
+    //     width: 25px;
+    //     margin: 3px;
+    // }
+
+    // .scroll::-webkit-scrollbar-thumb {
+    //     background-image: url('https://i.pinimg.com/originals/15/d9/15/15d915a12800b3c5d0ec2f739f415996.png');
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    // }
+
 }
 </style>

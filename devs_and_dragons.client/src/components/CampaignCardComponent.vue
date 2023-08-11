@@ -2,7 +2,9 @@
   <router-link :to="{ name: 'ActiveCampaign', params: { campaignId: campaignProp.id } }">
     <div class="row text-white text-center">
       <div class="col-12">
-        <div v-if="campaignProp.isArchived == false" class="d-flex flex-column box rounded elevation-5 selectable p-2 main-card" title="To this Campaign!">
+        <div v-if="campaignProp.isArchived == false"
+          class="d-flex flex-column justify-content-around box rounded elevation-5 selectable p-2 main-card"
+          title="To this Campaign!">
           <div class="elevation-5 mb-3 info-card rounded">
             <h3>{{ campaignProp.name }}</h3>
             <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
@@ -14,8 +16,9 @@
             <img class="img-fluid rounded cover-Img" :src="campaignProp.coverImg" alt="">
           </div>
         </div>
-  
-        <div v-else class="d-flex flex-column archived-box rounded elevation-5 selectable p-2" title="This campaign has ended but you can still view its details for inspiration!">
+
+        <div v-else class="d-flex flex-column justify-content-around archived-box rounded elevation-5 selectable p-2"
+          title="This campaign has ended but you can still view its details for inspiration!">
           <div class="elevation-5 mb-3 info-card rounded">
             <h3>{{ campaignProp.name }}</h3>
             <!-- <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p> -->
@@ -61,12 +64,14 @@ export default {
   background-color: rgba(73, 73, 73, 0.719);
   outline: 1px double red;
   box-shadow: 3px 1px 5px rgb(255, 0, 0);
+  height: 45vh;
 }
 
-.archived-box{
+.archived-box {
   background-color: rgba(73, 73, 73, 0.719);
   outline: 1px double rgb(255, 220, 19);
   box-shadow: 3px 1px 5px rgb(255, 220, 19);
+  height: 45vh;
 
 }
 
@@ -95,8 +100,8 @@ export default {
 //   border: 1px double rgb(112, 213, 241);
 
 // }
-.main-card{
-  height: 100%;
+.main-card {
+  height: 45vh;
 }
 
 .cover-Img {
@@ -105,7 +110,7 @@ export default {
   object-fit: cover;
 }
 
-.campaign-desc{
-overflow-wrap:break-word
+.campaign-desc {
+  overflow-wrap: break-word
 }
 </style>
