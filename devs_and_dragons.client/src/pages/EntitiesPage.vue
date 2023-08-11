@@ -9,7 +9,7 @@
             <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked @click="makeEntityPrivate()">
             <label class="btn btn-outline-warning" for="btnradio1">Private</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" @click="makeEntityPublic()">
             <label class="btn btn-outline-success" for="btnradio2">Public</label>
           </div>
         </div>
@@ -80,12 +80,27 @@ export default {
           try {
             const entity = AppState.ActiveEntityLink
             entity.isPrivate = true
-          await entitiesCampaignLinkService.makeEntityPrivate(entity)
+            const entityLinkId = entity.id
+          await entitiesCampaignLinkService.makeEntityPrivate(entity, entityLinkId)
           } catch (error) {
             Pop.error(error.message)
             logger.log(error.message)
           }
+      },
+
+
+      // FIXME works in ui but is not flipping bool on network request
+      async makeEntityPublic() {
+        try {
+          const linkData = AppState.ActiveEntityLink
+            linkData.isPrivate = false
+            const entityLinkId = linkData.id
+          await entitiesCampaignLinkService.makeEntityPublic(linkData, entityLinkId)
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error.message)
         }
+      }
       }
       
 
