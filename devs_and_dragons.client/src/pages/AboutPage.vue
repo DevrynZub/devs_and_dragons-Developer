@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid about-page bg-black">
     <div class="row justify-content-around ">
-      <div class="col-12 col-md-4 pt-md-5 pb-3 d-flex justify-content-center ">
-        <img class="hero-img card img-fluid" src="src\assets\img\DnD About Page.png" alt="">
+      <div class="col-12 pt-md-5 pb-3 d-flex justify-content-center ">
+        <img class="hero-img img-fluid bg-warning rounded-4" src="src\assets\img\DnD_Logo2-removebg-preview.png" alt="">
       </div>
 
-      <div class="col-12 col-md-4 card project-tools text-light  px-3">
+      <div class="col-12 col-md-6 card project-tools text-light  m-3">
         <div>
           <p>Languages and Tools
             used on this project:</p>
@@ -24,8 +24,8 @@
 
 
 
-    <div class="row mt-3 justify-content-center">
-      <div class="col-11 col-md-10 card align-items-center justify-content-center">
+    <div class="row my-3 justify-content-center">
+      <div class="col-11 col-md-9 card align-items-center justify-content-center">
         <h1 class="d-flex text-light quote-img ">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
@@ -68,7 +68,7 @@
         <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
           <div class="mt-4">Brandon Riggs</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/BrandonRiggs-0104"></a>
             <a class="mdi mdi-linkedin fs-2" href=""></a>
           </div>
         </div>
@@ -236,12 +236,11 @@ span:nth-child(18) {
 
 .about-page {
   background-color: #000000;
-  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-  background-attachment: fixed;
+  // background-image:
+  // background-attachment: fixed;
   // background-repeat: no-repeat;
   // background-size: cover;
-
-
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .hero-img {
@@ -249,6 +248,8 @@ span:nth-child(18) {
   max-width: 75vh;
   // margin-left: 15%;
   // padding-top: 5%;
+  border: 1px double rgba(255, 72, 0, 0.578);
+  box-shadow: 4px 1px 13px rgb(255, 72, 0, 0.578);
 }
 
 
