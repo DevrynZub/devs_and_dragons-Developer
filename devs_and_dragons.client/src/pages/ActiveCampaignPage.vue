@@ -1,7 +1,7 @@
 <template>
-  <div class="background">
+  
 
-    <div class="container-fluid">
+    <div class="container-fluid background">
       <!-- SECTION links, join us, title, and session date -->
       <div class="row">
         <!-- STUB Discord Link -->
@@ -130,7 +130,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 
 
@@ -263,7 +263,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100%;
+  height: 200%;
 }
 
 .player-avatar {
@@ -275,7 +275,7 @@ export default {
 .player-info-background {
   background-image: url(https://www.shutterstock.com/image-photo/flameburning-banner-black-flames-fire-260nw-2123476919.jpg);
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   box-shadow:
     inset 0 0 20px 7px #0cfc8cb6,
@@ -294,6 +294,7 @@ export default {
 
 .top-menu{
   // overflow-x: hidden;
-  height: 58.8vh;
+  min-height: 70vh;
+
 }
 </style>
