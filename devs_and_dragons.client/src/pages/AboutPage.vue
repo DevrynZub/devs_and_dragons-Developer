@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid about-page bg-black">
     <div class="row justify-content-around ">
-      <div class="col-12 pt-md-5 pb-3 d-flex justify-content-center ">
+      <div class="col-12 pt-md-5 pb-3 mt-2 d-flex justify-content-center ">
         <img class="hero-img img-fluid rounded-4" src="src\assets\img\DnD_Logo2-removebg-preview.png" alt="">
       </div>
 

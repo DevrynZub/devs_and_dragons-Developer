@@ -162,6 +162,7 @@ img {
   background-position: center;
   background-attachment: fixed;
   min-height: 95vh;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .box {
