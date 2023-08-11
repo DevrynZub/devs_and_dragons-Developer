@@ -298,6 +298,7 @@ export default {
   overflow-wrap: break-word;
   overflow-y: auto;
   max-height: 50vh;
+  
 }
 
 .top-menu {

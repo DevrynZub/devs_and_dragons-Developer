@@ -64,14 +64,14 @@ export default {
   background-color: rgba(73, 73, 73, 0.719);
   outline: 1px double red;
   box-shadow: 3px 1px 5px rgb(255, 0, 0);
-  height: 45vh;
+  min-height: 50vh;
 }
 
 .archived-box {
   background-color: rgba(73, 73, 73, 0.719);
   outline: 1px double rgb(255, 220, 19);
   box-shadow: 3px 1px 5px rgb(255, 220, 19);
-  height: 45vh;
+  min-height: 50vh;
 
 }
 
@@ -101,7 +101,7 @@ export default {
 
 // }
 .main-card {
-  height: 45vh;
+  min-height: 50vh;
 }
 
 .cover-Img {
@@ -114,6 +114,6 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
+  max-height: 10em;
 }
 </style>
