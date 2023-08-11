@@ -2,15 +2,15 @@
     <div class="background">
 
         <div class="container-fluid">
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-12 p-3 text-center">
-                    <div class="elevation-3 rounded fs-5 box text-light p-1 ">
-                        <label for="site-campaigns">Search for Campaigns: </label>
-                        <input v-model="filterBy" class="rounded m-2" type="search" id="site-campaigns" name="q" />
-                        <button v-if="account.id" class="btn btn-outline-danger mx-2" type="button" data-bs-toggle="modal"
-                            data-bs-target="#createCampaignModal">
-                            <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
+            <div class="row justify-content-center d-flex ">
+                <div class="col-md-4 col-12 p-3 text-center">
+                    <div class="elevation-3 rounded fs-5 search text-light p-1 ">
+                        <input v-model="filterBy" class="rounded-pill m-2 w-75" placeholder="Search Campaigns" type="search"
+                            id="site-campaigns" name="q" />
                     </div>
+                    <button v-if="account.id" class="btn btn-danger m-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#createCampaignModal">
+                        <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
                 </div>
             </div>
             <div class="row justify-content-center p-2">
@@ -73,11 +73,12 @@ export default {
 
 <style lang="scss" scoped>
 .background {
-    background-position: center;
+    // background-position: center;
     background-image: url(https://www.pixel-creation.com/wp-content/uploads/dungeons-and-dragons-wallpaper-1920x1080-77-images-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
 }
 
 .scroll {
@@ -86,8 +87,15 @@ export default {
 
 .box {
     background-color: rgba(10, 7, 7, 0.719);
-    border: 1px double red;
-    box-shadow: 3px 1px 5px rgb(255, 0, 0);
+    border: 1px double rgb(63, 5, 5);
+    box-shadow: 3px 1px 5px rgba(100, 4, 4, 0.628);
+
+}
+
+.search {
+    background-color: rgba(0, 0, 0, 0.831);
+    // border: 1px double red;
+    // box-shadow: 3px 1px 5px rgb(255, 0, 0);
 
 }
 
