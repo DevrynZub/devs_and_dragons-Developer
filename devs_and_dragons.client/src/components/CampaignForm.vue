@@ -75,9 +75,9 @@ export default {
 
 <style lang="scss" scoped>
 .background {
-    // background-position: center;
-    background-image: url("../assets/img/solarized-colorscheme-dungeons-and-dragons-minimalism-vector-simple-background-hd-wallpaper-preview.jpg");
-    background-size: cover;
+    background-position: center;
+    background-image: url(https://www.transparentpng.com/thumb/fire/fire-flame-png-images-download-2.png);
+    background-size: contain;
     background-repeat: no-repeat;
     // background-attachment: fixed;
 }
