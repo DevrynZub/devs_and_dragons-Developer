@@ -260,7 +260,7 @@ span:nth-child(18) {
   // margin-left: 15%;
   // padding-top: 5%;
   border: 1px double rgba(255, 72, 0, 0.578);
-  box-shadow: 4px 1px 13px rgb(255, 72, 0, 0.578);
+  box-shadow: 4px 5px 13px rgb(255, 72, 0, 0.578);
   background-color: rgb(224, 190, 35);
 }
 
