@@ -6,10 +6,10 @@
           Type of Entity: {{ entityLink?.Entity.type }}
           
           <div v-if="activeCampaign?.creatorId == account?.id" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked @click="makeEntityPrivate()">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="activeEntity?.isPrivate == true" @click="makeEntityPrivate()">
             <label class="btn btn-outline-warning" for="btnradio1">Private</label>
 
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" @click="makeEntityPublic()">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" :checked="activeEntity?.isPrivate == false" @click="makeEntityPublic()">
             <label class="btn btn-outline-success" for="btnradio2">Public</label>
           </div>
         </div>
