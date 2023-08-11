@@ -184,49 +184,49 @@ p {
     position: relative;
     top: 1em;
     left: 17px;
-    height: 18em;
+    height: 21em;
     width: 90%;
   }
 
   .info-card1 {
     position: relative;
-    top: -17em;
+    top: -21em;
     right: -1em;
-    height: 20em;
+    height: 26em;
     width: 90%;
   }
 
   .info-card2 {
     position: relative;
-    top: -12em;
+    top: -19em;
     left: 1em;
-    height: 25em;
+    height: 30em;
     width: 90%;
   }
 
   .info-card3 {
     position: relative;
-    top: -5em;
+    top: -6em;
     left: 1em;
-    height: 17em;
+    height: 22em;
     width: 90%;
   }
 
   .info-card4 {
     position: relative;
-    top: -2em;
+    top: -6em;
     left: 1em;
-    height: 26em;
+    height: 35em;
     width: 90%;
   }
 
   .start-button {
     position: relative;
-    top: 1em;
+    top: -4em;
     left: 5em;
   }
 
   .horse-img {
-    height: 62em;
+    height: 70em;
   }
 }</style>
