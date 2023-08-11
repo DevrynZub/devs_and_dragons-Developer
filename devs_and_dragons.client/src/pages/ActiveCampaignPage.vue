@@ -53,7 +53,7 @@
 
       </div>
       <!-- STUB child routing section -->
-      <div class="col-12 col-md-7 colrounded elevation-5 child-field order-2 order-md-1">
+      <div class="col-12 col-md-7 rounded elevation-5 child-field order-2 order-md-1">
         <div>
           <router-view>
 
@@ -62,7 +62,7 @@
 
       </div>
       <!-- STUB information collapsibles -->
-      <div class="col-12 col-md-3 bg-dark text-light text-center top-menu order-1 order-md2">
+      <div class="col-12 col-md-3 bg-dark text-light text-center top-menu order-1 order-md-2">
         <!-- NOTE description -->
         <div>
           <router-link :to="{ name: 'description' }">
