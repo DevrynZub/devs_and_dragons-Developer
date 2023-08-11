@@ -123,6 +123,11 @@
       <EquipmentComponent />
     </template>
   </ModalComponent>
+  <ModalComponent>
+    <template #body>
+
+    </template>
+  </ModalComponent>
 </template>
 
 

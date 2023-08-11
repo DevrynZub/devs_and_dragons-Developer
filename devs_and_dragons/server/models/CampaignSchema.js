@@ -9,7 +9,8 @@ export const CampaignSchema = new Schema({
   tags: [{ type: String, maxLength: 20 }],
   capacity: { type: Number, required: true },
   isArchived: { type: Boolean, default: false },
-  nextSessionDate: { type: Date }
+  nextSessionDate: { type: Date },
+  discordLink: { type: String, minLength: 30 }
 },
   { timestamps: true, toJSON: { virtuals: true } }
 )

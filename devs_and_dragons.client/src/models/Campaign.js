@@ -11,5 +11,6 @@ export class Campaign {
         this.isArchived = data.isArchived
         this.nextSessionDate = new Date(data.nextSessionDate)
         this.partyCount = data.partyCount
+        this.discordLink = data.discordLink || null
     }
 }
