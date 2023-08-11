@@ -103,7 +103,7 @@
       {{ selectedResult?.name }}
     </template>
     <template #body>
-
+      <BackgroundComponent />
     </template>
   </ModalComponent>
   <ModalComponent id="magicItemsSearch">
@@ -143,6 +143,7 @@ import MonstersComponent from './components/MonstersComponent.vue'
 import EquipmentComponent from "./components/EquipmentComponent.vue"
 import ClassesComponent from './components/ClassesComponent.vue'
 import MagicItemsComponent from "./components/MagicItemsComponent.vue"
+import BackgroundComponent from "./components/BackgroundComponent.vue"
 
 export default {
   setup() {
@@ -151,7 +152,7 @@ export default {
       selectedResult: computed(() => AppState.selectedResult)
     }
   },
-  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, ClassesComponent, MagicItemsComponent }
+  components: { Navbar, ModalComponent, CampaignForm, EntityCreateForm, UpdateAccount, CreateNoteForm, EditNoteForm, RecapFormComponent, EntityListComponent, EquipmentComponent, SpellsComponent, MonstersComponent, ClassesComponent, MagicItemsComponent, BackgroundComponent }
 }
 </script>
 <style lang="scss">
