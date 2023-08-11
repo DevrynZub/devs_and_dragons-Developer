@@ -33,8 +33,8 @@
                 <p>{{ entityLink?.Entity.body }}</p>
               </div>
             </div>
-          <div class="entityImg  mt-5 m-auto pb-5">
-            <img class="img-fluid rounded-5" :src="entityLink?.Entity.imgUrl">
+          <div class="col-10 mt-5 m-auto pb-5">
+            <img class="img-fluid entityImg rounded-5" :src="entityLink?.Entity.imgUrl">
           </div>
       </div>
 </div>
@@ -126,7 +126,8 @@ export default {
 }
 
 .entityImg {
-  max-width: 90%;
-  max-height: 75%;
+  width: 100%;
+  height: 40%;
+  
 }
 </style>
