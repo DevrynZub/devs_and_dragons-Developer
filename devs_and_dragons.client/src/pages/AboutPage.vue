@@ -24,7 +24,7 @@
 
 
 
-    <div class="row my-3 justify-content-center quote-style">
+    <div class="row my-3 justify-content-center">
       <div class="col-12 col-md-9 card align-items-center justify-content-center">
         <h1 class="d-flex text-light quote-img ">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
