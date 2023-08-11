@@ -90,7 +90,7 @@ export default {
 
 .scroll {
     overflow-y: scroll;
-    max-height: 73vh;
+    max-height: 69vh;
 
 
 }
