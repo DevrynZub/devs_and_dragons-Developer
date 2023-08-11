@@ -8,12 +8,19 @@
               <h5>Type: </h5>
               <h3 class="ps-3">{{ entityLink?.Entity.type }}</h3>
             </div>
-            <div v-if="activeCampaign?.creatorId == account?.id" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="activeEntity?.isPrivate == true" @click="makeEntityPrivate()">
-              <label class="btn btn-outline-warning" for="btnradio1">Private</label>
-  
-              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" :checked="activeEntity?.isPrivate == false" @click="makeEntityPublic()">
-              <label class="btn btn-outline-success" for="btnradio2">Public</label>
+
+            <div v-if="activeCampaign?.creatorId == account?.id">
+              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="activeEntity?.isPrivate == true" @click="makeEntityPrivate()">
+                  <label class="btn btn-outline-warning" for="btnradio1">Private</label>
+      
+                  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" :checked="activeEntity?.isPrivate == false" @click="makeEntityPublic()">
+                  <label class="btn btn-outline-success" for="btnradio2">Public</label>
+                </div>
+
+                <div>
+                  <button class="btn btn-outline-danger delete-button" @click="removeEntityCampaignLink()">Remove Entity</button>
+                </div>
             </div>
           </div>
   
@@ -52,6 +59,7 @@ import { logger } from "../utils/Logger.js";
 import { Entity } from "../models/Entity.js";
 import { AppState } from "../AppState.js";
 import { entitiesCampaignLinkService } from "../services/EntitiesCampaignLinkService.js";
+import { router } from "../router.js";
 
 export default {
   setup() {
@@ -107,8 +115,24 @@ export default {
           Pop.error(error.message)
           logger.log(error.message)
         }
+      },
+
+      async removeEntityCampaignLink() {
+        try {
+          if (await Pop.confirm('Are you sure you want to delete this entity from your campaign?')) {
+            const entityId = AppState.ActiveEntityLink.id
+            await entitiesCampaignLinkService.removeEntityCampaignLink(entityId)
+            router.push({name: 'ActiveCampaign', params: {campaignId: this.activeCampaign.id}})
+          }
+          return
+        } catch (error) {
+          Pop.error(error.message)
+          logger.log(error.message)
+        }
       }
-      }
+    }
+
+    
       
 
     }
@@ -129,5 +153,9 @@ export default {
   width: 100%;
   height: 40%;
   
+}
+
+.delete-button{
+  width: 9em;
 }
 </style>

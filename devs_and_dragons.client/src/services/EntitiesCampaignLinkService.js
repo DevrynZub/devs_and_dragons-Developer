@@ -45,6 +45,14 @@ class EntitiesCampaignLinkService {
     const updatedLink = new EntityCampaignLink(res.data)
     AppState.ActiveEntityLink = updatedLink
   }
+
+  async removeEntityCampaignLink(entityId) {
+    const res = await api.delete(`api/entitycampaignlinks/${entityId}`)
+    logger.log('deleting entity links', res.data)
+    const linkIndex = AppState.entityLinks.findIndex(l => l.id == entityId)
+    AppState.entityLinks.splice(linkIndex, 1)
+  }
+
 }
 
 
