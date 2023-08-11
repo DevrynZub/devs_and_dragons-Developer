@@ -50,9 +50,9 @@
       <div class="row justify-content-center mb-4">
         <div class="col-11 col-md-6 card d-flex p-3 ">
           <div class="d-flex justify-content-between">
-            <h3 class="text-light">My Entities: {{ myEntities?.length }}</h3>
+            <h4 class="text-light">My Entities: {{ myEntities?.length }}</h4>
             <div>
-              <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
+              <button v-if="account.id" class="btn btn-outline-primary mx-2" type="button" data-bs-toggle="modal"
                 data-bs-target="#createEntityModal"><i class="mdi mdi-plus-box"> </i>
                 Create Entity</button>
             </div>
@@ -162,6 +162,7 @@ img {
   background-position: center;
   background-attachment: fixed;
   min-height: 95vh;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .box {
@@ -187,8 +188,8 @@ img {
 }
 
 .card {
-  background-color: rgba(19, 13, 13, 0.765);
-  border: 1px double rgba(255, 0, 0, 0.395);
+  background-color: rgba(19, 13, 13, 0.936);
+  border: 1px double rgba(10, 49, 220, 0.468);
 
 }
 
