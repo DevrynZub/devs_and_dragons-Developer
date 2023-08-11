@@ -1,11 +1,11 @@
 <template>
   <div class="container-fluid about-page bg-black">
     <div class="row justify-content-around ">
-      <div class="col-12 col-md-4 pt-md-5 pb-3 d-flex justify-content-center ">
-        <img class="hero-img card img-fluid" src="src\assets\img\DnD About Page.png" alt="">
+      <div class="col-12 pt-md-5 pb-3 d-flex justify-content-center ">
+        <img class="hero-img img-fluid rounded-4" src="src\assets\img\DnD_Logo2-removebg-preview.png" alt="">
       </div>
 
-      <div class="col-12 col-md-4 card project-tools text-light  px-3">
+      <div class="col-12 text-center project-tools text-light  mx-3">
         <div>
           <p>Languages and Tools
             used on this project:</p>
@@ -24,8 +24,8 @@
 
 
 
-    <div class="row mt-3 justify-content-center">
-      <div class="col-11 col-md-10 card align-items-center justify-content-center">
+    <div class="row my-3 justify-content-center">
+      <div class="col-11 col-md-9 card align-items-center justify-content-center">
         <h1 class="d-flex text-light quote-img ">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
@@ -33,16 +33,16 @@
     </div>
 
 
-    <div class="container card-names">
-      <div class="row justify-content-center text-light mt-2">
-        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+    <div class="container card-names text-center">
+      <div class="row justify-content-center text-light mt-5">
+        <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Devryn Zub</div>
           <div>
             <a class="mdi mdi-github mx-2 fs-2" href=""></a>
             <a class="mdi mdi-linkedin fs-2" href=""></a>
           </div>
         </div>
-        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+        <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Andrew Allison</div>
           <div>
             <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/AndrewAllison2"></a>
@@ -51,24 +51,24 @@
         </div>
       </div>
       <div class="row justify-content-center text-light">
-        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+        <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Jeremy Olds</div>
           <div>
             <a class="mdi mdi-github mx-2 fs-2" href=""></a>
             <a class="mdi mdi-linkedin fs-2" href=""></a>
           </div>
         </div>
-        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+        <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Riley Thomas</div>
           <div>
             <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/Rilezzz"></a>
             <a class="mdi mdi-linkedin fs-2" href="https://www.linkedin.com/in/idahosuperiorcustoms/"></a>
           </div>
         </div>
-        <div class="col-12 col-md-5 card m-2 p-2 align-items-center">
+        <div class="col-12 col-md-5 card-name m-2 p-2 align-items-center">
           <div class="mt-4">Brandon Riggs</div>
           <div>
-            <a class="mdi mdi-github mx-2 fs-2" href=""></a>
+            <a class="mdi mdi-github mx-2 fs-2" href="https://github.com/BrandonRiggs-0104"></a>
             <a class="mdi mdi-linkedin fs-2" href=""></a>
           </div>
         </div>
@@ -209,11 +209,22 @@ span:nth-child(18) {
 
 
 .card {
-  background-color: rgba(30, 20, 20, 0.879);
+  background-color: rgb(0, 0, 0);
+  //   border: 1px double rgba(255, 72, 0, 0.578);
+  //   box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
+  // border-radius: 16px;
+  color: white;
+
+}
+
+.card-name {
+  background-color: rgb(0, 0, 0);
   border: 1px double rgba(255, 72, 0, 0.578);
-  box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
+  box-shadow: 1px 3px 2px rgb(255, 72, 0, 0.578);
   border-radius: 16px;
   color: white;
+  // background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.329), rgba(85, 84, 84, 0.507) 10%, rgb(22, 22, 22) 20%);
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
 
 }
 
@@ -222,8 +233,8 @@ span:nth-child(18) {
   font-size: 25px;
   margin-top: 2.5%;
   border-radius: 16px;
-  box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
-  border: 1px solid rgba(255, 72, 0, 0.578);
+  // box-shadow: 2px 0px 4px rgb(255, 72, 0, 0.578);
+  // border: 1px solid rgba(255, 72, 0, 0.578);
   margin-left: -1.5%
 }
 
@@ -236,12 +247,11 @@ span:nth-child(18) {
 
 .about-page {
   background-color: #000000;
-  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-  background-attachment: fixed;
+  // background-image:
+  // background-attachment: fixed;
   // background-repeat: no-repeat;
   // background-size: cover;
-
-
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .hero-img {
@@ -249,6 +259,9 @@ span:nth-child(18) {
   max-width: 75vh;
   // margin-left: 15%;
   // padding-top: 5%;
+  border: 1px double rgba(255, 72, 0, 0.578);
+  box-shadow: 4px 1px 13px rgb(255, 72, 0, 0.578);
+  background-color: rgb(224, 190, 35);
 }
 
 
