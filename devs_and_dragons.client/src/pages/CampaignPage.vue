@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="row justify-content-center p-2">
-                <div class="col-10">
+                <div class="col-11 scroll backdrop rounded">
                     <div class="row justify-content-center p-2 ">
                         <div class="col-md-3 col-12 m-3 text-light animate__animated animate__fadeIn camp-card"
                             v-for="campaign in campaigns " :key="campaign.id">
@@ -79,10 +79,34 @@ export default {
     background-attachment: fixed;
     font-family: 'Courier New', Courier, monospace;
 
+
+
 }
+
+
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.648);
+}
+
 
 .scroll {
     overflow-y: scroll;
+    height: 73vh;
+
+
+}
+
+.scroll::-webkit-scrollbar {
+    box-shadow: inset 0 0 5px rgb(175, 30, 30);
+    border-radius: 10px;
+    width: 25px;
+    margin: 3px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-image: url('https://i.pinimg.com/originals/15/d9/15/15d915a12800b3c5d0ec2f739f415996.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .box {
@@ -112,7 +136,7 @@ export default {
     object-fit: cover;
 }
 
-.camp-card{
+.camp-card {
     height: 100%;
 }
 </style>
