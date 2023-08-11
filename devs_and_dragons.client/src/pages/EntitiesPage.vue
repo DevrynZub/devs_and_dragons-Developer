@@ -25,11 +25,14 @@
               <h4 class="ms-2 text-decoration-underline">Description: </h4>
               <p class="ms-2"> {{ entityLink?.Entity.desc }}</p>
             </div>
-            <div class="text-center mt-5">
-              <h5 class="ms-2 text-decoration-underline">Information: </h5> 
-              <p>{{ entityLink?.Entity.body }}</p>
-            </div>
           </div>
+
+            <div class="row">
+              <div class="col-10 text-center mt-5 m-auto">
+                <h5 class="ms-2 text-decoration-underline">Information: </h5> 
+                <p>{{ entityLink?.Entity.body }}</p>
+              </div>
+            </div>
           <div class="entityImg  mt-5 m-auto pb-5">
             <img class="img-fluid rounded-5" :src="entityLink?.Entity.imgUrl">
           </div>
