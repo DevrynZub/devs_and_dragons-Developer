@@ -151,7 +151,8 @@ export default {
 
 .entityImg {
   width: 100%;
-  height: 40%;
+  height: 40vh;
+  object-fit: contain;
   
 }
 
