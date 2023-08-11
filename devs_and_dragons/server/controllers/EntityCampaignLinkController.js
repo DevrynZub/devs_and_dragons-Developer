@@ -13,6 +13,7 @@ export class EntityCampaignLinkController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       .post('', this.createEntityCampaignLink)
       .delete('/:entityLinkId', this.deleteEntityCampaignLink)
+      .put('/:entityLinkId', this.editEntityLink)
   }
 
   async getEntityLinkById(req, res, next) {
@@ -44,4 +45,17 @@ export class EntityCampaignLinkController extends BaseController {
       next(error)
     }
   }
+
+  async editEntityLink(req, res, next) {
+    try {
+      const data = req.body
+      const entityLinkId = req.params.entityLinkId
+      const userId = req.userInfo.id
+      const editedLink = await entityCampaignLinkService.editEntityLink(data, entityLinkId, userId)
+      res.send(editedLink)
+    } catch (error) {
+      next(error)
+    }
+  }
+
 }

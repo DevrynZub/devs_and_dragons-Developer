@@ -36,6 +36,19 @@ class EntityCampaignLinkService {
     return entityLinks
   }
 
+  async editEntityLink(data, entityLinkId, userId) {
+    const originalLink = await this.getEntityLinkById(entityLinkId)
+    if (!originalLink) {
+      throw new BadRequest('Cnnot find a link by that ID')
+    }
+    originalLink.isPrivate = data.isPrivate || true
+
+    await originalLink.save()
+    return originalLink
+
+  }
 }
+
+
 
 export const entityCampaignLinkService = new EntityCampaignLinkService()
