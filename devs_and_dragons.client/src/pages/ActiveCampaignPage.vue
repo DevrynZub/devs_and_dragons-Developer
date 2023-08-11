@@ -263,7 +263,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 200%;
+  height: 100%;
 }
 
 .player-avatar {
