@@ -1,12 +1,12 @@
 <template>
   <router-link :to="{ name: 'ActiveCampaign', params: { campaignId: campaignProp.id } }">
-    <div class="text-white text-center">
-      <div v-if="campaignProp.isArchived == false" class="d-flex flex-column box rounded elevation-5 selectable p-2" title="To this Campaign!">
+    <div class="row text-white text-center">
+      <div v-if="campaignProp.isArchived == false" class="d-flex flex-column box rounded elevation-5 selectable p-2 main-card" title="To this Campaign!">
         <div class="elevation-5 mb-3 info-card rounded">
           <h3>{{ campaignProp.name }}</h3>
           <p>{{ campaignProp.nextSessionDate.toLocaleDateString() }} </p>
           <p>{{ campaignProp.nextSessionDate.toLocaleTimeString() }}</p>
-          <p>{{ campaignProp.desc }}</p>
+          <p class="campaign-desc">{{ campaignProp.desc }}</p>
           <p>Player Capacity: {{ campaignProp.partyCount }} / {{ campaignProp?.capacity }}</p>
         </div>
         <div class="text-center mb-2">
@@ -58,7 +58,6 @@ export default {
   background-color: rgba(73, 73, 73, 0.719);
   outline: 1px double red;
   box-shadow: 3px 1px 5px rgb(255, 0, 0);
-
 }
 
 .archived-box{
@@ -85,6 +84,7 @@ export default {
 .info-card {
   background-color: rgba(0, 0, 0, 0.555);
   padding: 10px;
+  // overflow-y: scroll;
 }
 
 // .card {
@@ -97,5 +97,9 @@ export default {
   height: 15vh;
   width: 35vh;
   object-fit: cover;
+}
+
+.campaign-desc{
+overflow-wrap:break-word
 }
 </style>

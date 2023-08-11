@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid about-page bg-black">
     <div class="row justify-content-around ">
-      <div class="col-12 pt-md-5 pb-3 d-flex justify-content-center ">
+      <div class="col-12 pt-md-5 pb-3 mt-2 d-flex justify-content-center ">
         <img class="hero-img img-fluid rounded-4" src="src\assets\img\DnD_Logo2-removebg-preview.png" alt="">
       </div>
 
@@ -25,7 +25,7 @@
 
 
     <div class="row my-3 justify-content-center">
-      <div class="col-11 col-md-9 card align-items-center justify-content-center">
+      <div class="col-12 col-md-9 card align-items-center justify-content-center">
         <h1 class="d-flex text-light quote-img ">
           “Never fear quarrels, but seek hazardous adventures.”― Alexandre Dumas, The Three Musketeers
         </h1>
@@ -223,7 +223,7 @@ span:nth-child(18) {
   box-shadow: 1px 3px 2px rgb(255, 72, 0, 0.578);
   border-radius: 16px;
   color: white;
-  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.329), rgba(85, 84, 84, 0.507) 10%, rgb(22, 22, 22) 20%);
+  background-image: linear-gradient(rgba(146, 146, 146, 0.747) 15%, rgba(105, 104, 104, 0.541) 20%, rgba(41, 39, 39, 0.541) 35%);
 
 }
 
@@ -285,8 +285,9 @@ span:nth-child(18) {
   .quote-img {
     font-size: 20px;
     padding-top: 3%;
-    margin-left: -14%;
+    margin-left: 0%;
   }
+
 
 
 }
