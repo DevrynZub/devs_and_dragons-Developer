@@ -13,9 +13,13 @@
                         Hit Points: {{ monster.hit_points }} ({{ monster.hit_points_roll }})
                     </div>
                     <div>
-                        Speed:{{ monster.speed.walk }}, <span v-if="monster.speed?.swim">swim {{ monster.speed.swim }}ft.,
-                        </span><span v-if="monster.speed?.fly">fly {{ monster.speed.fly }}ft</span><span
-                            v-if="monster.speed.burrow">burrow {{ monster.speed.burrow }}</span>
+                        Speed:{{ monster.speed.walk }},
+                        <span v-if="monster.speed?.swim">swim {{ monster.speed.swim }}, </span>
+                        <span v-if="monster.speed?.fly">fly {{ monster.speed.fly }}, </span>
+                        <span v-if="monster.speed.burrow">burrow {{ monster.speed.burrow }}</span>
+                    </div>
+                    <div>
+                        Challenge Rating: {{ monster.challenge_rating }}
                     </div>
                     <div>
 
