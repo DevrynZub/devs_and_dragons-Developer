@@ -28,8 +28,6 @@
     </div>
     <!-- SECTION players -->
 
-    <!--  REVIEW does the creator of the campaign need a link to interact with the other players? are they given a link when creating a campaign? -->
-
     <div class="row">
       <div class="col-12 d-flex justify-content-around p-4">
         <div v-for="links in accountLinks" :key="links.id">
@@ -55,7 +53,7 @@
 
       </div>
       <!-- STUB information collapsibles -->
-      <div class="col-2 bg-dark text-light m-2">
+      <div class="col-2 bg-dark text-light text-center m-2">
         <!-- NOTE description -->
         <div>
           <router-link :to="{ name: 'description' }">
@@ -73,8 +71,11 @@
 
           <div id="notes" class="collapse">
             <ul v-for="note in notes" :key="note?.id">
-              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
-                <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign?.id, noteId: note?.id } }">
+                <div class="d-flex justify-content-between">
+                  <li v-if="note.isRecap == false" class="selectable">{{ note.name }}</li>
+                  <i v-if="note?.accountId == account?.id && note?.isRecap == false" class="mdi mdi-eye text-success" title="Everybody can see this Entity"></i>
+                </div>
               </router-link>
 
             </ul>
@@ -91,7 +92,7 @@
 
           <div id="recaps" class="collapse">
             <ul v-for="note in notes" :key="note.id">
-              <router-link :to="{ name: 'notes', params: { campaignId: campaign.id, noteId: note.id } }">
+              <router-link :to="{ name: 'notes', params: { campaignId: campaign?.id, noteId: note?.id } }">
                 <li v-if="note.isRecap == true" class="selectable">{{ note.name }}</li>
               </router-link>
             </ul>
@@ -106,9 +107,9 @@
           </div>
           <div id="entities" class="collapse">
             <ul v-for="entity in entityLinks" :key="entity.id">
-              <router-link :to="{ name: 'entities', params: { campaignId: campaign.id, entityId: entity.id } }">
+              <router-link :to="{ name: 'entities', params: { campaignId: campaign?.id, entityId: entity?.id } }">
                 <div class="d-flex justify-content-between">
-                <li v-if="entity.isPrivate == false || campaign.creatorId == account.id" class="selectable">{{
+                <li v-if="entity?.isPrivate == false || campaign?.creatorId == account?.id" class="selectable">{{
                   entity.Entity.name }}</li>
                   <i v-if="entity.isPrivate == false && campaign?.creatorId == account.id" class="mdi mdi-eye text-success" title="Everybody can see this Entity"></i>
                 </div>
@@ -158,6 +159,7 @@ export default {
 
     watchEffect(() => {
       getEntityLinksByCampaign()
+      getNotesByCampaign()
     })
 
     async function getEntityLinksByCampaign() {
