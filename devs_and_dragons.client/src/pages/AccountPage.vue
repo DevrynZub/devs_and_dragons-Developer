@@ -19,7 +19,12 @@
 
       <div class="row justify-content-center mb-3">
         <div class="col-11 col-md-6 d-flex card p-3">
-          <h4 class="text-light">My Campaigns: {{ myCampaigns?.length }}</h4>
+          <div class="d-flex justify-content-between">
+            <h4 class="text-light">My Campaigns: {{ myCampaigns?.length }}</h4>
+            <button v-if="account.id" class="btn btn-outline-primary mx-2" type="button" data-bs-toggle="modal"
+              data-bs-target="#createCampaignModal">
+              <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
+          </div>
 
 
           <div id="carouselExample" class="carousel slide carousel-fade">
@@ -48,7 +53,7 @@
             <h3 class="text-light">My Entities: {{ myEntities?.length }}</h3>
             <div>
               <button v-if="account.id" class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-                data-bs-target="#createEntityModal">
+                data-bs-target="#createEntityModal"><i class="mdi mdi-plus-box"> </i>
                 Create Entity</button>
             </div>
           </div>

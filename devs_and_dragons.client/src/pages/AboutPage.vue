@@ -223,8 +223,7 @@ span:nth-child(18) {
   box-shadow: 1px 3px 2px rgb(255, 72, 0, 0.578);
   border-radius: 16px;
   color: white;
-  // background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.329), rgba(85, 84, 84, 0.507) 10%, rgb(22, 22, 22) 20%);
-  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.329), rgba(85, 84, 84, 0.507) 10%, rgb(22, 22, 22) 20%);
 
 }
 
