@@ -26,6 +26,7 @@ import { AppState } from '../AppState.js'
 import { accountService } from '../services/AccountService.js'
 import { logger } from '../utils/Logger.js'
 import Pop from '../utils/Pop.js'
+import { Modal } from "bootstrap"
 
 export default {
   setup() {
@@ -50,6 +51,7 @@ export default {
           const formData = editable.value
           await accountService.editAccount(formData)
           logger.log('[EDITING ACCOUNT]', editable)
+          Modal.getOrCreateInstance('#editAccount').hide()
         } catch (error) {
           Pop.error(error.message)
         }
