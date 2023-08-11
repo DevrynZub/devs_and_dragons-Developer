@@ -19,7 +19,7 @@
       </div>
       <!-- STUB  Title and session date-->
       <div class="col-md-8 col-12">
-        <div class="text-white d-flex flex-column align-items-center pt-3">
+        <div class="text-white text-center d-flex flex-column align-items-center pt-3">
           <h1>{{ campaign?.name }}</h1>
           <h2 v-if="campaign?.isArchived == false">Next Session Date: {{ formattedDate }}
           </h2>
@@ -53,7 +53,7 @@
 
       </div>
       <!-- STUB child routing section -->
-      <div class="col-10 col-md-7 colrounded elevation-5 child-field">
+      <div class="col-12 col-md-7 colrounded elevation-5 child-field">
         <div>
           <router-view>
 
@@ -62,7 +62,7 @@
 
       </div>
       <!-- STUB information collapsibles -->
-      <div class="col-3 bg-dark text-light text-center top-menu d-flex flex-column justify-content-between">
+      <div class="col-12 col-md-3 bg-dark text-light text-center top-menu d-flex flex-column justify-content-between">
         <!-- NOTE description -->
         <div>
           <router-link :to="{ name: 'description' }">
@@ -298,7 +298,7 @@ export default {
   overflow-wrap: break-word;
   overflow-y: auto;
   max-height: 50vh;
-  
+
 }
 
 .top-menu {
@@ -306,4 +306,6 @@ export default {
   min-height: 70vh;
 
 }
+
+
 </style>
