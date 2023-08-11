@@ -41,7 +41,7 @@ class EntityCampaignLinkService {
     if (!originalLink) {
       throw new BadRequest('Cannot find a link by that ID')
     }
-    originalLink.isPrivate = data.isPrivate || originalLink.isPrivate
+    originalLink.isPrivate = data.isPrivate
 
     await originalLink.save()
     return originalLink
