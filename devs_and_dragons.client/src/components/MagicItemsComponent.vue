@@ -2,16 +2,13 @@
   <div v-if="magicItems?.url.includes('magic-items')" class="container-fluid">
     <div class="row">
       <div>
-        Name: {{ magicItems?.name }}
-      </div>
-      <div>
         Category: {{ magicItems?.equipment_category.name }}
       </div>
       <div>
-        Rarity: {{ magicItems?.rarity }}
+        Rarity: {{ magicItems?.rarity.name }}
       </div>
-      <div>
-        Description: {{ magicItems?.desc }}
+      <div v-if="magicItems?.desc.length > 0">
+        Description: <span v-for="(m, index) in magicItems?.desc" :key="index">{{ m }}</span>
       </div>
     </div>
   </div>

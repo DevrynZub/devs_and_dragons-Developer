@@ -3,18 +3,31 @@
         <div class="row">
             <div class="col-11 col-md-9" v-if="spells?.url.includes('spell')">
                 <div>
-                    <h3> {{ spells.name }}</h3>
-                </div>
-                <div>
-                    <p>{{ spells.range }}</p>
-                    <p>{{ spells.components }}</p>
-                    <p>{{ spells.material }}</p>
-                    <p>{{ spells.ritual }}</p>
-                    <p>{{ spells.duration }}</p>
-                    <p>{{ spells.concentration }}</p>
-                    <p>{{ spells.casting_time }}</p>
+                    <div>
+                        Range: {{ spells.range }}
+                    </div>
+                    <div>
+                        Components: <span v-for="(s, index) in spells.components" :key="index">{{ s }}, </span>
+                    </div>
+                    <div>
+                        {{ spells.material }}
+                    </div>
+                    <div>
+                        {{ spells.ritual }}
+                    </div>
+                    <div>
+                        Spell Duration: {{ spells.duration }}
+                    </div>
+                    <div v-if="spells.concentration">
+                        Concentration: {{ spells.concentration }}
+                    </div>
+                    <div>
+                        Spellcasting time: {{ spells.casting_time }}
+                    </div>
+                    <div v-for="(s, index) in spells.desc" :key="index">
+                        {{ s }}
+                    </div>
                     <!-- <p>{{ spells.classes }}</p> -->
-                    <p>{{ spells.desc }}</p>
                 </div>
             </div>
         </div>
@@ -38,4 +51,8 @@ export default {
 </script>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div {
+    padding-bottom: 1vh;
+}
+</style>
