@@ -1,29 +1,27 @@
 <template>
-    <div class="background">
-        <div class="container-fluid">
-            <div class="row justify-content-center d-flex ">
-                <div class="col-md-4 col-12 p-3 text-center">
-                    <div class="elevation-3 rounded fs-5 search text-light p-1 ">
-                        <input v-model="filterBy" class="rounded-pill m-2 w-75" placeholder="Search Campaigns" type="search"
-                            id="site-campaigns" name="q" />
-                    </div>
-                    <button v-if="account.id" class="btn btn-danger m-2" type="button" data-bs-toggle="modal"
-                        data-bs-target="#createCampaignModal">
-                        <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
+    <div class="background h-100 container-fluid">
+        <div class="row justify-content-center d-flex ">
+            <div class="col-md-4 col-12 p-3 text-center">
+                <div class="elevation-3 rounded fs-5 search text-light p-1 ">
+                    <input v-model="filterBy" class="rounded-pill m-2 w-75" placeholder="Search Campaigns" type="search"
+                        id="site-campaigns" name="q" />
                 </div>
+                <button v-if="account.id" class="btn btn-danger m-2" type="button" data-bs-toggle="modal"
+                    data-bs-target="#createCampaignModal">
+                    <i class="mdi mdi-plus-box"> </i> Create Campaign</button>
             </div>
-            <div class="row justify-content-center p-2">
-                <div class="col-11 scroll backdrop rounded">
-                    <div class="row justify-content-center p-2 ">
-                        <div class="col-md-3 col-12 m-3 text-light animate__animated animate__fadeIn camp-card"
-                            v-for="campaign in campaigns " :key="campaign.id">
-                            <CampaignCardComponent :campaignProp="campaign" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
+        <div class="row justify-content-center p-2">
+            <div class="col-11 scroll backdrop rounded">
+                <div class="row justify-content-center p-2 ">
+                    <div class="col-md-3 col-12 m-4 text-light animate__animated animate__fadeIn camp-card"
+                        v-for="campaign in campaigns " :key="campaign.id">
+                        <CampaignCardComponent :campaignProp="campaign" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -72,12 +70,13 @@ export default {
 
 <style lang="scss" scoped>
 .background {
-    // background-position: center;
+    background-position: center;
     background-image: url(https://www.pixel-creation.com/wp-content/uploads/dungeons-and-dragons-wallpaper-1920x1080-77-images-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Courier New', Courier, monospace;
+
 
 
 
@@ -91,7 +90,7 @@ export default {
 
 .scroll {
     overflow-y: scroll;
-    height: 73vh;
+    max-height: 73vh;
 
 
 }
