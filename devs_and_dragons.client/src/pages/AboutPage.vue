@@ -223,7 +223,8 @@ span:nth-child(18) {
   box-shadow: 1px 3px 2px rgb(255, 72, 0, 0.578);
   border-radius: 16px;
   color: white;
-  background-image: linear-gradient(rgba(146, 146, 146, 0.747) 15%, rgba(105, 104, 104, 0.541) 20%, rgba(41, 39, 39, 0.541) 35%);
+  background-image: linear-gradient(rgba(41, 39, 39, 0.541) 50%, rgba(105, 104, 104, 0.363) 80%, rgba(146, 146, 146, 0.747) 90%);
+  // background-image: linear-gradient(rgba(146, 146, 146, 0.747) 15%, rgba(105, 104, 104, 0.541) 20%, rgba(41, 39, 39, 0.541) 35%);
 
 }
 
