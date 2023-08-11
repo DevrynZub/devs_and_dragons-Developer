@@ -4,8 +4,10 @@
       <div class="col-11 mt-4 m-auto">
         <div class="mt-3 card rounded-3 text-light entityCard elevation-5">
           <div class="p-3 d-flex justify-content-between">
-            <h3>Type of Entity: {{ entityLink?.Entity.type }}</h3>
-            
+            <div class="d-flex align-items-center">
+              <h5>Type: </h5>
+              <h3 class="ps-3">{{ entityLink?.Entity.type }}</h3>
+            </div>
             <div v-if="activeCampaign?.creatorId == account?.id" class="btn-group" role="group" aria-label="Basic radio toggle button group">
               <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="activeEntity?.isPrivate == true" @click="makeEntityPrivate()">
               <label class="btn btn-outline-warning" for="btnradio1">Private</label>
@@ -17,19 +19,22 @@
   
           <div class="m-auto">
             <div class="text-center">
-              <h5>Entity Name: </h5><h4 class="ms-2"> {{ entityLink?.Entity.name }}</h4>
+              <h2 class="ms-2 text-decoration-underline"> {{ entityLink?.Entity.name }}</h2>
             </div>
             <div class="text-center mt-5">
-              <h4>Entity Description: </h4>
+              <h4 class="ms-2 text-decoration-underline">Description: </h4>
               <p class="ms-2"> {{ entityLink?.Entity.desc }}</p>
             </div>
-            <div class="text-center mt-5">
-              <h5>Entity Information: </h5> 
-              <p>{{ entityLink?.Entity.body }}</p>
-            </div>
           </div>
-          <div class="entityImg  mt-5 m-auto pb-5">
-            <img class="img-fluid rounded-5" :src="entityLink?.Entity.imgUrl">
+
+            <div class="row">
+              <div class="col-10 text-center mt-5 m-auto">
+                <h5 class="ms-2 text-decoration-underline">Information: </h5> 
+                <p>{{ entityLink?.Entity.body }}</p>
+              </div>
+            </div>
+          <div class="col-10 mt-5 m-auto pb-5">
+            <img class="img-fluid entityImg rounded-5" :src="entityLink?.Entity.imgUrl">
           </div>
       </div>
 </div>
@@ -93,8 +98,6 @@ export default {
           }
       },
 
-
-      // FIXME works in ui but is not flipping bool on network request
       async makeEntityPublic() {
         try {
           const linkData = AppState.ActiveEntityLink
@@ -116,13 +119,15 @@ export default {
 
 <style lang="scss" scoped>
 .entityCard {
-  background-color: rgba(172, 9, 9, 0.438);
-  border: 1px double red;
-  box-shadow: 3px 1px 5px rgb(255, 0, 0);
+  background-color: rgba(88, 72, 72, 0.438);
+  border: 1px double rgb(255, 203, 203);
+  box-shadow: 3px 1px 5px rgba(255, 255, 255, 0.616);
+  margin-bottom: 2em;
 }
 
 .entityImg {
-  max-width: 90%;
-  max-height: 75%;
+  width: 100%;
+  height: 40%;
+  
 }
 </style>

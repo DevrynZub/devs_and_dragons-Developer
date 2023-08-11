@@ -54,7 +54,7 @@ export default {
           const account = await entityService.createEntity(entityData)
           router.push({ name: 'Account', params: { accountId: account.id } })
           editable.value = {}
-          Modal.getOrCreateInstance('createEntityModal').hide()
+          Modal.getOrCreateInstance('#createEntityModal').hide()
         } catch (error) {
           Pop.success('Created Entity')
         }

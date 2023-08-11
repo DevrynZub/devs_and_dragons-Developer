@@ -59,7 +59,7 @@
           <!-- NOTE description -->
           <div>
             <router-link :to="{ name: 'description' }">
-              <h1 class="selectable">Description</h1>
+              <h1 class="selectable mt-3 text-light">Description</h1>
             </router-link>
           </div>
           <!-- NOTE Notes Section -->
@@ -122,7 +122,7 @@
           <!-- NOTE Search page routing -->
           <div>
             <router-link :to="{ name: 'search' }">
-              <h1>Search</h1>
+              <h1 class="text-light mb-3">Search</h1>
             </router-link>
           </div>
   
