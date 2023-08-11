@@ -81,17 +81,7 @@
   </div>
 </template>
 
-
-
-
-
-
-
-
-
-
-
--lefipt>
+<script>
 export default {
   setup() {
     return {}
