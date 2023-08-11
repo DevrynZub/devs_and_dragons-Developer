@@ -93,15 +93,15 @@ export default {
 
 .edit-button{
   position: relative;
-  top: -2em;
-  right: -13em;
+  top: -1em;
+  right: -11em;
   color: rgb(209, 209, 6)
   ;
 }
 .delete-button{
   position: relative;
-  top: -2em;
-  right: -14em;
+  top: -1em;
+  right: -12em;
   color: rgb(252, 21, 21)
   ;
 }
