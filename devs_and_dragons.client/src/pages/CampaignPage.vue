@@ -16,7 +16,7 @@
             <div class="row justify-content-center p-2">
                 <div class="col-10">
                     <div class="row justify-content-center p-2 ">
-                        <div class="col-md-3 col-12 m-3 text-light animate__animated animate__fadeIn"
+                        <div class="col-md-3 col-12 m-3 text-light animate__animated animate__fadeIn camp-card"
                             v-for="campaign in campaigns " :key="campaign.id">
                             <CampaignCardComponent :campaignProp="campaign" />
                         </div>
@@ -110,5 +110,9 @@ export default {
     height: 15vh;
     width: 35vh;
     object-fit: cover;
+}
+
+.camp-card{
+    height: 100%;
 }
 </style>
