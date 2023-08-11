@@ -1,6 +1,5 @@
 <template>
     <div class="background">
-
         <div class="container-fluid">
             <div class="row justify-content-center d-flex ">
                 <div class="col-md-4 col-12 p-3 text-center">
@@ -78,6 +77,7 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: 'Courier New', Courier, monospace;
 
 }
 
