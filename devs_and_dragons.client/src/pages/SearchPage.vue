@@ -96,7 +96,7 @@ import { AppState } from "../AppState.js";
 export default {
   setup() {
 
-    const filterBy = ref({})
+    const filterBy = ref({ name: '' })
     let selectedCategory = ref(null)
     let savedCategory = ref(null)
 
