@@ -1,32 +1,38 @@
 <template>
-  <div class="container-fluid d-flex">
-    <div class="row">
-      <div class="mt-3 card rounded-3 text-light entityCard elevation-5">
-        <div class="m-1 d-flex justify-content-between">
-          Type of Entity: {{ entityLink?.Entity.type }}
-          
-          <div v-if="activeCampaign?.creatorId == account?.id" class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="activeEntity?.isPrivate == true" @click="makeEntityPrivate()">
-            <label class="btn btn-outline-warning" for="btnradio1">Private</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" :checked="activeEntity?.isPrivate == false" @click="makeEntityPublic()">
-            <label class="btn btn-outline-success" for="btnradio2">Public</label>
+  <div>
+    <div class="row justify-content-center">
+      <div class="col-11 mt-4 m-auto">
+        <div class="mt-3 card rounded-3 text-light entityCard elevation-5">
+          <div class="p-3 d-flex justify-content-between">
+            <h3>Type of Entity: {{ entityLink?.Entity.type }}</h3>
+            
+            <div v-if="activeCampaign?.creatorId == account?.id" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" :checked="activeEntity?.isPrivate == true" @click="makeEntityPrivate()">
+              <label class="btn btn-outline-warning" for="btnradio1">Private</label>
+  
+              <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" :checked="activeEntity?.isPrivate == false" @click="makeEntityPublic()">
+              <label class="btn btn-outline-success" for="btnradio2">Public</label>
+            </div>
           </div>
-        </div>
-
-        <div class="m-1">
-          Entity Name: {{ entityLink?.Entity.name }}
-        </div>
-        <div class="m-1">
-          Entity Description: {{ entityLink?.Entity.desc }}
-        </div>
-        <div class="m-1">
-          Entity Information: {{ entityLink?.Entity.body }}
-        </div>
-      <div class="entityImg  mt-3">
-        <img class="img-fluid rounded-5" :src="entityLink?.Entity.imgUrl">
+  
+          <div class="m-auto">
+            <div class="text-center">
+              <h5>Entity Name: </h5><h4 class="ms-2"> {{ entityLink?.Entity.name }}</h4>
+            </div>
+            <div class="text-center mt-5">
+              <h4>Entity Description: </h4>
+              <p class="ms-2"> {{ entityLink?.Entity.desc }}</p>
+            </div>
+            <div class="text-center mt-5">
+              <h5>Entity Information: </h5> 
+              <p>{{ entityLink?.Entity.body }}</p>
+            </div>
+          </div>
+          <div class="entityImg  mt-5 m-auto pb-5">
+            <img class="img-fluid rounded-5" :src="entityLink?.Entity.imgUrl">
+          </div>
       </div>
-    </div>
+</div>
   </div>
   </div>
 </template>
@@ -116,6 +122,7 @@ export default {
 }
 
 .entityImg {
-  max-width: 60%;
+  max-width: 90%;
+  max-height: 75%;
 }
 </style>
