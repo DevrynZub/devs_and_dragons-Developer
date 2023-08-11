@@ -34,15 +34,16 @@ class EntitiesCampaignLinkService {
     entity.isPrivate = true
     const res = await api.put(`api/entitycampaignlinks/${entityLinkId}`, entity)
     logger.log('making entity link private', res.data)
-    // const updatedLink = new EntityCampaignLink(res.data)
-    // AppState.ActiveEntityLink = updatedLink
+    const updatedLink = new EntityCampaignLink(res.data)
+    AppState.ActiveEntityLink = updatedLink
   }
 
   async makeEntityPublic(linkData, entityLinkId) {
     linkData.isPrivate = false
     const res = await api.put(`api/entitycampaignlinks/${entityLinkId}`, linkData)
     logger.log('making entity link public', res.data)
-
+    const updatedLink = new EntityCampaignLink(res.data)
+    AppState.ActiveEntityLink = updatedLink
   }
 }
 
