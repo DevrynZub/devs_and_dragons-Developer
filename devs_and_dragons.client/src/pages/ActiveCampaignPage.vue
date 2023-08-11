@@ -53,7 +53,7 @@
 
       </div>
       <!-- STUB information collapsibles -->
-      <div class="col-2 bg-dark text-light m-2">
+      <div class="col-2 bg-dark text-light text-center m-2">
         <!-- NOTE description -->
         <div>
           <router-link :to="{ name: 'description' }">
