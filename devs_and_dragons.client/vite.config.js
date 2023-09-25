@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     outDir: 'docs',
-    sourcemap: false
+    sourcemap: false,
+    rollupOptions: {
+      external: ['/src/assets/img/DnD_Logo2-removebg-preview.png'],
+    },
   },
   server: {
     port: 8080
