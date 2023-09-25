@@ -5,11 +5,8 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: 'dist',
+    outDir: 'docs',
     sourcemap: false,
-    rollupOptions: {
-      external: ['/src/assets/img/DnD_Logo2-removebg-preview.png'],
-    },
   },
   server: {
     port: 8080
