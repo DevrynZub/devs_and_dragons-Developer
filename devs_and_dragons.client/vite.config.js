@@ -5,7 +5,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: 'docs',
+    outDir: 'dist',
     sourcemap: false,
     rollupOptions: {
       external: ['/src/assets/img/DnD_Logo2-removebg-preview.png'],
